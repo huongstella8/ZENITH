@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZENITH · C1–C2 Vocabulary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0a15; --panel:#16121f; --panel2:#1d1730; --line:#332a49; --ink:#f4efe4; --muted:#a99ec7;
+    --gold:#e8c26a; --gold2:#f6e6b4; --goldDeep:#b8863a; --plum:#7c5cff; --rose:#f19cb0; --green:#7fe0ab;
+    --grad:linear-gradient(120deg,#b8863a 0%,#f6e6b4 48%,#d9a441 100%);
+    --gradP:linear-gradient(120deg,#7c5cff,#c9a0ff);
+    --fh:'Playfair Display',Georgia,serif; --fb:'Inter',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(55% 45% at 10% 0%,rgba(124,92,255,.18),transparent 60%),
+                     radial-gradient(50% 45% at 100% 4%,rgba(232,194,106,.16),transparent 60%),
+                     radial-gradient(60% 55% at 50% 100%,rgba(124,92,255,.10),transparent 60%);
+    background-attachment:fixed;}
+  h1,h2,h3,h4{font-family:var(--fh);margin:0;line-height:1.15;font-weight:700}
+  .gradtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  header.top{padding:26px 28px 24px;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(124,92,255,.12),transparent);border-bottom:1px solid var(--line)}
+  header .nova{font-family:var(--fb);font-weight:800;font-size:12.5px;letter-spacing:8px;text-transform:uppercase;color:#e7dcff;display:flex;align-items:center;gap:10px}
+  header .nova::before{content:"✦";color:var(--gold);filter:drop-shadow(0 0 7px var(--gold))}
+  header h1{font-size:40px;margin:12px 0 6px;font-weight:800;letter-spacing:-.01em}
+  header .lvl{display:inline-block;font-family:var(--fb);font-weight:800;font-size:11px;letter-spacing:1.5px;color:#0c0a15;background:var(--grad);padding:3px 10px;border-radius:20px;vertical-align:middle;margin-left:10px}
+  header p{margin:6px 0 0;color:var(--muted);font-size:13px;max-width:840px}
+  header .glow{position:absolute;right:-40px;top:-70px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(232,194,106,.45),transparent 65%);filter:blur(34px);pointer-events:none}
+  nav.tabs{position:sticky;top:0;z-index:30;background:rgba(12,10,21,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:4px;padding:10px 16px}
+  nav.tabs button{border:1px solid transparent;background:transparent;font:inherit;font-family:var(--fb);font-weight:600;color:var(--muted);padding:8px 13px;border-radius:11px;cursor:pointer;font-size:13.5px;white-space:nowrap;transition:.15s}
+  nav.tabs button:hover{background:var(--panel2);color:var(--ink)}
+  nav.tabs button.active{background:var(--grad);color:#0c0a15;font-weight:800;box-shadow:0 4px 18px rgba(232,194,106,.35)}
+  nav.tabs button .l{font-family:var(--fh);font-weight:800;margin-right:5px}
+  main{max-width:1140px;margin:0 auto;padding:22px 20px 90px}
+  .searchbar{margin:0 0 16px;position:relative}
+  .searchbar input{width:100%;padding:14px 16px 14px 48px;border:1px solid var(--line);border-radius:14px;font:inherit;font-size:15.5px;background:var(--panel);color:var(--ink)}
+  .searchbar input::placeholder{color:#77709a}
+  .searchbar input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,194,106,.18)}
+  .searchbar .ic{position:absolute;left:17px;top:50%;transform:translateY(-50%);font-size:17px;opacity:.7}
+  .skillrow{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+  .skillrow button{border:1px solid var(--line);background:var(--panel);color:var(--muted);font:inherit;font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:20px;cursor:pointer;transition:.15s}
+  .skillrow button:hover{border-color:var(--gold);color:var(--ink)}
+  .skillrow button.on{color:#0c0a15;border-color:transparent}
+  .skillrow button.on.rw{background:linear-gradient(120deg,#e8c26a,#f6e6b4)}
+  .skillrow button.on.ls{background:linear-gradient(120deg,#c9a0ff,#7c5cff)}
+  .skillrow button.on.all{background:var(--grad)}
+  .modhead{display:flex;align-items:center;gap:16px;margin:6px 0 4px}
+  .modhead .badge{width:60px;height:60px;flex:0 0 auto;border-radius:16px;background:var(--grad);color:#0c0a15;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:26px;font-weight:800;box-shadow:0 8px 26px rgba(232,194,106,.4)}
+  .modhead h2{font-size:27px}
+  .modhead p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
+  .sub{font-family:var(--fh);font-size:16px;font-weight:700;color:#f0e6c8;display:flex;align-items:center;gap:10px;margin:24px 0 12px}
+  .sub::before{content:"";width:24px;height:3px;background:var(--grad);border-radius:2px}
+  .sub .cnt{font-family:var(--fb);font-weight:600;font-size:12px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
+  .card{border:1px solid var(--line);border-radius:15px;padding:15px 16px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.012));transition:transform .13s,box-shadow .13s,border-color .13s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+  .card.ls::before{background:var(--plum)}
+  .card:hover{transform:translateY(-3px);border-color:#4a3d63;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+  .card .w{font-family:var(--fh);font-weight:800;font-size:19px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .card .pos{font-family:var(--fb);font-size:10px;font-weight:800;letter-spacing:.4px;color:#0c0a15;background:linear-gradient(120deg,#f6e6b4,#e8c26a);padding:2px 7px;border-radius:9px;text-transform:uppercase}
+  .card .cefr{font-family:var(--fb);font-size:10px;font-weight:900;letter-spacing:.4px;padding:2px 7px;border-radius:9px;color:#0c0a15}
+  .card .cefr.c1{background:#9fe6c0}.card .cefr.c2{background:#f0b6cf}
+  .card .chip{font-family:var(--fb);font-size:9.5px;font-weight:800;letter-spacing:.4px;padding:2px 7px;border-radius:9px;text-transform:uppercase}
+  .card .chip.rw{color:#2a2410;background:linear-gradient(120deg,#e8c26a,#f6e6b4)}
+  .card .chip.ls{color:#fff;background:linear-gradient(120deg,#7c5cff,#c9a0ff)}
+  .card .spk{margin-left:auto;border:1px solid var(--line);background:var(--panel2);border-radius:9px;cursor:pointer;font-size:14px;padding:3px 10px;color:var(--muted)}
+  .card .spk:hover{border-color:var(--gold);color:var(--gold)}
+  .card .meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:7px}
+  .card .reg{font-size:10.5px;font-weight:700;color:#d9cffc;background:rgba(124,92,255,.14);border:1px solid rgba(124,92,255,.28);padding:1px 8px;border-radius:8px;text-transform:lowercase}
+  .card .up{font-size:10.5px;font-weight:600;color:#a99ec7;background:var(--panel2);border:1px solid var(--line);padding:1px 8px;border-radius:8px}
+  .card .up b{color:var(--gold2)}
+  .card .vi{color:#f3c9dc;font-size:13.8px;margin-top:7px;font-weight:600}
+  .card .nu{font-size:12.4px;margin-top:8px;color:#f0dca6;background:rgba(232,194,106,.09);border:1px solid rgba(232,194,106,.2);border-radius:9px;padding:6px 9px}
+  .card .nu b{color:#f6e6b4;font-size:9.5px;letter-spacing:.5px;display:block;margin-bottom:1px}
+  .card .col{font-size:12.3px;margin-top:7px;color:#c8bff0}
+  .card .col b{color:#b39cff;font-size:9.5px;letter-spacing:.5px}
+  .card .ex{color:#aca4c6;font-size:12.8px;margin-top:7px;font-style:italic;padding-left:10px;border-left:2px solid var(--line)}
+  .empty{text-align:center;color:var(--muted);padding:50px 0;font-size:15px}
+  /* nuance ladders */
+  .ladder{border:1px solid var(--line);border-radius:16px;padding:18px 18px 14px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent);margin-bottom:16px}
+  .ladder-h{font-family:var(--fh);font-weight:800;font-size:18px;color:#f6e6b4;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .ladder-h .vi{font-family:var(--fb);font-weight:600;font-size:12.5px;color:var(--muted)}
+  .steps{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+  .step{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  .step .gauge{flex:0 0 66px;height:8px;border-radius:6px;background:var(--panel2);position:relative;margin-top:8px;overflow:hidden}
+  .step .gauge i{position:absolute;left:0;top:0;bottom:0;background:var(--grad);border-radius:6px}
+  .step .body{flex:1}
+  .step .sw{font-family:var(--fh);font-weight:800;font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .step .sw .spk{border:1px solid var(--line);background:var(--panel2);border-radius:8px;cursor:pointer;font-size:12px;padding:1px 8px;color:var(--muted)}
+  .step .svi{color:#f3c9dc;font-size:12.6px;font-weight:600}
+  .step .note{color:#c9c0e2;font-size:12px;margin-top:2px}
+  .lvtag{font-size:9.5px;font-weight:900;letter-spacing:.4px;padding:1px 7px;border-radius:8px;color:#0c0a15;background:linear-gradient(120deg,#e8c26a,#f6e6b4);text-transform:uppercase}
+  /* debates */
+  .debate{border:1px solid var(--line);border-radius:16px;padding:20px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent);margin-bottom:20px}
+  .dq{font-family:var(--fh);font-weight:800;font-size:21px;color:#f6e6b4;line-height:1.25}
+  .dtag{display:inline-block;font-family:var(--fb);font-weight:800;font-size:10px;letter-spacing:1px;color:#0c0a15;background:var(--grad);padding:2px 9px;border-radius:20px;margin-bottom:8px;text-transform:uppercase}
+  .dctx{color:var(--muted);font-size:13px;margin:8px 0 16px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .colc{border:1px solid var(--line);border-radius:13px;padding:14px;background:var(--panel)}
+  .colc.for{border-color:rgba(127,224,171,.35)}
+  .colc.against{border-color:rgba(241,156,176,.35)}
+  .colc h4{font-family:var(--fb);font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}
+  .colc.for h4{color:var(--green)}.colc.against h4{color:var(--rose)}
+  .colc ul{margin:0;padding-left:0;list-style:none}
+  .colc li{font-size:13px;margin-bottom:9px;padding-left:18px;position:relative;color:#e7e1d4}
+  .colc.for li::before{content:"▸";position:absolute;left:0;color:var(--green)}
+  .colc.against li::before{content:"▸";position:absolute;left:0;color:var(--rose)}
+  .rebut{margin-top:16px}
+  .rebut h4,.phrases h4,.dvocab h4{font-family:var(--fb);font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#d9cffc;margin:16px 0 9px;display:flex;align-items:center;gap:8px}
+  .rebut h4::before,.phrases h4::before,.dvocab h4::before{content:"";width:18px;height:2px;background:var(--gradP);border-radius:2px}
+  .rpair{border:1px solid var(--line);border-radius:12px;padding:11px 13px;background:var(--panel);margin-bottom:8px}
+  .rpair .claim{font-size:12.8px;color:#f3c9dc;font-weight:600}
+  .rpair .counter{font-size:12.8px;color:#c9e8d5;margin-top:4px;padding-left:16px;position:relative}
+  .rpair .counter::before{content:"↳";position:absolute;left:0;color:var(--green)}
+  .phrasechip{display:inline-block;font-size:12.5px;color:#f0e6c8;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 11px;margin:0 6px 6px 0;font-style:italic}
+  .vchip{display:inline-block;font-size:12.5px;font-weight:600;color:#0c0a15;background:linear-gradient(120deg,#f6e6b4,#e8c26a);border-radius:9px;padding:4px 10px;margin:0 6px 6px 0;cursor:pointer}
+  /* quiz */
+  .quizwrap{max-width:620px;margin:0 auto}
+  .qcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+  .qtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:700;color:var(--muted);font-size:13px}
+  .qtop .score{color:var(--gold)}
+  .qprompt-label{font-weight:800;letter-spacing:.6px;font-size:13px;text-transform:uppercase;margin-top:12px}
+  .qprompt{font-family:var(--fh);font-size:32px;font-weight:800;margin:8px 0 22px}
+  .qopts{display:flex;flex-direction:column;gap:12px}
+  .qopts button{border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:14px;padding:16px;font:inherit;font-weight:600;font-size:18px;cursor:pointer;transition:.12s;text-align:left;display:flex;align-items:center;gap:12px}
+  .qopts button:hover{border-color:var(--gold)}
+  .qopts button .k{width:34px;height:34px;flex:0 0 auto;border-radius:9px;background:var(--panel);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800}
+  .qopts button.correct{background:rgba(127,224,171,.15);border-color:var(--green)}
+  .qopts button.correct .k{background:var(--green);color:#0c0a15}
+  .qopts button.wrong{background:rgba(241,156,176,.15);border-color:var(--rose)}
+  .qopts button.wrong .k{background:var(--rose);color:#0c0a15}
+  .qopts button:disabled{cursor:default}
+  .qctrl{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap;align-items:center}
+  .btn{border:0;border-radius:12px;font:inherit;font-weight:800;font-size:14px;padding:12px 20px;cursor:pointer}
+  .btn.p{background:var(--grad);color:#0c0a15}
+  .btn.g{background:var(--panel2);border:1px solid var(--line);color:var(--ink)}
+  .qreveal{margin-top:16px;font-size:14px;color:var(--muted);min-height:24px}
+  .qreveal b{color:var(--ink)}
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:30px;padding:0 20px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}.cols{grid-template-columns:1fr}.qprompt{font-size:26px}header h1{font-size:30px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="glow"></div>
+  <div class="nova">HUONG STELLA · ZENITH</div>
+  <h1 class="gradtext" id="htitle">Technology &amp; AI<span class="lvl">C1 – C2</span></h1>
+  <p id="headsub"></p>
+</header>
+<nav class="tabs" id="tabs"></nav>
+<main id="main"></main>
+<div class="foot" id="foot"></div>
+
+<script>
+const DATA = {"vocab": [{"letter": "A", "title": "AI & Automation", "sub": "Machine intelligence & its reach · Reading/Writing", "groups": [{"name": "Machine Capability", "words": [{"w": "autonomous", "pos": "adj", "cefr": "C2", "reg": "technical", "up": "self-driving / independent", "vi": "tự hành, tự vận hành", "nu": "Mạnh hơn 'automatic': hàm ý ra quyết định độc lập, không cần con người.", "col": "autonomous systems / vehicles", "ex": "Autonomous vehicles must make split-second ethical decisions without any human input.", "tag": "RW"}, {"w": "augment", "pos": "v", "cefr": "C2", "reg": "formal", "up": "improve / add to", "vi": "tăng cường, bổ trợ", "nu": "Sắc thái tích cực: 'bổ sung cho' con người, khác 'replace'.", "col": "augment human capabilities", "ex": "Rather than replacing doctors, AI is designed to augment their diagnostic abilities.", "tag": "RW"}, {"w": "sophisticated", "pos": "adj", "cefr": "C1", "reg": "neutral", "up": "advanced", "vi": "tinh vi, phức tạp", "nu": "Khen ngợi độ tinh xảo; trung tính về đạo đức.", "col": "a sophisticated algorithm", "ex": "A sophisticated algorithm can now detect tumours that clinicians might overlook.", "tag": "RW"}, {"w": "rudimentary", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "basic", "vi": "sơ khai, thô sơ", "nu": "Nhẹ nhàng hạ thấp: 'mới ở mức cơ bản', lịch sự hơn 'primitive'.", "col": "still rudimentary", "ex": "Emotional intelligence in machines remains, for now, decidedly rudimentary.", "tag": "RW"}, {"w": "streamline", "pos": "v", "cefr": "C1", "reg": "neutral", "up": "make more efficient", "vi": "tinh giản, tối ưu hóa", "nu": "Hàm ý bỏ bớt khâu thừa để nhanh gọn.", "col": "streamline workflows", "ex": "Automation has streamlined processes that once took entire departments days.", "tag": "RW"}, {"w": "scalable", "pos": "adj", "cefr": "C1", "reg": "technical", "up": "able to grow", "vi": "có thể mở rộng quy mô", "nu": "Thuật ngữ kinh doanh/công nghệ: mở rộng mà chi phí không tăng tương ứng.", "col": "a scalable solution", "ex": "Cloud computing makes such tools infinitely scalable at negligible extra cost.", "tag": "RW"}]}, {"name": "Spread & Displacement", "words": [{"w": "ubiquitous", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "everywhere", "vi": "hiện diện khắp nơi", "nu": "Trang trọng, hơi văn chương; mạnh hơn 'common' hay 'widespread'.", "col": "ubiquitous computing", "ex": "Smartphones have become so ubiquitous that constant connectivity is now assumed.", "tag": "RW"}, {"w": "proliferate", "pos": "v", "cefr": "C2", "reg": "formal", "up": "spread quickly", "vi": "sinh sôi, lan nhanh", "nu": "Thường mang sắc thái hơi tiêu cực: lan tràn khó kiểm soát.", "col": "AI tools proliferate", "ex": "As generative tools proliferate, distinguishing authentic content grows harder.", "tag": "RW"}, {"w": "supersede", "pos": "v", "cefr": "C2", "reg": "formal", "up": "replace", "vi": "thay thế (cái cũ hơn)", "nu": "Trang trọng: cái mới ưu việt hơn khiến cái cũ lỗi thời.", "col": "supersede older systems", "ex": "Neural networks have largely superseded the rule-based systems of the past.", "tag": "RW"}, {"w": "displace", "pos": "v", "cefr": "C2", "reg": "formal", "up": "replace (workers)", "vi": "thay thế, đẩy khỏi (việc làm)", "nu": "Sắc thái tiêu cực về xã hội: khiến người/việc bị đẩy ra.", "col": "displace workers", "ex": "Automation threatens to displace millions of workers in routine occupations.", "tag": "RW"}, {"w": "obsolete", "pos": "adj", "cefr": "C1", "reg": "neutral", "up": "out of date", "vi": "lỗi thời, không còn dùng", "nu": "Dùng với 'render/become': trở nên vô dụng vì có cái mới.", "col": "render skills obsolete", "ex": "Rapid innovation can render hard-won skills obsolete within a decade.", "tag": "RW"}, {"w": "pervasive", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "widespread", "vi": "lan tỏa sâu rộng, thấm khắp", "nu": "Hơi tiêu cực: len lỏi vào mọi ngóc ngách, khó thoát.", "col": "pervasive tracking", "ex": "Pervasive data collection has quietly eroded any expectation of privacy.", "tag": "RW"}]}]}, {"letter": "B", "title": "Digital Society & Data", "sub": "Data, media & the online self · Reading/Writing", "groups": [{"name": "Data & Privacy", "words": [{"w": "surveillance", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "watching / monitoring", "vi": "sự giám sát, theo dõi", "nu": "Trung tính–tiêu cực; đi với mass/state/digital.", "col": "mass surveillance", "ex": "Facial-recognition cameras have normalised a level of surveillance once unthinkable.", "tag": "RW"}, {"w": "commodify", "pos": "v", "cefr": "C2", "reg": "academic", "up": "turn into a product", "vi": "biến thành hàng hóa", "nu": "Phê phán: biến thứ đáng lẽ riêng tư thành món hàng để bán.", "col": "commodify personal data", "ex": "Platforms commodify our attention, packaging it and selling it to advertisers.", "tag": "RW"}, {"w": "erode", "pos": "v", "cefr": "C2", "reg": "formal", "up": "reduce gradually", "vi": "bào mòn, xói mòn dần", "nu": "Ẩn dụ: hao mòn từ từ, khó nhận ra cho tới khi quá muộn.", "col": "erode privacy / trust", "ex": "The steady accumulation of data has gradually eroded personal privacy.", "tag": "RW"}, {"w": "anonymise", "pos": "v", "cefr": "C2", "reg": "technical", "up": "remove identity from", "vi": "ẩn danh hóa dữ liệu", "nu": "Thuật ngữ bảo mật: gỡ thông tin nhận dạng khỏi dữ liệu.", "col": "anonymise data", "ex": "Even when records are anonymised, individuals can often be re-identified.", "tag": "RW"}, {"w": "transparency", "pos": "n", "cefr": "C1", "reg": "formal", "up": "openness", "vi": "sự minh bạch", "nu": "Tích cực, ngôn ngữ quản trị; trái nghĩa 'opacity'.", "col": "greater transparency", "ex": "Campaigners demand far greater transparency about how algorithms decide.", "tag": "RW"}, {"w": "opaque", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "unclear / hidden", "vi": "mờ đục, khó hiểu (hộp đen)", "nu": "Ẩn dụ 'không nhìn xuyên qua được'; phê phán thuật toán bí ẩn.", "col": "an opaque algorithm", "ex": "Decisions made by opaque systems are almost impossible to challenge.", "tag": "RW"}]}, {"name": "Media & the Mind", "words": [{"w": "disinformation", "pos": "n", "cefr": "C2", "reg": "academic", "up": "false info (deliberate)", "vi": "thông tin sai lệch có chủ đích", "nu": "Khác 'misinformation': cố ý bịa để đánh lừa.", "col": "spread disinformation", "ex": "State-sponsored disinformation can distort an entire election.", "tag": "RW"}, {"w": "echo chamber", "pos": "n", "cefr": "C2", "reg": "journalistic", "up": "a bubble of like views", "vi": "buồng vọng âm (chỉ nghe điều đồng tình)", "nu": "Ẩn dụ: chỉ nghe lại quan điểm giống mình, khuếch đại thiên kiến.", "col": "an online echo chamber", "ex": "Recommendation engines trap users in an echo chamber of their own beliefs.", "tag": "RW"}, {"w": "desensitise", "pos": "v", "cefr": "C2", "reg": "academic", "up": "make less sensitive", "vi": "làm chai lì, trơ cảm xúc", "nu": "Tiêu cực: phơi nhiễm quá nhiều khiến mất phản ứng cảm xúc.", "col": "desensitise viewers", "ex": "Constant exposure to online violence can desensitise young viewers.", "tag": "RW"}, {"w": "polarise", "pos": "v", "cefr": "C2", "reg": "academic", "up": "divide sharply", "vi": "phân cực, chia rẽ gay gắt", "nu": "Đẩy hai phía ra xa nhau, triệt tiêu vùng trung dung.", "col": "polarise public opinion", "ex": "Inflammatory content is engineered to polarise, because outrage drives clicks.", "tag": "RW"}, {"w": "addictive", "pos": "adj", "cefr": "C1", "reg": "neutral", "up": "habit-forming", "vi": "gây nghiện", "nu": "Đi với 'highly'; hàm ý thiết kế để giữ chân người dùng.", "col": "highly addictive", "ex": "Infinite-scroll feeds are deliberately engineered to be addictive.", "tag": "RW"}, {"w": "manipulate", "pos": "v", "cefr": "C1", "reg": "neutral", "up": "control unfairly", "vi": "thao túng, điều khiển", "nu": "Tiêu cực: tác động ngầm để trục lợi.", "col": "manipulate behaviour", "ex": "Targeted advertising can subtly manipulate the choices we believe are our own.", "tag": "RW"}]}]}, {"letter": "C", "title": "Innovation & Disruption", "sub": "Progress, breakthroughs & change · Reading/Writing", "groups": [{"name": "Driving Change", "words": [{"w": "disruptive", "pos": "adj", "cefr": "C1", "reg": "technical", "up": "radically changing", "vi": "mang tính đột phá, xáo trộn", "nu": "Ngôn ngữ khởi nghiệp: phá vỡ trật tự ngành cũ.", "col": "disruptive technology", "ex": "Ride-hailing apps proved profoundly disruptive to the taxi industry.", "tag": "RW"}, {"w": "catalyse", "pos": "v", "cefr": "C2", "reg": "academic", "up": "cause / speed up", "vi": "xúc tác, thúc đẩy mạnh", "nu": "Ẩn dụ hóa học: khơi mào và tăng tốc một quá trình.", "col": "catalyse innovation", "ex": "The pandemic catalysed a decade's worth of digital adoption in months.", "tag": "RW"}, {"w": "galvanise", "pos": "v", "cefr": "C2", "reg": "formal", "up": "spur strongly into action", "vi": "thôi thúc, khích lệ mạnh mẽ", "nu": "Mạnh và tích cực: làm bừng tỉnh và hành động dứt khoát.", "col": "galvanise investment", "ex": "The breakthrough galvanised a wave of investment into the sector.", "tag": "RW"}, {"w": "transformative", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "causing deep change", "vi": "có sức biến đổi sâu sắc", "nu": "Trang trọng, tích cực; mạnh hơn 'big' hay 'important'.", "col": "a transformative impact", "ex": "Artificial intelligence promises to be as transformative as electricity.", "tag": "RW"}, {"w": "incremental", "pos": "adj", "cefr": "C2", "reg": "academic", "up": "step-by-step", "vi": "tăng dần từng bước nhỏ", "nu": "Trái với 'radical'; nhấn mạnh tiến bộ nhỏ, tích lũy.", "col": "incremental improvement", "ex": "Most progress is incremental rather than the result of sudden leaps.", "tag": "RW"}, {"w": "burgeoning", "pos": "adj", "cefr": "C2", "reg": "literary", "up": "rapidly growing", "vi": "đang bùng nổ, nảy nở", "nu": "Văn chương, tích cực: phát triển tươi mới và nhanh.", "col": "a burgeoning industry", "ex": "A burgeoning market for wearable technology has emerged almost overnight.", "tag": "RW"}]}, {"name": "Frontiers", "words": [{"w": "groundbreaking", "pos": "adj", "cefr": "C1", "reg": "journalistic", "up": "highly original", "vi": "đột phá, khai phá", "nu": "Khen ngợi: mở ra điều chưa từng có.", "col": "groundbreaking research", "ex": "Their groundbreaking research redefined what machines could achieve.", "tag": "RW"}, {"w": "frontier", "pos": "n", "cefr": "C2", "reg": "literary", "up": "new area to explore", "vi": "biên cương, lĩnh vực mới", "nu": "Ẩn dụ mở đất mới; gợi phiêu lưu, chưa ai đặt chân.", "col": "the frontier of science", "ex": "Quantum computing represents the next great frontier of science.", "tag": "RW"}, {"w": "harness", "pos": "v", "cefr": "C1", "reg": "formal", "up": "make use of", "vi": "khai thác, tận dụng", "nu": "Tích cực: thuần phục sức mạnh sẵn có để phục vụ.", "col": "harness the power of", "ex": "Engineers are learning to harness the raw power of machine learning.", "tag": "RW"}, {"w": "trailblazing", "pos": "adj", "cefr": "C2", "reg": "journalistic", "up": "pioneering", "vi": "tiên phong, mở lối", "nu": "Khen ngợi người/việc đi trước dẫn đường.", "col": "a trailblazing firm", "ex": "The trailblazing start-up set the standard the whole industry now follows.", "tag": "RW"}, {"w": "render obsolete", "pos": "phr", "cefr": "C2", "reg": "formal", "up": "make outdated", "vi": "làm cho lỗi thời", "nu": "Cụm trang trọng: khiến cái cũ vô dụng.", "col": "render an approach obsolete", "ex": "Each breakthrough threatens to render the previous approach obsolete.", "tag": "RW"}, {"w": "paradigm shift", "pos": "n", "cefr": "C2", "reg": "academic", "up": "fundamental change", "vi": "sự thay đổi mô thức căn bản", "nu": "Học thuật: đổi hoàn toàn cách nhìn/khung tư duy.", "col": "a genuine paradigm shift", "ex": "The move to remote work marked a genuine paradigm shift in employment.", "tag": "RW"}]}]}, {"letter": "D", "title": "Risk, Ethics & Governance", "sub": "Harm, safeguards & control · Reading/Writing", "groups": [{"name": "Degrees of Harm", "words": [{"w": "detrimental", "pos": "adj", "cefr": "C1", "reg": "formal", "up": "harmful", "vi": "có hại, bất lợi", "nu": "Trang trọng, trung tính về mức độ; đi với 'to'.", "col": "detrimental to society", "ex": "Unregulated technology can prove detrimental to social cohesion.", "tag": "RW"}, {"w": "pernicious", "pos": "adj", "cefr": "C2", "reg": "literary", "up": "harmful in a subtle way", "vi": "độc hại (một cách âm thầm)", "nu": "Mạnh hơn 'harmful': tác hại ngấm ngầm, lan rộng.", "col": "a pernicious influence", "ex": "Algorithmic curation exerts a pernicious influence on how we think.", "tag": "RW"}, {"w": "insidious", "pos": "adj", "cefr": "C2", "reg": "literary", "up": "gradually & secretly harmful", "vi": "nguy hiểm ngấm ngầm, khó nhận ra", "nu": "Nhấn mạnh 'âm thầm, tinh vi' hơn cả 'pernicious'.", "col": "an insidious effect", "ex": "The most insidious effect of social media is how gradually it changes us.", "tag": "RW"}, {"w": "exacerbate", "pos": "v", "cefr": "C2", "reg": "academic", "up": "make worse", "vi": "làm trầm trọng thêm", "nu": "Trang trọng: khiến vấn đề sẵn có tệ hơn.", "col": "exacerbate inequality", "ex": "Automation may exacerbate the inequality it was meant to relieve.", "tag": "RW"}, {"w": "entrench", "pos": "v", "cefr": "C2", "reg": "academic", "up": "fix firmly in place", "vi": "củng cố, ăn sâu (cố hữu)", "nu": "Tiêu cực: khiến cái xấu trở nên khó xóa bỏ.", "col": "entrench bias", "ex": "Training on flawed data can entrench existing racial bias.", "tag": "RW"}, {"w": "existential", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "threatening survival", "vi": "mang tính sinh tồn", "nu": "Rất mạnh: đe dọa sự tồn vong; dùng thận trọng.", "col": "an existential risk", "ex": "Some scientists warn that unchecked AI could pose an existential risk.", "tag": "RW"}]}, {"name": "Governance", "words": [{"w": "safeguard", "pos": "v", "cefr": "C1", "reg": "formal", "up": "protect", "vi": "bảo vệ, phòng vệ", "nu": "Tích cực; danh từ 'safeguards' = biện pháp bảo vệ.", "col": "safeguard the public", "ex": "Robust rules are needed to safeguard the public from misuse.", "tag": "RW"}, {"w": "mitigate", "pos": "v", "cefr": "C1", "reg": "formal", "up": "reduce (harm)", "vi": "giảm nhẹ, giảm thiểu", "nu": "Trang trọng: làm dịu tác hại chứ không loại bỏ hẳn.", "col": "mitigate the risks", "ex": "Careful oversight can mitigate the risks without stifling progress.", "tag": "RW"}, {"w": "oversight", "pos": "n", "cefr": "C2", "reg": "formal", "up": "supervision", "vi": "sự giám sát, quản trị", "nu": "Ngôn ngữ chính sách: giám sát có thẩm quyền.", "col": "regulatory oversight", "ex": "Powerful systems demand independent regulatory oversight.", "tag": "RW"}, {"w": "culpability", "pos": "n", "cefr": "C2", "reg": "legal", "up": "blame / responsibility", "vi": "sự có lỗi, trách nhiệm pháp lý", "nu": "Trang trọng/pháp lý: ai chịu tội khi có sai phạm.", "col": "questions of culpability", "ex": "When an autonomous car crashes, questions of culpability become murky.", "tag": "RW"}, {"w": "precautionary", "pos": "adj", "cefr": "C2", "reg": "academic", "up": "preventive", "vi": "phòng ngừa, đề phòng", "nu": "Đi với 'principle': cẩn tắc vô ưu trước rủi ro chưa rõ.", "col": "the precautionary principle", "ex": "Regulators increasingly invoke the precautionary principle for new tech.", "tag": "RW"}, {"w": "ramifications", "pos": "n", "cefr": "C2", "reg": "formal", "up": "complex consequences", "vi": "hệ lụy (phân nhánh)", "nu": "Trang trọng: hậu quả lan tỏa, phức tạp, khó lường.", "col": "far-reaching ramifications", "ex": "The technology carries ethical ramifications we scarcely understand.", "tag": "RW"}]}]}, {"letter": "E", "title": "Phrasal Verbs & Idioms", "sub": "Natural, high-level · Listening/Speaking", "groups": [{"name": "Advanced Phrasal Verbs", "words": [{"w": "rein in", "pos": "phr v", "cefr": "C2", "reg": "neutral", "up": "control / restrain", "vi": "kiềm chế, siết lại", "nu": "Ẩn dụ ghì cương ngựa; thường về quyền lực/chi tiêu.", "col": "rein in big tech", "ex": "Governments are under pressure to rein in the power of big tech.", "tag": "LS"}, {"w": "usher in", "pos": "phr v", "cefr": "C2", "reg": "formal", "up": "introduce (an era)", "vi": "mở ra (một kỷ nguyên)", "nu": "Trang trọng: khởi đầu một thời kỳ mới.", "col": "usher in a new era", "ex": "The smartphone ushered in an era of constant connectivity.", "tag": "LS"}, {"w": "crack down on", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "take strict action", "vi": "mạnh tay trấn áp", "nu": "Về nhà chức trách siết chặt hành vi xấu.", "col": "crack down on fraud", "ex": "Regulators have vowed to crack down on online fraud.", "tag": "LS"}, {"w": "phase out", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "remove gradually", "vi": "loại bỏ dần", "nu": "Bỏ từ từ theo lộ trình, không đột ngột.", "col": "phase out old systems", "ex": "The company is phasing out its legacy systems.", "tag": "LS"}, {"w": "weed out", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "remove what is bad", "vi": "loại bỏ (cái kém)", "nu": "Ẩn dụ nhổ cỏ dại; lọc bỏ thứ không tốt.", "col": "weed out errors", "ex": "The vetting process weeds out unreliable content.", "tag": "LS"}, {"w": "do away with", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "abolish", "vi": "bãi bỏ, dẹp bỏ", "nu": "Thân mật hơn 'abolish'; loại bỏ hoàn toàn.", "col": "do away with passwords", "ex": "Biometrics could do away with passwords altogether.", "tag": "LS"}, {"w": "keep tabs on", "pos": "phr v", "cefr": "C1", "reg": "informal", "up": "monitor closely", "vi": "theo dõi sát sao", "nu": "Thân mật: giám sát để nắm tình hình.", "col": "keep tabs on users", "ex": "Apps quietly keep tabs on everything we do.", "tag": "LS"}, {"w": "iron out", "pos": "phr v", "cefr": "C1", "reg": "informal", "up": "resolve (problems)", "vi": "xử lý (trục trặc)", "nu": "Ẩn dụ là phẳng nếp nhăn; gỡ rối các lỗi nhỏ.", "col": "iron out the bugs", "ex": "Developers still need to iron out a few bugs.", "tag": "LS"}]}, {"name": "High-level Idioms", "words": [{"w": "the genie is out of the bottle", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "cannot be undone", "vi": "chuyện đã rồi, không thể đảo ngược", "nu": "Dùng khi công nghệ đã lan ra và không thể thu hồi.", "col": "the genie is out of the bottle", "ex": "With generative AI, the genie is out of the bottle.", "tag": "LS"}, {"w": "a double-edged sword", "pos": "idiom", "cefr": "C1", "reg": "neutral", "up": "has good & bad sides", "vi": "con dao hai lưỡi", "nu": "Vừa lợi vừa hại; rất hợp mở/kết luận Task 2.", "col": "a double-edged sword", "ex": "Social media is a double-edged sword.", "tag": "LS"}, {"w": "a slippery slope", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "leading to something bad", "vi": "con đường trơn trượt (tới hậu quả xấu)", "nu": "Cảnh báo một bước nhỏ dẫn tới hệ quả nghiêm trọng.", "col": "a slippery slope", "ex": "Normalising surveillance is a slippery slope.", "tag": "LS"}, {"w": "teething problems", "pos": "idiom", "cefr": "C2", "reg": "informal", "up": "early difficulties", "vi": "trục trặc buổi đầu", "nu": "Nhẹ nhàng: lỗi ban đầu sẽ khắc phục được.", "col": "teething problems", "ex": "The rollout had a few teething problems.", "tag": "LS"}, {"w": "play catch-up", "pos": "idiom", "cefr": "C1", "reg": "informal", "up": "try to reach the level of others", "vi": "chạy theo để bắt kịp", "nu": "Bên đi sau cố đuổi bên dẫn đầu.", "col": "play catch-up", "ex": "Regulators are forever playing catch-up with technology.", "tag": "LS"}, {"w": "cutting edge", "pos": "idiom", "cefr": "C1", "reg": "neutral", "up": "the most advanced point", "vi": "mũi nhọn, tiên phong", "nu": "Đi với 'at the'; vị trí dẫn đầu công nghệ.", "col": "at the cutting edge", "ex": "The lab operates at the cutting edge of robotics.", "tag": "LS"}, {"w": "ahead of the curve", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "more advanced than others", "vi": "đi trước xu thế", "nu": "Khen: nhận ra/áp dụng sớm hơn số đông.", "col": "stay ahead of the curve", "ex": "Firms that innovate stay ahead of the curve.", "tag": "LS"}, {"w": "bury your head in the sand", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "ignore a problem", "vi": "trốn tránh thực tại", "nu": "Phê phán sự né tránh rủi ro rõ ràng.", "col": "bury their heads in the sand", "ex": "Policymakers cannot bury their heads in the sand over AI.", "tag": "LS"}]}]}], "ladders": [{"theme": "IMPORTANT", "vi": "mức độ quan trọng — nhẹ → tối cao", "steps": [{"w": "notable", "lv": "nhẹ", "vi": "đáng chú ý", "note": "Ghi nhận nhưng không nhấn mạnh."}, {"w": "significant", "lv": "vừa", "vi": "đáng kể", "note": "Trung lập, an toàn, rất phổ biến trong writing."}, {"w": "crucial", "lv": "mạnh", "vi": "then chốt", "note": "Thiết yếu cho một kết quả."}, {"w": "pivotal", "lv": "mạnh+", "vi": "mang tính bản lề", "note": "Là điểm xoay quyết định cả cục diện."}, {"w": "paramount", "lv": "tối cao", "vi": "tối quan trọng, trên hết", "note": "Rất trang trọng: cao hơn mọi yếu tố khác. 'of paramount importance'."}, {"w": "seminal", "lv": "học thuật", "vi": "có tính khai nguồn", "note": "Chỉ dùng cho công trình/ý tưởng đặt nền móng."}]}, {"theme": "HARMFUL", "vi": "mức độ có hại — nhẹ → nghiêm trọng", "steps": [{"w": "undesirable", "lv": "nhẹ", "vi": "không mong muốn", "note": "Uyển ngữ, lịch sự, giảm nhẹ."}, {"w": "detrimental", "lv": "vừa", "vi": "có hại, bất lợi", "note": "Trang trọng, trung tính; đi với 'to'."}, {"w": "deleterious", "lv": "mạnh", "vi": "gây hại (học thuật)", "note": "Rất trang trọng/khoa học, đồng nghĩa detrimental."}, {"w": "pernicious", "lv": "mạnh+", "vi": "độc hại âm thầm", "note": "Tác hại ngấm dần, lan rộng."}, {"w": "insidious", "lv": "tinh vi", "vi": "nguy hiểm ngấm ngầm", "note": "Nhấn mạnh sự lén lút, khó nhận ra."}, {"w": "egregious", "lv": "cực đoan", "vi": "tồi tệ trắng trợn", "note": "Sai/tệ đến mức lộ liễu, gây phẫn nộ."}]}, {"theme": "INCREASE", "vi": "mức độ tăng — từ từ → bùng nổ", "steps": [{"w": "rise", "lv": "nhẹ", "vi": "tăng lên", "note": "Trung tính, chung chung."}, {"w": "climb", "lv": "vừa", "vi": "nhích lên đều", "note": "Tăng ổn định, từ tốn."}, {"w": "surge", "lv": "mạnh", "vi": "tăng vọt", "note": "Tăng nhanh và đột ngột."}, {"w": "soar", "lv": "mạnh+", "vi": "tăng cao vút", "note": "Lên rất cao, thường tích cực."}, {"w": "skyrocket", "lv": "cực đoan", "vi": "tăng phi mã", "note": "Không trang trọng; tăng chóng mặt."}, {"w": "escalate", "lv": "tiêu cực", "vi": "leo thang", "note": "Tăng theo hướng xấu (xung đột, chi phí)."}]}, {"theme": "CAUSE", "vi": "gây ra — trung tính → mạnh", "steps": [{"w": "lead to", "lv": "nhẹ", "vi": "dẫn đến", "note": "Trung tính, an toàn nhất."}, {"w": "give rise to", "lv": "vừa", "vi": "làm nảy sinh", "note": "Trang trọng hơn 'cause'."}, {"w": "precipitate", "lv": "mạnh", "vi": "làm bùng phát (đột ngột)", "note": "Kích hoạt điều xấu một cách bất ngờ."}, {"w": "engender", "lv": "học thuật", "vi": "làm sản sinh", "note": "Rất trang trọng; thường với cảm xúc/thái độ."}, {"w": "catalyse", "lv": "mạnh+", "vi": "xúc tác, thúc đẩy", "note": "Khơi mào và tăng tốc một quá trình."}, {"w": "trigger", "lv": "đột ngột", "vi": "châm ngòi", "note": "Kích hoạt tức thì một phản ứng/sự kiện."}]}, {"theme": "REDUCE", "vi": "làm giảm — nhẹ → dứt khoát", "steps": [{"w": "lessen", "lv": "nhẹ", "vi": "làm giảm bớt", "note": "Chung chung, trung tính."}, {"w": "alleviate", "lv": "vừa", "vi": "xoa dịu (đau khổ, gánh nặng)", "note": "Làm dịu vấn đề, thường về khó khăn."}, {"w": "mitigate", "lv": "mạnh", "vi": "giảm thiểu (rủi ro/tác hại)", "note": "Trang trọng; giảm mức nghiêm trọng."}, {"w": "curtail", "lv": "mạnh+", "vi": "cắt giảm, hạn chế", "note": "Chủ động cắt bớt (quyền, chi tiêu)."}, {"w": "stem", "lv": "dứt khoát", "vi": "chặn đứng (đà xấu)", "note": "Ngăn dòng chảy tiêu cực. 'stem the tide'."}]}, {"theme": "WIDESPREAD", "vi": "mức độ phổ biến — ít → khắp nơi", "steps": [{"w": "common", "lv": "nhẹ", "vi": "phổ biến", "note": "Trung tính, đời thường."}, {"w": "prevalent", "lv": "vừa", "vi": "thịnh hành", "note": "Trang trọng hơn; phổ biến ở một thời/nơi."}, {"w": "pervasive", "lv": "mạnh", "vi": "thấm khắp", "note": "Len lỏi mọi ngóc ngách; hơi tiêu cực."}, {"w": "ubiquitous", "lv": "mạnh+", "vi": "hiện diện khắp nơi", "note": "Trang trọng/văn chương: ở đâu cũng thấy."}, {"w": "endemic", "lv": "chuyên biệt", "vi": "cố hữu, đặc hữu", "note": "Ăn sâu vào một nơi/nhóm; thường về vấn đề."}]}, {"theme": "SHOW / HIGHLIGHT", "vi": "cho thấy — trung tính → nhấn mạnh", "steps": [{"w": "indicate", "lv": "nhẹ", "vi": "cho thấy, chỉ ra", "note": "Trung tính, thận trọng."}, {"w": "demonstrate", "lv": "vừa", "vi": "chứng minh rõ", "note": "Bằng chứng cho thấy chắc chắn."}, {"w": "underscore", "lv": "mạnh", "vi": "nhấn mạnh, tô đậm", "note": "Làm nổi bật tầm quan trọng."}, {"w": "exemplify", "lv": "học thuật", "vi": "là ví dụ điển hình cho", "note": "Minh họa hoàn hảo cho một xu hướng."}, {"w": "epitomise", "lv": "mạnh+", "vi": "là hiện thân của", "note": "Là mẫu mực tuyệt đối của điều gì đó."}]}, {"theme": "BIG CHANGE", "vi": "thay đổi — nhỏ → tận gốc", "steps": [{"w": "alter", "lv": "nhẹ", "vi": "thay đổi (đôi chút)", "note": "Thay đổi nhẹ, cục bộ."}, {"w": "transform", "lv": "mạnh", "vi": "biến đổi toàn diện", "note": "Đổi khác về bản chất."}, {"w": "revolutionise", "lv": "mạnh+", "vi": "cách mạng hóa", "note": "Thay đổi triệt để cả một lĩnh vực."}, {"w": "overhaul", "lv": "dứt khoát", "vi": "đại tu, cải tổ toàn bộ", "note": "Chủ động làm lại từ gốc (hệ thống, chính sách)."}, {"w": "paradigm shift", "lv": "học thuật", "vi": "đổi mô thức", "note": "Thay đổi cả khung tư duy nền tảng."}]}], "debates": [{"q": "Nên siết chặt quản lý việc phát triển AI mạnh?", "ctx": "Topic liên quan: an toàn AI · đổi mới vs kiểm soát · vai trò nhà nước · rủi ro sinh tồn. Dùng cho Writing Task 2 (agree/disagree, discuss) và Speaking Part 3.", "for": ["Rủi ro có thể không thể đảo ngược: một khi hệ thống nguy hại được phát tán, 'the genie is out of the bottle'.", "Có tiền lệ hợp lý: dược phẩm, hàng không và hạt nhân đều bị quản lý chặt vì hậu quả sai sót quá lớn.", "Bảo vệ nhóm yếu thế trước thiên kiến thuật toán (algorithmic bias) vốn có thể entrench bất bình đẳng.", "Khung pháp lý rõ ràng tạo niềm tin và thực ra thu hút đầu tư dài hạn thay vì cản trở nó."], "against": ["Quản lý quá sớm có thể stifle đổi mới và khiến một quốc gia tụt hậu về cạnh tranh.", "Khó thực thi xuyên biên giới: siết ở nơi này chỉ đẩy nghiên cứu sang nơi khác dễ dãi hơn.", "Nhiều rủi ro hiện vẫn mang tính giả định (existential risk) chứ chưa được thực chứng.", "Quy định cứng nhắc nhanh chóng render obsolete trước tốc độ thay đổi của công nghệ."], "rebut": [{"claim": "Quản lý bóp nghẹt đổi mới", "counter": "Một sân chơi có luật rõ ràng (a level playing field) thường khuyến khích đổi mới có trách nhiệm, chứ không triệt tiêu nó."}, {"claim": "Còn quá sớm để lo", "counter": "Với công nghệ lan nhanh, đợi đến khi tác hại lộ rõ thì việc khắc phục đã muộn — đây chính là lập luận precautionary."}, {"claim": "Không thể quản xuyên biên giới", "counter": "Chính vì thế cần hợp tác đa phương; sự bất khả thi tuyệt đối không phải lý do để không làm gì cả."}], "phrases": ["While proponents contend that…, a more defensible position is that…", "This argument, though superficially compelling, overlooks the fact that…", "It would be disingenuous to deny that…, yet…", "The crux of the matter is whether…", "On balance, the potential for irreversible harm tips the scales towards…"], "vocab": ["oversight", "precautionary principle", "mitigate", "existential risk", "entrench", "a slippery slope"]}, {"q": "Mạng xã hội gây hại cho xã hội nhiều hơn là có lợi?", "ctx": "Topic liên quan: sức khỏe tâm thần · tin giả · phân cực chính trị · kết nối cộng đồng. Hợp cho advantages/disadvantages và Speaking Part 3.", "for": ["Thuật toán được thiết kế để 'addictive', desensitise người dùng và bào mòn (erode) khả năng tập trung.", "Nó tạo echo chamber và polarise dư luận, làm suy yếu đối thoại dân chủ.", "Disinformation lan nhanh hơn sự thật, gây hệ lụy (ramifications) cho bầu cử và y tế công.", "Liên hệ nhân quả với lo âu và trầm cảm, nhất là ở thanh thiếu niên."], "against": ["Nó democratise tiếng nói, giúp nhóm yếu thế và phong trào cơ sở được lắng nghe.", "Kết nối con người xuyên khoảng cách, duy trì quan hệ mà đời thực khó làm được.", "Là công cụ học tập, kinh doanh và tổ chức cộng đồng chi phí thấp, quy mô lớn.", "Tác hại phần lớn đến từ cách dùng và thiết kế, không phải bản chất — nên có thể sửa."], "rebut": [{"claim": "Nó chỉ kết nối con người", "counter": "Kết nối bề mặt có thể đi kèm cô lập sâu hơn; 'connection' không đồng nghĩa với 'intimacy'."}, {"claim": "Vấn đề là do người dùng", "counter": "Khi nền tảng cố ý khai thác tâm lý để giữ chân, quy trách nhiệm hoàn toàn cho người dùng là không thỏa đáng."}, {"claim": "Lợi ích lớn hơn hại", "counter": "Lợi ích là thật, nhưng nếu cái giá là sức khỏe tâm thần của cả một thế hệ thì phép tính 'on balance' cần xét lại."}], "phrases": ["There is no denying the benefits; the real question is whether they outweigh…", "Critics are quick to point out that…, but this risks conflating…", "A crucial distinction must be drawn between… and…", "Far from being a neutral tool, the technology is engineered to…", "Ultimately, the harm is less inherent than it is a product of design."], "vocab": ["polarise", "echo chamber", "desensitise", "disinformation", "commodify", "a double-edged sword"]}, {"q": "Tự động hóa cuối cùng sẽ có lợi hay có hại cho người lao động?", "ctx": "Topic liên quan: thất nghiệp công nghệ · tái đào tạo · bất bình đẳng thu nhập · thu nhập cơ bản. Hợp cho Task 2 và Speaking Part 3.", "for": ["Nó displace lao động ở các công việc thường quy, gây thất nghiệp trên diện rộng.", "Có thể exacerbate bất bình đẳng: lợi nhuận dồn về chủ vốn, người lao động chịu thiệt.", "Kỹ năng bị render obsolete quá nhanh khiến việc tái đào tạo không theo kịp.", "Áp lực tâm lý và mất bản sắc nghề nghiệp là những ramifications ít được nói tới."], "against": ["Lịch sử cho thấy công nghệ mới thường tạo ra ngành nghề mới nhiều hơn số việc nó xóa bỏ.", "Nó gánh vác việc nguy hiểm/nhàm chán, giải phóng con người cho lao động sáng tạo hơn.", "Tăng năng suất kéo giá thành xuống và có thể nâng mức sống chung.", "Với tái đào tạo phù hợp, người lao động có thể được augment chứ không bị thay thế."], "rebut": [{"claim": "Công nghệ luôn tạo việc mới", "counter": "Đúng trong dài hạn, nhưng 'in the long run' bỏ qua nỗi đau chuyển đổi của những người mất việc ngay bây giờ."}, {"claim": "Chỉ cần tái đào tạo", "counter": "Tái đào tạo không phải liều thuốc vạn năng: không phải ai cũng dễ chuyển sang việc lương cao đòi kỹ năng cao."}, {"claim": "Máy chỉ làm việc nhàm chán", "counter": "Ranh giới đang dịch chuyển: AI ngày càng lấn sang cả công việc tri thức và sáng tạo."}], "phrases": ["Proponents of automation are fond of arguing that…, yet the evidence is more equivocal.", "While it is true that…, this overlooks the human cost of transition.", "The benefits, though real, are unevenly distributed.", "The pertinent question is not whether jobs will change, but who will bear the cost.", "A measured response would be to embrace the technology while cushioning its impact."], "vocab": ["displace", "exacerbate", "render obsolete", "augment", "a paradigm shift", "play catch-up"]}]};
+const META = {"title": "Technology & AI", "key": "technology"};
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+let TOTAL=0; DATA.vocab.forEach(m=>m.groups.forEach(g=>TOTAL+=g.words.length));
+$('htitle').innerHTML=esc(META.title)+'<span class="lvl">C1 – C2</span>';
+$('headsub').innerHTML=`<b style="color:#f0e6c8">${TOTAL}</b> từ C1–C2 · ${DATA.ladders.length} nuance ladders · ${DATA.debates.length} debate (Critical Thinking) · sắc thái &amp; register · 🔊 giọng Anh–Anh`;
+$('foot').innerHTML='ZENITH · C1–C2 precision vocabulary — RW = Reading &amp; Writing · LS = Listening &amp; Speaking · 🔊 phát âm Anh–Anh';
+
+let voice=null;
+function pickV(){const vs=(window.speechSynthesis&&speechSynthesis.getVoices())||[];
+  const pref=["Google UK English Female","Microsoft Sonia Online (Natural) - English (United Kingdom)","Microsoft Libby Online (Natural) - English (United Kingdom)","Kate","Serena","Daniel"];
+  for(const n of pref){const v=vs.find(x=>x.name===n);if(v)return v;}
+  return vs.find(v=>/en[-_]GB/i.test(v.lang))||vs.find(v=>/United Kingdom/i.test(v.name))||null;}
+if('speechSynthesis' in window){voice=pickV();speechSynthesis.onvoiceschanged=()=>{voice=pickV();};}
+function say(w){if(!('speechSynthesis' in window))return;const u=new SpeechSynthesisUtterance(w);u.lang='en-GB';u.rate=.9;u.pitch=1.0;if(!voice)voice=pickV();if(voice)u.voice=voice;speechSynthesis.cancel();speechSynthesis.speak(u);}
+
+const tabsEl=$('tabs'), mainEl=$('main');
+let cur='all', skill='all';
+
+function skillRow(){
+  return `<div class="skillrow">
+    <button class="${skill==='all'?'on all':''}" onclick="setSkill('all')">✦ Tất cả</button>
+    <button class="${skill==='RW'?'on rw':''}" onclick="setSkill('RW')">📖 Reading &amp; Writing</button>
+    <button class="${skill==='LS'?'on ls':''}" onclick="setSkill('LS')">🎧 Listening &amp; Speaking</button>
+  </div>`;
+}
+function setSkill(s){skill=s;render();}
+function passSkill(e){return skill==='all'||e.tag===skill;}
+
+function card(e){
+  const ls=e.tag==='LS';
+  return `<div class="card ${ls?'ls':''}">
+    <div class="w"><span>${esc(e.w)}</span>
+      ${e.pos?`<span class="pos">${esc(e.pos)}</span>`:''}
+      <span class="cefr ${e.cefr==='C2'?'c2':'c1'}">${esc(e.cefr||'C1')}</span>
+      <span class="chip ${ls?'ls':'rw'}">${ls?'L·S':'R·W'}</span>
+      <button class="spk" onclick="say('${String(e.w).replace(/'/g,"\\'")}')">🔊</button></div>
+    <div class="meta">${e.reg?`<span class="reg">${esc(e.reg)}</span>`:''}${e.up?`<span class="up">⬆ <b>${esc(e.up)}</b></span>`:''}</div>
+    <div class="vi">${esc(e.vi)}</div>
+    ${e.nu?`<div class="nu"><b>SẮC THÁI</b>${esc(e.nu)}</div>`:''}
+    ${e.col?`<div class="col"><b>COLLOCATION · </b>${esc(e.col)}</div>`:''}
+    <div class="ex">e.g. ${esc(e.ex)}</div></div>`;
+}
+
+function renderTabs(){
+  tabsEl.innerHTML='';
+  const mk=(id,label)=>{const b=document.createElement('button');b.className=(cur===id?'active':'');b.innerHTML=label;
+    b.onclick=()=>{cur=id;renderTabs();render();window.scrollTo({top:0,behavior:'smooth'});};return b;};
+  tabsEl.appendChild(mk('all','🔎 Tất cả'));
+  DATA.vocab.forEach(m=>tabsEl.appendChild(mk('m'+m.letter,`<span class="l">${m.letter}</span>${esc(m.title)}`)));
+  tabsEl.appendChild(mk('nuance','🪜 Nuance'));
+  tabsEl.appendChild(mk('debate','⚖ Critical Thinking'));
+  tabsEl.appendChild(mk('quiz','🎮 Quiz'));
+}
+
+function render(){
+  if(cur==='quiz'){renderQuiz();return;}
+  if(cur==='nuance'){renderLadders();return;}
+  if(cur==='debate'){renderDebates();return;}
+  if(cur==='all'){
+    mainEl.innerHTML=`<div class="searchbar"><span class="ic">🔎</span>
+      <input id="q" placeholder="Tìm từ, register, sắc thái hoặc nghĩa… (VD: pernicious, âm thầm, ⬆ harmful)" oninput="doSearch(this.value)"></div>
+      ${skillRow()}<div id="results"></div>`;
+    doSearch(($('q')&&$('q').value)||'');return;
+  }
+  const m=DATA.vocab.find(x=>'m'+x.letter===cur);
+  mainEl.innerHTML=`<div class="modhead"><div class="badge">${m.letter}</div><div><h2>${esc(m.title)}</h2><p>${esc(m.sub)}</p></div></div>
+    ${skillRow()}${m.groups.map(g=>{const ws=g.words.filter(passSkill);return ws.length?`<div class="sub">${esc(g.name)} <span class="cnt">· ${ws.length}</span></div><div class="grid">${ws.map(card).join('')}</div>`:'';}).join('')||'<div class="empty">Không có mục nào cho bộ lọc này.</div>'}`;
+}
+function doSearch(v){
+  const q=(v||'').toLowerCase().trim();const box=$('results');if(!box)return;
+  let html='',shown=0;
+  DATA.vocab.forEach(m=>{
+    let inner='';
+    m.groups.forEach(g=>{
+      const ws=g.words.filter(e=>passSkill(e)&&(!q||(e.w+' '+e.vi+' '+e.ex+' '+(e.col||'')+' '+(e.nu||'')+' '+(e.reg||'')+' '+(e.up||'')).toLowerCase().includes(q)));
+      if(ws.length){shown+=ws.length;inner+=`<div class="sub">${esc(g.name)} <span class="cnt">· ${ws.length}</span></div><div class="grid">${ws.map(card).join('')}</div>`;}
+    });
+    if(inner)html+=`<div class="modhead" style="margin-top:22px"><div class="badge">${m.letter}</div><div><h2>${esc(m.title)}</h2></div></div>`+inner;
+  });
+  box.innerHTML=shown?html:`<div class="empty">Không tìm thấy “${esc(q)}”.</div>`;
+}
+
+function renderLadders(){
+  mainEl.innerHTML=`<div class="modhead"><div class="badge">🪜</div><div><h2>Nuance Ladders</h2><p>Thang sắc thái — chọn từ mạnh/nhẹ &amp; đúng register cho từng nhóm nghĩa</p></div></div>`+
+    DATA.ladders.map(L=>{
+      const n=L.steps.length;
+      return `<div class="ladder"><div class="ladder-h">${esc(L.theme)} <span class="vi">${esc(L.vi)}</span></div>
+        <div class="steps">${L.steps.map((s,i)=>`<div class="step">
+          <div class="gauge"><i style="width:${Math.round((i+1)/n*100)}%"></i></div>
+          <div class="body"><div class="sw"><span>${esc(s.w)}</span><span class="lvtag">${esc(s.lv)}</span>
+            <button class="spk" onclick="say('${String(s.w).replace(/'/g,"\\'")}')">🔊</button></div>
+            <div class="svi">${esc(s.vi)}</div><div class="note">${esc(s.note)}</div></div></div>`).join('')}</div></div>`;
+    }).join('');
+}
+
+function renderDebates(){
+  mainEl.innerHTML=`<div class="modhead"><div class="badge">⚖</div><div><h2>Critical Thinking</h2><p>Mỗi debate: luận điểm bảo vệ CẢ HAI phía · phản biện chéo · khung câu &amp; từ vựng triển khai</p></div></div>`+
+    DATA.debates.map((D,i)=>`<div class="debate">
+      <div class="dtag">Debate ${i+1}</div>
+      <div class="dq">${esc(D.q)}</div>
+      <div class="dctx">${esc(D.ctx)}</div>
+      <div class="cols">
+        <div class="colc for"><h4>✔ Luận điểm ỦNG HỘ</h4><ul>${D.for.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+        <div class="colc against"><h4>✘ Luận điểm PHẢN ĐỐI (steelman)</h4><ul>${D.against.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+      </div>
+      <div class="rebut"><h4>Phản biện chéo</h4>${D.rebut.map(r=>`<div class="rpair"><div class="claim">“${esc(r.claim)}”</div><div class="counter">${esc(r.counter)}</div></div>`).join('')}</div>
+      <div class="phrases"><h4>Khung câu lập luận (C1–C2)</h4>${D.phrases.map(p=>`<span class="phrasechip">${esc(p)}</span>`).join('')}</div>
+      <div class="dvocab"><h4>Từ vựng nên triển khai</h4>${D.vocab.map(v=>`<span class="vchip" onclick="say('${String(v).replace(/'/g,"\\'")}')">${esc(v)}</span>`).join('')}</div>
+    </div>`).join('');
+}
+
+/* Quiz from vocab (VI -> English), respects skill filter */
+let quiz={pool:[],i:0,score:0,answered:false,all:[]};
+function pool(){const a=[];DATA.vocab.forEach(m=>m.groups.forEach(g=>g.words.forEach(w=>{if(passSkill(w))a.push(w);})));return a;}
+function renderQuiz(){
+  mainEl.innerHTML=`${skillRow()}<div class="quizwrap"><div class="qctrl" style="margin:0 0 16px">
+    <button class="btn p" onclick="startQuiz()">✦ Bắt đầu / Làm lại</button></div><div id="qbody"></div></div>`;
+  startQuiz();
+}
+function startQuiz(){const P=pool();quiz={all:P,pool:P.slice().sort(()=>Math.random()-.5).slice(0,10),i:0,score:0,answered:false};drawQ();}
+function drawQ(){
+  const body=$('qbody');if(!body)return;const q=quiz.pool[quiz.i];
+  if(!q){body.innerHTML=`<div class="qcard"><div class="qprompt-label gradtext">Kết quả</div><div class="qprompt gradtext">${quiz.score}/${quiz.pool.length}</div><div class="qctrl"><button class="btn p" onclick="startQuiz()">↻ Làm lại</button></div></div>`;return;}
+  const others=quiz.all.filter(w=>w.w!==q.w).sort(()=>Math.random()-.5).slice(0,3).map(w=>w.w);
+  const opts=[q.w,...others].sort(()=>Math.random()-.5);quiz.answered=false;
+  body.innerHTML=`<div class="qcard"><div class="qtop"><span>Câu ${quiz.i+1}/${quiz.pool.length}</span><span class="score">✦ ${quiz.score}</span></div>
+    <div class="qprompt-label gradtext">Say it in English</div><div class="qprompt">${esc(q.vi)}</div>
+    <div class="qopts" id="qopts">${opts.map((o,i)=>`<button data-o="${encodeURIComponent(o)}" onclick="answer(this)"><span class="k">${'ABCD'[i]}</span><span>${esc(o)}</span></button>`).join('')}</div>
+    <div class="qreveal" id="qreveal"></div><div class="qctrl"><button class="btn g" id="qnext" onclick="nextQ()" style="display:none">Câu tiếp →</button></div></div>`;
+}
+function answer(btn){
+  if(quiz.answered)return;quiz.answered=true;const q=quiz.pool[quiz.i];const chosen=decodeURIComponent(btn.dataset.o);
+  document.querySelectorAll('#qopts button').forEach(b=>{const o=decodeURIComponent(b.dataset.o);b.disabled=true;if(o===q.w)b.classList.add('correct');else if(o===chosen)b.classList.add('wrong');});
+  if(chosen===q.w)quiz.score++;say(q.w);$('qreveal').innerHTML=`<b>${esc(q.w)}</b> — ${esc(q.ex)}`;$('qnext').style.display='inline-block';
+}
+function nextQ(){quiz.i++;drawQ();}
+
+renderTabs();render();
+</script>
+</body>
+</html>
