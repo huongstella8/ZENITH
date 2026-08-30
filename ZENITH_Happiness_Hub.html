@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZENITH · C1–C2 Vocabulary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0a15; --panel:#16121f; --panel2:#1d1730; --line:#332a49; --ink:#f4efe4; --muted:#a99ec7;
+    --gold:#e8c26a; --gold2:#f6e6b4; --goldDeep:#b8863a; --plum:#7c5cff; --rose:#f19cb0; --green:#7fe0ab;
+    --grad:linear-gradient(120deg,#b8863a 0%,#f6e6b4 48%,#d9a441 100%);
+    --gradP:linear-gradient(120deg,#7c5cff,#c9a0ff);
+    --fh:'Playfair Display',Georgia,serif; --fb:'Inter',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(55% 45% at 10% 0%,rgba(124,92,255,.18),transparent 60%),
+                     radial-gradient(50% 45% at 100% 4%,rgba(232,194,106,.16),transparent 60%),
+                     radial-gradient(60% 55% at 50% 100%,rgba(124,92,255,.10),transparent 60%);
+    background-attachment:fixed;}
+  h1,h2,h3,h4{font-family:var(--fh);margin:0;line-height:1.15;font-weight:700}
+  .gradtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  header.top{padding:26px 28px 24px;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(124,92,255,.12),transparent);border-bottom:1px solid var(--line)}
+  header .nova{font-family:var(--fb);font-weight:800;font-size:12.5px;letter-spacing:8px;text-transform:uppercase;color:#e7dcff;display:flex;align-items:center;gap:10px}
+  header .nova::before{content:"✦";color:var(--gold);filter:drop-shadow(0 0 7px var(--gold))}
+  header h1{font-size:40px;margin:12px 0 6px;font-weight:800;letter-spacing:-.01em}
+  header .lvl{display:inline-block;font-family:var(--fb);font-weight:800;font-size:11px;letter-spacing:1.5px;color:#0c0a15;background:var(--grad);padding:3px 10px;border-radius:20px;vertical-align:middle;margin-left:10px}
+  header p{margin:6px 0 0;color:var(--muted);font-size:13px;max-width:840px}
+  header .glow{position:absolute;right:-40px;top:-70px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(232,194,106,.45),transparent 65%);filter:blur(34px);pointer-events:none}
+  nav.tabs{position:sticky;top:0;z-index:30;background:rgba(12,10,21,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:4px;padding:10px 16px}
+  nav.tabs button{border:1px solid transparent;background:transparent;font:inherit;font-family:var(--fb);font-weight:600;color:var(--muted);padding:8px 13px;border-radius:11px;cursor:pointer;font-size:13.5px;white-space:nowrap;transition:.15s}
+  nav.tabs button:hover{background:var(--panel2);color:var(--ink)}
+  nav.tabs button.active{background:var(--grad);color:#0c0a15;font-weight:800;box-shadow:0 4px 18px rgba(232,194,106,.35)}
+  nav.tabs button .l{font-family:var(--fh);font-weight:800;margin-right:5px}
+  main{max-width:1140px;margin:0 auto;padding:22px 20px 90px}
+  .searchbar{margin:0 0 16px;position:relative}
+  .searchbar input{width:100%;padding:14px 16px 14px 48px;border:1px solid var(--line);border-radius:14px;font:inherit;font-size:15.5px;background:var(--panel);color:var(--ink)}
+  .searchbar input::placeholder{color:#77709a}
+  .searchbar input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,194,106,.18)}
+  .searchbar .ic{position:absolute;left:17px;top:50%;transform:translateY(-50%);font-size:17px;opacity:.7}
+  .skillrow{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+  .skillrow button{border:1px solid var(--line);background:var(--panel);color:var(--muted);font:inherit;font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:20px;cursor:pointer;transition:.15s}
+  .skillrow button:hover{border-color:var(--gold);color:var(--ink)}
+  .skillrow button.on{color:#0c0a15;border-color:transparent}
+  .skillrow button.on.rw{background:linear-gradient(120deg,#e8c26a,#f6e6b4)}
+  .skillrow button.on.ls{background:linear-gradient(120deg,#c9a0ff,#7c5cff)}
+  .skillrow button.on.all{background:var(--grad)}
+  .modhead{display:flex;align-items:center;gap:16px;margin:6px 0 4px}
+  .modhead .badge{width:60px;height:60px;flex:0 0 auto;border-radius:16px;background:var(--grad);color:#0c0a15;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:26px;font-weight:800;box-shadow:0 8px 26px rgba(232,194,106,.4)}
+  .modhead h2{font-size:27px}
+  .modhead p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
+  .sub{font-family:var(--fh);font-size:16px;font-weight:700;color:#f0e6c8;display:flex;align-items:center;gap:10px;margin:24px 0 12px}
+  .sub::before{content:"";width:24px;height:3px;background:var(--grad);border-radius:2px}
+  .sub .cnt{font-family:var(--fb);font-weight:600;font-size:12px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
+  .card{border:1px solid var(--line);border-radius:15px;padding:15px 16px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.012));transition:transform .13s,box-shadow .13s,border-color .13s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+  .card.ls::before{background:var(--plum)}
+  .card:hover{transform:translateY(-3px);border-color:#4a3d63;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+  .card .w{font-family:var(--fh);font-weight:800;font-size:19px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .card .pos{font-family:var(--fb);font-size:10px;font-weight:800;letter-spacing:.4px;color:#0c0a15;background:linear-gradient(120deg,#f6e6b4,#e8c26a);padding:2px 7px;border-radius:9px;text-transform:uppercase}
+  .card .cefr{font-family:var(--fb);font-size:10px;font-weight:900;letter-spacing:.4px;padding:2px 7px;border-radius:9px;color:#0c0a15}
+  .card .cefr.c1{background:#9fe6c0}.card .cefr.c2{background:#f0b6cf}
+  .card .chip{font-family:var(--fb);font-size:9.5px;font-weight:800;letter-spacing:.4px;padding:2px 7px;border-radius:9px;text-transform:uppercase}
+  .card .chip.rw{color:#2a2410;background:linear-gradient(120deg,#e8c26a,#f6e6b4)}
+  .card .chip.ls{color:#fff;background:linear-gradient(120deg,#7c5cff,#c9a0ff)}
+  .card .spk{margin-left:auto;border:1px solid var(--line);background:var(--panel2);border-radius:9px;cursor:pointer;font-size:14px;padding:3px 10px;color:var(--muted)}
+  .card .spk:hover{border-color:var(--gold);color:var(--gold)}
+  .card .meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:7px}
+  .card .reg{font-size:10.5px;font-weight:700;color:#d9cffc;background:rgba(124,92,255,.14);border:1px solid rgba(124,92,255,.28);padding:1px 8px;border-radius:8px;text-transform:lowercase}
+  .card .up{font-size:10.5px;font-weight:600;color:#a99ec7;background:var(--panel2);border:1px solid var(--line);padding:1px 8px;border-radius:8px}
+  .card .up b{color:var(--gold2)}
+  .card .vi{color:#f3c9dc;font-size:13.8px;margin-top:7px;font-weight:600}
+  .card .nu{font-size:12.4px;margin-top:8px;color:#f0dca6;background:rgba(232,194,106,.09);border:1px solid rgba(232,194,106,.2);border-radius:9px;padding:6px 9px}
+  .card .nu b{color:#f6e6b4;font-size:9.5px;letter-spacing:.5px;display:block;margin-bottom:1px}
+  .card .col{font-size:12.3px;margin-top:7px;color:#c8bff0}
+  .card .col b{color:#b39cff;font-size:9.5px;letter-spacing:.5px}
+  .card .ex{color:#aca4c6;font-size:12.8px;margin-top:7px;font-style:italic;padding-left:10px;border-left:2px solid var(--line)}
+  .empty{text-align:center;color:var(--muted);padding:50px 0;font-size:15px}
+  /* nuance ladders */
+  .ladder{border:1px solid var(--line);border-radius:16px;padding:18px 18px 14px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent);margin-bottom:16px}
+  .ladder-h{font-family:var(--fh);font-weight:800;font-size:18px;color:#f6e6b4;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .ladder-h .vi{font-family:var(--fb);font-weight:600;font-size:12.5px;color:var(--muted)}
+  .steps{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+  .step{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  .step .gauge{flex:0 0 66px;height:8px;border-radius:6px;background:var(--panel2);position:relative;margin-top:8px;overflow:hidden}
+  .step .gauge i{position:absolute;left:0;top:0;bottom:0;background:var(--grad);border-radius:6px}
+  .step .body{flex:1}
+  .step .sw{font-family:var(--fh);font-weight:800;font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .step .sw .spk{border:1px solid var(--line);background:var(--panel2);border-radius:8px;cursor:pointer;font-size:12px;padding:1px 8px;color:var(--muted)}
+  .step .svi{color:#f3c9dc;font-size:12.6px;font-weight:600}
+  .step .note{color:#c9c0e2;font-size:12px;margin-top:2px}
+  .lvtag{font-size:9.5px;font-weight:900;letter-spacing:.4px;padding:1px 7px;border-radius:8px;color:#0c0a15;background:linear-gradient(120deg,#e8c26a,#f6e6b4);text-transform:uppercase}
+  /* debates */
+  .debate{border:1px solid var(--line);border-radius:16px;padding:20px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent);margin-bottom:20px}
+  .dq{font-family:var(--fh);font-weight:800;font-size:21px;color:#f6e6b4;line-height:1.25}
+  .dtag{display:inline-block;font-family:var(--fb);font-weight:800;font-size:10px;letter-spacing:1px;color:#0c0a15;background:var(--grad);padding:2px 9px;border-radius:20px;margin-bottom:8px;text-transform:uppercase}
+  .dctx{color:var(--muted);font-size:13px;margin:8px 0 16px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .colc{border:1px solid var(--line);border-radius:13px;padding:14px;background:var(--panel)}
+  .colc.for{border-color:rgba(127,224,171,.35)}
+  .colc.against{border-color:rgba(241,156,176,.35)}
+  .colc h4{font-family:var(--fb);font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}
+  .colc.for h4{color:var(--green)}.colc.against h4{color:var(--rose)}
+  .colc ul{margin:0;padding-left:0;list-style:none}
+  .colc li{font-size:13px;margin-bottom:9px;padding-left:18px;position:relative;color:#e7e1d4}
+  .colc.for li::before{content:"▸";position:absolute;left:0;color:var(--green)}
+  .colc.against li::before{content:"▸";position:absolute;left:0;color:var(--rose)}
+  .rebut{margin-top:16px}
+  .rebut h4,.phrases h4,.dvocab h4{font-family:var(--fb);font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#d9cffc;margin:16px 0 9px;display:flex;align-items:center;gap:8px}
+  .rebut h4::before,.phrases h4::before,.dvocab h4::before{content:"";width:18px;height:2px;background:var(--gradP);border-radius:2px}
+  .rpair{border:1px solid var(--line);border-radius:12px;padding:11px 13px;background:var(--panel);margin-bottom:8px}
+  .rpair .claim{font-size:12.8px;color:#f3c9dc;font-weight:600}
+  .rpair .counter{font-size:12.8px;color:#c9e8d5;margin-top:4px;padding-left:16px;position:relative}
+  .rpair .counter::before{content:"↳";position:absolute;left:0;color:var(--green)}
+  .phrasechip{display:inline-block;font-size:12.5px;color:#f0e6c8;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 11px;margin:0 6px 6px 0;font-style:italic}
+  .vchip{display:inline-block;font-size:12.5px;font-weight:600;color:#0c0a15;background:linear-gradient(120deg,#f6e6b4,#e8c26a);border-radius:9px;padding:4px 10px;margin:0 6px 6px 0;cursor:pointer}
+  /* model discussion */
+  .model{margin-top:18px;border-top:1px dashed var(--line);padding-top:14px}
+  .model .legend{font-size:11px;color:var(--muted);margin-bottom:10px}
+  .model .legend mark{margin:0 2px}
+  .mblock{border:1px solid var(--line);border-radius:13px;padding:15px 16px;background:var(--panel);margin-top:11px;position:relative}
+  .mblock.writing{border-left:3px solid var(--gold)}
+  .mblock.speaking{border-left:3px solid var(--plum)}
+  .mhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .mlabel{font-family:var(--fb);font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px}
+  .mblock.writing .mlabel{color:var(--gold2)}
+  .mblock.speaking .mlabel{color:#d9cffc}
+  .mreg{font-size:10.5px;color:var(--muted);margin-bottom:10px;font-style:italic}
+  .mspk{border:1px solid var(--line);background:var(--panel2);color:#f0e6c8;font:inherit;font-weight:700;font-size:11.5px;padding:5px 11px;border-radius:20px;cursor:pointer;white-space:nowrap;transition:.15s}
+  .mspk:hover{border-color:var(--gold);color:var(--gold)}
+  .mspk.playing{background:var(--grad);color:#0c0a15;border-color:transparent}
+  .mspk.sm{padding:1px 8px;font-size:11px;border-radius:8px;vertical-align:middle;margin-left:4px}
+  .mband{display:none}
+  .mblock p{font-size:13.2px;margin:0 0 10px;color:#e7e1d4;line-height:1.75}
+  .mblock p:last-child{margin-bottom:0}
+  .mblock .qa{margin-bottom:12px}
+  .mblock .qa:last-child{margin-bottom:0}
+  .mblock .qa .mq{font-size:12.6px;font-weight:700;color:#f3c9dc}
+  .mblock .qa .mq::before{content:"Q · ";color:var(--rose)}
+  .mblock .qa .ma{font-size:13.2px;color:#e7e1d4;margin-top:4px;line-height:1.75}
+  mark{background:linear-gradient(transparent 58%, rgba(232,194,106,.38) 58%);color:#f6e6b4;font-weight:600;border-radius:2px;padding:0 1px}
+  .mblock.speaking mark{background:linear-gradient(transparent 58%, rgba(124,92,255,.4) 58%);color:#d9c9ff}
+  /* quiz */
+  .quizwrap{max-width:620px;margin:0 auto}
+  .qcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+  .qtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:700;color:var(--muted);font-size:13px}
+  .qtop .score{color:var(--gold)}
+  .qprompt-label{font-weight:800;letter-spacing:.6px;font-size:13px;text-transform:uppercase;margin-top:12px}
+  .qprompt{font-family:var(--fh);font-size:32px;font-weight:800;margin:8px 0 22px}
+  .qopts{display:flex;flex-direction:column;gap:12px}
+  .qopts button{border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:14px;padding:16px;font:inherit;font-weight:600;font-size:18px;cursor:pointer;transition:.12s;text-align:left;display:flex;align-items:center;gap:12px}
+  .qopts button:hover{border-color:var(--gold)}
+  .qopts button .k{width:34px;height:34px;flex:0 0 auto;border-radius:9px;background:var(--panel);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800}
+  .qopts button.correct{background:rgba(127,224,171,.15);border-color:var(--green)}
+  .qopts button.correct .k{background:var(--green);color:#0c0a15}
+  .qopts button.wrong{background:rgba(241,156,176,.15);border-color:var(--rose)}
+  .qopts button.wrong .k{background:var(--rose);color:#0c0a15}
+  .qopts button:disabled{cursor:default}
+  .qctrl{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap;align-items:center}
+  .btn{border:0;border-radius:12px;font:inherit;font-weight:800;font-size:14px;padding:12px 20px;cursor:pointer}
+  .btn.p{background:var(--grad);color:#0c0a15}
+  .btn.g{background:var(--panel2);border:1px solid var(--line);color:var(--ink)}
+  .qreveal{margin-top:16px;font-size:14px;color:var(--muted);min-height:24px}
+  .qreveal b{color:var(--ink)}
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:30px;padding:0 20px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}.cols{grid-template-columns:1fr}.qprompt{font-size:26px}header h1{font-size:30px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="glow"></div>
+  <div class="nova">HUONG STELLA · ZENITH</div>
+  <h1 class="gradtext" id="htitle">Technology &amp; AI<span class="lvl">C1 – C2</span></h1>
+  <p id="headsub"></p>
+</header>
+<nav class="tabs" id="tabs"></nav>
+<main id="main"></main>
+<div class="foot" id="foot"></div>
+
+<script>
+const DATA = {"vocab": [{"letter": "A", "title": "Happiness & Wellbeing", "sub": "States of contentment · Reading/Writing", "groups": [{"name": "Degrees of Happiness", "words": [{"w": "contentment", "pos": "n", "cefr": "C2", "reg": "formal", "up": "quiet happiness", "vi": "sự mãn nguyện, bằng lòng", "nu": "Điềm tĩnh, bền: hài lòng nhẹ nhàng, không ồn ào như 'joy'.", "col": "a deep contentment", "ex": "True contentment tends to spring from within rather than from possessions.", "tag": "RW"}, {"w": "fulfilment", "pos": "n", "cefr": "C2", "reg": "formal", "up": "deep satisfaction", "vi": "sự viên mãn, thỏa nguyện", "nu": "Cảm giác đủ đầy khi sống đúng giá trị/mục đích.", "col": "a sense of fulfilment", "ex": "Meaningful work offers a sense of fulfilment that money alone cannot.", "tag": "RW"}, {"w": "well-being", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "health & happiness", "vi": "sự an lành, khỏe mạnh", "nu": "Rộng: cả thể chất lẫn tinh thần; 'mental/emotional well-being'.", "col": "emotional well-being", "ex": "Schools increasingly recognise that pupils' well-being underpins learning.", "tag": "RW"}, {"w": "elation", "pos": "n", "cefr": "C2", "reg": "literary", "up": "great joy", "vi": "sự hân hoan tột độ", "nu": "Rất mạnh, thoáng qua: vui sướng bùng nổ.", "col": "a moment of elation", "ex": "Her elation on hearing the news was impossible to disguise.", "tag": "RW"}, {"w": "serenity", "pos": "n", "cefr": "C2", "reg": "literary", "up": "calm peace", "vi": "sự thanh thản, an nhiên", "nu": "Bình yên nội tâm sâu sắc; hơi văn chương.", "col": "inner serenity", "ex": "Meditation cultivates a serenity that the daily grind erodes.", "tag": "RW"}, {"w": "gratification", "pos": "n", "cefr": "C2", "reg": "academic", "up": "pleasure from getting what you want", "vi": "sự thỏa mãn (ham muốn)", "nu": "Học thuật; 'instant gratification' = thỏa mãn tức thời.", "col": "instant gratification", "ex": "A culture of instant gratification leaves little room for patience.", "tag": "RW"}]}, {"name": "Sources & Mindset", "words": [{"w": "gratitude", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "thankfulness", "vi": "lòng biết ơn", "nu": "Tích cực: trân trọng những gì mình có.", "col": "practise gratitude", "ex": "Those who practise gratitude report markedly higher life satisfaction.", "tag": "RW"}, {"w": "resilience", "pos": "n", "cefr": "C2", "reg": "formal", "up": "ability to recover", "vi": "sức bật, khả năng phục hồi", "nu": "Trang trọng: đứng dậy sau nghịch cảnh.", "col": "emotional resilience", "ex": "Emotional resilience matters more to happiness than any stroke of luck.", "tag": "RW"}, {"w": "mindfulness", "pos": "n", "cefr": "C2", "reg": "neutral", "up": "present-moment awareness", "vi": "sự chánh niệm, sống trong hiện tại", "nu": "Chú tâm vào hiện tại thay vì lo âu.", "col": "practise mindfulness", "ex": "Mindfulness teaches us to savour the present rather than dwell on the past.", "tag": "RW"}, {"w": "thrive", "pos": "v", "cefr": "C1", "reg": "neutral", "up": "flourish", "vi": "phát triển tốt, an khang", "nu": "Tích cực: sống sung mãn, không chỉ tồn tại.", "col": "people thrive", "ex": "People thrive when their work aligns with their deeper values.", "tag": "RW"}, {"w": "savour", "pos": "v", "cefr": "C2", "reg": "literary", "up": "enjoy slowly", "vi": "tận hưởng trọn vẹn", "nu": "Văn chương: thưởng thức chậm rãi từng khoảnh khắc.", "col": "savour the moment", "ex": "She has learned to savour small pleasures rather than chase grand ones.", "tag": "RW"}, {"w": "optimism", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "positive outlook", "vi": "sự lạc quan", "nu": "Nhìn về mặt tươi sáng; 'cautious optimism'.", "col": "unshakeable optimism", "ex": "His unshakeable optimism carried the team through hard times.", "tag": "RW"}]}]}, {"letter": "B", "title": "Unhappiness & Struggle", "sub": "When wellbeing frays · Reading/Writing", "groups": [{"name": "Low States", "words": [{"w": "discontent", "pos": "n", "cefr": "C2", "reg": "formal", "up": "dissatisfaction", "vi": "sự bất mãn, bất bình", "nu": "Trang trọng: không hài lòng âm ỉ, có thể lan rộng.", "col": "widespread discontent", "ex": "Chronic overwork breeds a quiet discontent that money cannot cure.", "tag": "RW"}, {"w": "disillusionment", "pos": "n", "cefr": "C2", "reg": "literary", "up": "loss of illusions", "vi": "sự vỡ mộng", "nu": "Cảm giác thất vọng khi lý tưởng sụp đổ.", "col": "growing disillusionment", "ex": "Many graduates feel a growing disillusionment with the rat race.", "tag": "RW"}, {"w": "burnout", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "exhaustion from overwork", "vi": "sự kiệt sức (do làm quá tải)", "nu": "Cạn kiệt cả thể chất lẫn tinh thần vì áp lực.", "col": "suffer burnout", "ex": "Relentless ambition often ends in burnout rather than bliss.", "tag": "RW"}, {"w": "despondent", "pos": "adj", "cefr": "C2", "reg": "literary", "up": "very low / hopeless", "vi": "chán nản, ủ rũ", "nu": "Mạnh: buồn bã, mất hy vọng.", "col": "feel despondent", "ex": "Repeated setbacks left him utterly despondent.", "tag": "RW"}, {"w": "melancholy", "pos": "n", "cefr": "C2", "reg": "literary", "up": "gentle sadness", "vi": "nỗi u sầu, buồn man mác", "nu": "Buồn dịu, trầm lắng; văn chương.", "col": "a quiet melancholy", "ex": "A quiet melancholy hung over the abandoned town.", "tag": "RW"}, {"w": "apathy", "pos": "n", "cefr": "C2", "reg": "academic", "up": "lack of interest", "vi": "sự thờ ơ, dửng dưng", "nu": "Mất động lực, chẳng buồn quan tâm điều gì.", "col": "widespread apathy", "ex": "Endless comparison online can breed apathy and self-doubt.", "tag": "RW"}]}, {"name": "Pressure & Strain", "words": [{"w": "stress", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "mental strain", "vi": "căng thẳng", "nu": "Rộng, đời thường; 'chronic/work-related stress'.", "col": "chronic stress", "ex": "Chronic stress quietly erodes both health and happiness.", "tag": "RW"}, {"w": "anxiety", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "worry / unease", "vi": "sự lo âu", "nu": "Lo lắng dai dẳng, đôi khi bệnh lý.", "col": "crippling anxiety", "ex": "Social media has fuelled crippling anxiety among the young.", "tag": "RW"}, {"w": "relentless", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "never stopping", "vi": "không ngừng nghỉ, khắc nghiệt", "nu": "Nhấn mạnh áp lực liên tục, không khoan nhượng.", "col": "relentless pressure", "ex": "The relentless pursuit of success can hollow out a life.", "tag": "RW"}, {"w": "overwhelmed", "pos": "adj", "cefr": "C1", "reg": "neutral", "up": "unable to cope", "vi": "bị quá tải, ngợp", "nu": "Bị cảm xúc/công việc lấn át.", "col": "feel overwhelmed", "ex": "Many feel overwhelmed by expectations they never chose.", "tag": "RW"}, {"w": "hollow", "pos": "adj", "cefr": "C2", "reg": "literary", "up": "empty / meaningless", "vi": "trống rỗng, vô nghĩa", "nu": "Ẩn dụ: thành công bề ngoài mà rỗng bên trong.", "col": "a hollow victory", "ex": "Wealth without purpose can feel strangely hollow.", "tag": "RW"}, {"w": "insatiable", "pos": "adj", "cefr": "C2", "reg": "literary", "up": "never satisfied", "vi": "không bao giờ thỏa mãn", "nu": "Ham muốn vô đáy; 'insatiable ambition/desire'.", "col": "insatiable ambition", "ex": "An insatiable appetite for more is the enemy of contentment.", "tag": "RW"}]}]}, {"letter": "C", "title": "Success & Achievement", "sub": "Reaching the summit · Reading/Writing", "groups": [{"name": "Attaining Success", "words": [{"w": "accomplishment", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "achievement", "vi": "thành tựu", "nu": "Điều đạt được nhờ nỗ lực; trang trọng vừa phải.", "col": "a sense of accomplishment", "ex": "Finishing the marathon gave her a deep sense of accomplishment.", "tag": "RW"}, {"w": "attain", "pos": "v", "cefr": "C2", "reg": "formal", "up": "achieve / reach", "vi": "đạt được, vươn tới", "nu": "Trang trọng hơn 'reach'; 'attain a goal/status'.", "col": "attain success", "ex": "Few attain lasting success without a measure of failure first.", "tag": "RW"}, {"w": "excel", "pos": "v", "cefr": "C1", "reg": "neutral", "up": "be very good", "vi": "xuất sắc, vượt trội", "nu": "Làm giỏi hơn hẳn số đông; đi với 'at/in'.", "col": "excel in a field", "ex": "She excels in a field long dominated by men.", "tag": "RW"}, {"w": "flourish", "pos": "v", "cefr": "C2", "reg": "formal", "up": "develop very well", "vi": "phát triển rực rỡ", "nu": "Tích cực: nở rộ khi có điều kiện thuận lợi.", "col": "talent flourishes", "ex": "Talent flourishes where curiosity is nurtured, not crushed.", "tag": "RW"}, {"w": "accolade", "pos": "n", "cefr": "C2", "reg": "formal", "up": "award / praise", "vi": "sự tán dương, giải thưởng", "nu": "Trang trọng: sự công nhận cao quý.", "col": "the highest accolade", "ex": "The prize is the highest accolade in the profession.", "tag": "RW"}, {"w": "prestige", "pos": "n", "cefr": "C2", "reg": "formal", "up": "respect / high status", "vi": "uy tín, danh giá", "nu": "Sự kính nể gắn với địa vị/thành tựu.", "col": "enjoy prestige", "ex": "Certain careers carry a prestige quite out of proportion to their pay.", "tag": "RW"}]}, {"name": "Drive & Qualities", "words": [{"w": "ambition", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "strong desire to succeed", "vi": "tham vọng, hoài bão", "nu": "Trung tính: khát khao vươn lên; có thể tích cực/tiêu cực.", "col": "burning ambition", "ex": "A burning ambition can inspire greatness or consume its owner.", "tag": "RW"}, {"w": "perseverance", "pos": "n", "cefr": "C2", "reg": "formal", "up": "persistence", "vi": "sự bền bỉ, kiên trì", "nu": "Trang trọng: kiên trì bất chấp trở ngại.", "col": "sheer perseverance", "ex": "Her success owed more to sheer perseverance than to talent.", "tag": "RW"}, {"w": "determination", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "firmness of purpose", "vi": "sự quyết tâm", "nu": "Ý chí vững vàng theo đuổi mục tiêu.", "col": "dogged determination", "ex": "Dogged determination saw the project through.", "tag": "RW"}, {"w": "aspiration", "pos": "n", "cefr": "C2", "reg": "formal", "up": "hope / ambition", "vi": "khát vọng, chí hướng", "nu": "Trang trọng: mục tiêu cao đẹp muốn đạt tới.", "col": "lofty aspirations", "ex": "We should judge people by their aspirations as much as their status.", "tag": "RW"}, {"w": "tenacity", "pos": "n", "cefr": "C2", "reg": "formal", "up": "refusal to give up", "vi": "sự kiên gan, lì lợm", "nu": "Rất bền: bám đuổi tới cùng dù khó khăn.", "col": "admirable tenacity", "ex": "It was her tenacity, not luck, that finally paid off.", "tag": "RW"}, {"w": "meticulous", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "very careful", "vi": "tỉ mỉ, cẩn trọng", "nu": "Chú ý từng chi tiết; phẩm chất của người thành công.", "col": "meticulous preparation", "ex": "Meticulous preparation is the unglamorous secret of most success.", "tag": "RW"}]}]}, {"letter": "D", "title": "Meaning, Failure & Values", "sub": "What success is really for · Reading/Writing", "groups": [{"name": "Meaning & Purpose", "words": [{"w": "meaningful", "pos": "adj", "cefr": "C1", "reg": "neutral", "up": "full of purpose", "vi": "có ý nghĩa", "nu": "Đáng giá, gắn với mục đích sống.", "col": "a meaningful life", "ex": "A meaningful life is rarely the same as a comfortable one.", "tag": "RW"}, {"w": "purpose", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "reason / aim", "vi": "mục đích, lẽ sống", "nu": "Điều dẫn dắt cuộc đời; 'a sense of purpose'.", "col": "a sense of purpose", "ex": "A clear sense of purpose sustains people through adversity.", "tag": "RW"}, {"w": "intrinsic", "pos": "adj", "cefr": "C2", "reg": "academic", "up": "from within", "vi": "nội tại, tự thân", "nu": "Học thuật: giá trị/động lực đến từ bên trong, không do phần thưởng.", "col": "intrinsic motivation", "ex": "Intrinsic motivation outlasts any external reward.", "tag": "RW"}, {"w": "holistic", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "whole-person", "vi": "toàn diện", "nu": "Nhìn con người/thành công một cách trọn vẹn.", "col": "a holistic view", "ex": "A holistic view of success weighs relationships as heavily as income.", "tag": "RW"}, {"w": "authentic", "pos": "adj", "cefr": "C2", "reg": "neutral", "up": "true to oneself", "vi": "chân thực, đúng với bản thân", "nu": "Sống thật với giá trị của mình.", "col": "an authentic life", "ex": "Chasing others' definition of success rarely feels authentic.", "tag": "RW"}, {"w": "equanimity", "pos": "n", "cefr": "C2", "reg": "literary", "up": "calm balance", "vi": "sự điềm nhiên, thản nhiên", "nu": "Rất trang trọng: giữ được bình tĩnh trước thắng–bại.", "col": "face it with equanimity", "ex": "She met both triumph and defeat with the same equanimity.", "tag": "RW"}]}, {"name": "Failure & Its Uses", "words": [{"w": "setback", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "temporary failure", "vi": "trở ngại, thất bại tạm thời", "nu": "Bước lùi có thể vượt qua; nhẹ hơn 'failure'.", "col": "a major setback", "ex": "Every major setback taught her more than any easy win.", "tag": "RW"}, {"w": "adversity", "pos": "n", "cefr": "C2", "reg": "formal", "up": "hardship", "vi": "nghịch cảnh", "nu": "Trang trọng: hoàn cảnh khó khăn thử thách.", "col": "in the face of adversity", "ex": "Character is forged in the face of adversity.", "tag": "RW"}, {"w": "resilient", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "quick to recover", "vi": "kiên cường, bền bỉ", "nu": "Bật lại nhanh sau vấp ngã.", "col": "remarkably resilient", "ex": "The most successful people are often the most resilient, not the most gifted.", "tag": "RW"}, {"w": "overcome", "pos": "v", "cefr": "C1", "reg": "neutral", "up": "defeat (a difficulty)", "vi": "vượt qua", "nu": "Chiến thắng khó khăn/nỗi sợ.", "col": "overcome obstacles", "ex": "Learning to overcome obstacles matters more than avoiding them.", "tag": "RW"}, {"w": "perfectionism", "pos": "n", "cefr": "C2", "reg": "academic", "up": "need to be flawless", "vi": "chủ nghĩa cầu toàn", "nu": "Học thuật: đòi hỏi hoàn hảo, thường phản tác dụng.", "col": "crippling perfectionism", "ex": "Crippling perfectionism can sabotage the very success it craves.", "tag": "RW"}, {"w": "complacency", "pos": "n", "cefr": "C2", "reg": "formal", "up": "smug self-satisfaction", "vi": "sự tự mãn, chủ quan", "nu": "Tiêu cực: bằng lòng quá sớm rồi lơ là.", "col": "breed complacency", "ex": "Early success can breed a complacency that undoes it.", "tag": "RW"}]}]}, {"letter": "E", "title": "Phrasal Verbs & Idioms", "sub": "Natural, high-level · Listening/Speaking", "groups": [{"name": "Advanced Phrasal Verbs", "words": [{"w": "get ahead", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "progress / succeed", "vi": "tiến lên, thành đạt", "nu": "Vượt lên trong sự nghiệp/cuộc sống.", "col": "get ahead in life", "ex": "People assume you must be ruthless to get ahead in life.", "tag": "LS"}, {"w": "work your way up", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "rise by effort", "vi": "tự vươn lên (từng bước)", "nu": "Thăng tiến dần nhờ nỗ lực bản thân.", "col": "work your way up", "ex": "She worked her way up from the shop floor to the boardroom.", "tag": "LS"}, {"w": "pay off", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "bring reward", "vi": "có kết quả, đền đáp", "nu": "Nỗ lực rốt cuộc mang lại thành quả.", "col": "hard work pays off", "ex": "All those late nights finally paid off.", "tag": "LS"}, {"w": "live up to", "pos": "phr v", "cefr": "C2", "reg": "neutral", "up": "meet expectations", "vi": "đáp ứng kỳ vọng", "nu": "Xứng với kỳ vọng đặt ra.", "col": "live up to expectations", "ex": "The pressure to live up to expectations can be crushing.", "tag": "LS"}, {"w": "burn out", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "exhaust yourself", "vi": "kiệt sức (vì làm quá)", "nu": "Cạn kiệt do lao lực; đi kèm ambition.", "col": "burn out young", "ex": "High-flyers who never rest tend to burn out young.", "tag": "LS"}, {"w": "bounce back", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "recover", "vi": "gượng dậy, phục hồi", "nu": "Bật lại sau thất bại nhanh chóng.", "col": "bounce back from failure", "ex": "What defines them is how quickly they bounce back from failure.", "tag": "LS"}, {"w": "settle for", "pos": "phr v", "cefr": "C2", "reg": "neutral", "up": "accept less", "vi": "chấp nhận (mức thấp hơn)", "nu": "Bằng lòng với thứ kém hơn mong muốn.", "col": "settle for less", "ex": "Why settle for a job that leaves you empty?", "tag": "LS"}, {"w": "chase after", "pos": "phr v", "cefr": "C2", "reg": "neutral", "up": "pursue relentlessly", "vi": "đeo đuổi, chạy theo", "nu": "Theo đuổi (thành công/hạnh phúc) không ngơi.", "col": "chase after success", "ex": "Endlessly chasing after success can cost you the present.", "tag": "LS"}]}, {"name": "High-level Idioms", "words": [{"w": "the rat race", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "exhausting competition", "vi": "cuộc đua chuột (bon chen mệt mỏi)", "nu": "Vòng xoáy cạnh tranh công việc ngột ngạt.", "col": "escape the rat race", "ex": "Many dream of escaping the rat race for a simpler life.", "tag": "LS"}, {"w": "count your blessings", "pos": "idiom", "cefr": "C1", "reg": "neutral", "up": "appreciate what you have", "vi": "biết trân trọng điều mình có", "nu": "Nhắc nhở biết ơn thay vì than vãn.", "col": "count your blessings", "ex": "When I feel low, I try to count my blessings.", "tag": "LS"}, {"w": "on top of the world", "pos": "idiom", "cefr": "C1", "reg": "neutral", "up": "extremely happy", "vi": "hạnh phúc tột cùng", "nu": "Cảm giác sung sướng, phấn chấn cực độ.", "col": "feel on top of the world", "ex": "Passing the exam left me on top of the world.", "tag": "LS"}, {"w": "a blessing in disguise", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "hidden good in a bad thing", "vi": "trong rủi có may", "nu": "Điều tưởng xấu hóa ra lại tốt.", "col": "a blessing in disguise", "ex": "Losing that job was a blessing in disguise.", "tag": "LS"}, {"w": "the grass is always greener", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "others seem better off", "vi": "đứng núi này trông núi nọ", "nu": "Cứ nghĩ nơi khác tốt hơn thực tế.", "col": "the grass is always greener", "ex": "We envy others, but the grass is always greener.", "tag": "LS"}, {"w": "go the extra mile", "pos": "idiom", "cefr": "C1", "reg": "approving", "up": "make extra effort", "vi": "nỗ lực vượt bậc", "nu": "Làm hơn mức yêu cầu để thành công.", "col": "go the extra mile", "ex": "Those who go the extra mile tend to stand out.", "tag": "LS"}, {"w": "hit rock bottom", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "reach the lowest point", "vi": "chạm đáy", "nu": "Xuống mức tồi tệ nhất trước khi hồi phục.", "col": "hit rock bottom", "ex": "He only turned his life around after hitting rock bottom.", "tag": "LS"}, {"w": "money can't buy happiness", "pos": "idiom", "cefr": "C1", "reg": "neutral", "up": "wealth isn't fulfilment", "vi": "tiền không mua được hạnh phúc", "nu": "Câu nói kinh điển; dùng khéo vẫn hiệu quả.", "col": "money can't buy happiness", "ex": "As the saying goes, money can't buy happiness.", "tag": "LS"}]}]}], "ladders": [{"theme": "IMPORTANT", "vi": "mức độ quan trọng — nhẹ → tối cao", "steps": [{"w": "notable", "lv": "nhẹ", "vi": "đáng chú ý", "note": "Ghi nhận nhưng không nhấn mạnh."}, {"w": "significant", "lv": "vừa", "vi": "đáng kể", "note": "Trung lập, an toàn, rất phổ biến trong writing."}, {"w": "crucial", "lv": "mạnh", "vi": "then chốt", "note": "Thiết yếu cho một kết quả."}, {"w": "pivotal", "lv": "mạnh+", "vi": "mang tính bản lề", "note": "Là điểm xoay quyết định cả cục diện."}, {"w": "paramount", "lv": "tối cao", "vi": "tối quan trọng, trên hết", "note": "Rất trang trọng: cao hơn mọi yếu tố khác."}, {"w": "seminal", "lv": "học thuật", "vi": "có tính khai nguồn", "note": "Chỉ dùng cho công trình/ý tưởng đặt nền móng."}]}, {"theme": "HARMFUL", "vi": "mức độ có hại — nhẹ → nghiêm trọng", "steps": [{"w": "undesirable", "lv": "nhẹ", "vi": "không mong muốn", "note": "Uyển ngữ, lịch sự, giảm nhẹ."}, {"w": "detrimental", "lv": "vừa", "vi": "có hại, bất lợi", "note": "Trang trọng, trung tính; đi với 'to'."}, {"w": "deleterious", "lv": "mạnh", "vi": "gây hại (học thuật)", "note": "Rất trang trọng/khoa học."}, {"w": "pernicious", "lv": "mạnh+", "vi": "độc hại âm thầm", "note": "Tác hại ngấm dần, lan rộng."}, {"w": "insidious", "lv": "tinh vi", "vi": "nguy hiểm ngấm ngầm", "note": "Nhấn mạnh sự lén lút, khó nhận ra."}, {"w": "egregious", "lv": "cực đoan", "vi": "tồi tệ trắng trợn", "note": "Sai/tệ đến mức lộ liễu, gây phẫn nộ."}]}, {"theme": "INCREASE", "vi": "mức độ tăng — từ từ → bùng nổ", "steps": [{"w": "rise", "lv": "nhẹ", "vi": "tăng lên", "note": "Trung tính, chung chung."}, {"w": "climb", "lv": "vừa", "vi": "nhích lên đều", "note": "Tăng ổn định, từ tốn."}, {"w": "surge", "lv": "mạnh", "vi": "tăng vọt", "note": "Tăng nhanh và đột ngột."}, {"w": "soar", "lv": "mạnh+", "vi": "tăng cao vút", "note": "Lên rất cao, thường tích cực."}, {"w": "skyrocket", "lv": "cực đoan", "vi": "tăng phi mã", "note": "Không trang trọng; tăng chóng mặt."}, {"w": "escalate", "lv": "tiêu cực", "vi": "leo thang", "note": "Tăng theo hướng xấu."}]}, {"theme": "CAUSE", "vi": "gây ra — trung tính → mạnh", "steps": [{"w": "lead to", "lv": "nhẹ", "vi": "dẫn đến", "note": "Trung tính, an toàn nhất."}, {"w": "give rise to", "lv": "vừa", "vi": "làm nảy sinh", "note": "Trang trọng hơn 'cause'."}, {"w": "precipitate", "lv": "mạnh", "vi": "làm bùng phát (đột ngột)", "note": "Kích hoạt điều xấu bất ngờ."}, {"w": "engender", "lv": "học thuật", "vi": "làm sản sinh", "note": "Rất trang trọng; thường với cảm xúc/thái độ."}, {"w": "catalyse", "lv": "mạnh+", "vi": "xúc tác, thúc đẩy", "note": "Khơi mào và tăng tốc một quá trình."}, {"w": "trigger", "lv": "đột ngột", "vi": "châm ngòi", "note": "Kích hoạt tức thì một phản ứng."}]}, {"theme": "REDUCE", "vi": "làm giảm — nhẹ → dứt khoát", "steps": [{"w": "lessen", "lv": "nhẹ", "vi": "làm giảm bớt", "note": "Chung chung, trung tính."}, {"w": "alleviate", "lv": "vừa", "vi": "xoa dịu (đau khổ, gánh nặng)", "note": "Làm dịu vấn đề, thường về khó khăn."}, {"w": "mitigate", "lv": "mạnh", "vi": "giảm thiểu (rủi ro/tác hại)", "note": "Trang trọng; giảm mức nghiêm trọng."}, {"w": "curtail", "lv": "mạnh+", "vi": "cắt giảm, hạn chế", "note": "Chủ động cắt bớt."}, {"w": "stem", "lv": "dứt khoát", "vi": "chặn đứng (đà xấu)", "note": "Ngăn dòng chảy tiêu cực."}]}, {"theme": "WIDESPREAD", "vi": "mức độ phổ biến — ít → khắp nơi", "steps": [{"w": "common", "lv": "nhẹ", "vi": "phổ biến", "note": "Trung tính, đời thường."}, {"w": "prevalent", "lv": "vừa", "vi": "thịnh hành", "note": "Trang trọng hơn; phổ biến ở một thời/nơi."}, {"w": "pervasive", "lv": "mạnh", "vi": "thấm khắp", "note": "Len lỏi mọi ngóc ngách; hơi tiêu cực."}, {"w": "ubiquitous", "lv": "mạnh+", "vi": "hiện diện khắp nơi", "note": "Trang trọng/văn chương."}, {"w": "endemic", "lv": "chuyên biệt", "vi": "cố hữu, đặc hữu", "note": "Ăn sâu vào một nơi/nhóm; thường về vấn đề."}]}, {"theme": "SHOW / HIGHLIGHT", "vi": "cho thấy — trung tính → nhấn mạnh", "steps": [{"w": "indicate", "lv": "nhẹ", "vi": "cho thấy, chỉ ra", "note": "Trung tính, thận trọng."}, {"w": "demonstrate", "lv": "vừa", "vi": "chứng minh rõ", "note": "Bằng chứng cho thấy chắc chắn."}, {"w": "underscore", "lv": "mạnh", "vi": "nhấn mạnh, tô đậm", "note": "Làm nổi bật tầm quan trọng."}, {"w": "exemplify", "lv": "học thuật", "vi": "là ví dụ điển hình cho", "note": "Minh họa hoàn hảo cho một xu hướng."}, {"w": "epitomise", "lv": "mạnh+", "vi": "là hiện thân của", "note": "Là mẫu mực tuyệt đối của điều gì đó."}]}, {"theme": "BIG CHANGE", "vi": "thay đổi — nhỏ → tận gốc", "steps": [{"w": "alter", "lv": "nhẹ", "vi": "thay đổi (đôi chút)", "note": "Thay đổi nhẹ, cục bộ."}, {"w": "transform", "lv": "mạnh", "vi": "biến đổi toàn diện", "note": "Đổi khác về bản chất."}, {"w": "revolutionise", "lv": "mạnh+", "vi": "cách mạng hóa", "note": "Thay đổi triệt để cả một lĩnh vực."}, {"w": "overhaul", "lv": "dứt khoát", "vi": "đại tu, cải tổ toàn bộ", "note": "Chủ động làm lại từ gốc."}, {"w": "paradigm shift", "lv": "học thuật", "vi": "đổi mô thức", "note": "Thay đổi cả khung tư duy nền tảng."}]}], "debates": [{"q": "Thành công về vật chất có phải là chìa khóa của hạnh phúc?", "ctx": "Topic liên quan: tiền bạc & sự thỏa mãn · ý nghĩa cuộc sống · chủ nghĩa tiêu dùng · so sánh xã hội. Dùng cho Writing Task 2 (agree/disagree) và Speaking Part 3.", "for": ["Của cải xóa bỏ lo âu tài chính, vốn là nguồn stress lớn nhất với đa số người.", "Nó mở ra lựa chọn: y tế, giáo dục, du lịch, thời gian rảnh — nền tảng của well-being.", "Accomplishment và prestige từ thành công đem lại lòng tự trọng và sự công nhận.", "Nghèo khó gắn liền với bất hạnh; nói tiền không quan trọng là đặc quyền của người đủ đầy."], "against": ["Qua một ngưỡng, thêm tiền đem lại rất ít fulfilment — quy luật lợi ích cận biên giảm dần.", "Chạy theo vật chất dễ dẫn tới burnout, insatiable ambition và một thành công hollow.", "Hạnh phúc bền đến từ intrinsic values: quan hệ, mục đích, gratitude — không mua được.", "So sánh xã hội khiến 'grass is always greener', của cải bao nhiêu cũng thấy thiếu."], "rebut": [{"claim": "Tiền mua được hạnh phúc", "counter": "Chỉ tới một ngưỡng: nghiên cứu cho thấy vượt mức đủ sống, thu nhập tăng gần như không nâng thêm mức hài lòng."}, {"claim": "Người nói tiền không quan trọng chỉ đang đạo đức giả", "counter": "Điểm đúng là nghèo gây khổ; nhưng từ đó không suy ra rằng CÀNG giàu sẽ CÀNG hạnh phúc."}, {"claim": "Thành công đem lại sự công nhận nên tất yếu hạnh phúc", "counter": "Sự công nhận bên ngoài chóng phai; nếu thiếu ý nghĩa nội tại, thành tựu vẫn để lại cảm giác trống rỗng."}], "phrases": ["It would be naive to pretend that money is irrelevant to happiness; the real question is how much it truly buys.", "Beyond a certain threshold, the returns on wealth diminish sharply.", "A crucial distinction must be drawn between fleeting pleasure and lasting fulfilment.", "Far from guaranteeing contentment, the relentless pursuit of success can actively undermine it.", "On balance, material success is at best a means to happiness, never its guarantee."], "vocab": ["fulfilment", "insatiable", "intrinsic", "the rat race", "hollow", "contentment"], "model": {"writing": {"note": "discussion mở rộng: thừa nhận vai trò của tiền → giới hạn của nó → lập trường", "paras": ["It is widely assumed that material success is the surest route to happiness. While it would be naive to dismiss the role of money altogether, I will argue that beyond a certain point wealth offers, at best, a means to ⟦contentment⟧ rather than any guarantee of it.", "The case for material success is not without force. Financial security removes the ⟦relentless⟧ anxiety that poverty inflicts, and few sources of ⟦stress⟧ weigh more heavily than the struggle to make ends meet. Money, moreover, buys options — healthcare, education, leisure, the freedom to spend one's time as one chooses — and these are the very foundations of ⟦well-being⟧. To pretend otherwise, from a position of comfort, is a kind of hypocrisy.", "Yet the argument founders once basic needs are met. Beyond that threshold, the returns on wealth diminish sharply: study after study finds that, past a comfortable income, extra earnings barely shift how satisfied people feel. The reason is not hard to grasp. The ⟦insatiable⟧ pursuit of more traps people in ⟦the rat race⟧, breeding ⟦burnout⟧ and a success that feels strangely ⟦hollow⟧. Worse, constant social comparison ensures that the grass always looks greener, so that no amount of money ever feels quite enough.", "Lasting happiness, by contrast, tends to spring from ⟦intrinsic⟧ sources that money cannot purchase — close relationships, a sense of ⟦purpose⟧, and the simple practice of ⟦gratitude⟧. This is why so many who reach the summit of worldly success describe a curious emptiness on arrival; they have climbed the ladder only to find it leaning against the wrong wall.", "On balance, then, material success is neither to be despised nor mistaken for the goal itself. It can smooth the path to a good life, but it is ⟦fulfilment⟧, not wealth, that ultimately makes us happy."]}, "speaking": {"note": "khẩu ngữ tự nhiên, cân bằng rồi ngả về ý nghĩa nội tại", "qa": [{"q": "Do you think money can make people happy?", "a": "Up to a point, definitely — I'd never pretend otherwise. If you're constantly worried about paying the bills, that's miserable, so having enough certainly helps. But beyond a comfortable level, I honestly don't think more money moves the needle much. You see people who seem to have it all yet are stuck in ⟦the rat race⟧, totally burnt out and weirdly empty. As the old cliché goes, money can't buy happiness — and I think there's a lot of truth in it once your basic needs are covered."}, {"q": "So what actually makes people happy, in your view?", "a": "For me it comes down to the ⟦intrinsic⟧ stuff — good relationships, a sense of ⟦purpose⟧, and just learning to ⟦count your blessings⟧ rather than always chasing the next thing. I've noticed the happiest people I know aren't necessarily the richest; they're the ones who've figured out what actually matters to them and stopped comparing themselves to everyone else. Because let's be honest, the grass always looks greener, and that's a game you can never really win."}]}}}, {"q": "Xã hội hiện đại có đang định nghĩa thành công quá hẹp (chủ yếu bằng tiền bạc và địa vị)?", "ctx": "Topic liên quan: thước đo thành công · áp lực xã hội · công việc ý nghĩa · sức khỏe tâm thần. Hợp cho 'to what extent' và Speaking Part 3.", "for": ["Truyền thông và mạng xã hội tôn vinh của cải, địa vị, khiến các giá trị khác bị lu mờ.", "Áp lực đạt chuẩn thành công hẹp này gây anxiety, burnout và disillusionment ở người trẻ.", "Những đóng góp thầm lặng (nuôi dạy con, chăm sóc, nghệ thuật) bị xem nhẹ vì khó quy ra tiền.", "Thước đo hẹp nuôi complacency về vật chất và bỏ quên fulfilment thật sự."], "against": ["Tiền bạc và địa vị là thước đo khách quan, dễ so sánh — nên tự nhiên được dùng phổ biến.", "Ambition vật chất thúc đẩy nỗ lực, đổi mới và tiến bộ; không nên xem nhẹ.", "Mỗi cá nhân vẫn tự do theo đuổi định nghĩa thành công riêng, xã hội không ép buộc.", "Nhiều người vẫn tôn vinh lòng tốt, tri thức, sáng tạo — bức tranh không hoàn toàn một chiều."], "rebut": [{"claim": "Xã hội đâu ép ai định nghĩa thành công theo tiền", "counter": "Không ép trực tiếp, nhưng áp lực văn hóa và so sánh xã hội định hình lựa chọn mạnh hơn ta tưởng."}, {"claim": "Tiền là thước đo khách quan nên hợp lý", "counter": "Dễ đo không có nghĩa là đáng đo nhất; thứ quan trọng nhất trong đời thường khó lượng hóa."}, {"claim": "Ai cũng tự do chọn con đường riêng", "counter": "Tự do trên lý thuyết, nhưng khi cả xã hội tưởng thưởng một loại thành công thì cái giá của việc đi ngược rất lớn."}], "phrases": ["There is a persistent tendency to equate success with wealth and status, at the expense of subtler achievements.", "What is easily measured is not necessarily what matters most.", "A narrow definition of success exacts a heavy toll on mental health.", "We would do well to adopt a more holistic conception of a life well lived.", "Ultimately, success ought to be measured against one's own values, not society's scoreboard."], "vocab": ["holistic", "disillusionment", "meaningful", "intrinsic", "prestige", "fulfilment"], "model": {"writing": {"note": "to what extent: đồng tình phần lớn, có nhượng bộ", "paras": ["Modern society, it is often claimed, defines success far too narrowly — chiefly in terms of money and status. I find this argument largely persuasive, though it is not without qualification: the fault lies less in valuing achievement than in the impoverished way we have come to measure it.", "The evidence for a narrowing is hard to ignore. Media and social platforms relentlessly glorify wealth, ⟦prestige⟧ and outward achievement, so that subtler contributions — raising children well, caring for the vulnerable, creating art — are quietly discounted precisely because they cannot be priced. The human cost is considerable: the pressure to conform to this ⟦relentless⟧ template breeds ⟦anxiety⟧, ⟦burnout⟧ and a creeping ⟦disillusionment⟧, especially among the young, who measure themselves against an endless highlight reel.", "In fairness, the picture is not entirely bleak. Wealth and status are, at least, legible and comparable, which explains their appeal as a yardstick; and material ⟦ambition⟧ undeniably spurs effort, innovation and progress. Society, one might add, does not literally compel anyone to define success this way.", "Yet this defence rings somewhat hollow. What is easily measured is not necessarily what matters most, and the freedom to choose one's own path is more theoretical than real when an entire culture rewards a single kind of success. To swim against that current exacts a genuine price. The result is that many attain every conventional marker of achievement only to feel a nagging emptiness, having neglected the ⟦intrinsic⟧ goods that give life its meaning.", "We would do well, therefore, to embrace a more ⟦holistic⟧ conception of a life well lived — one in which ⟦fulfilment⟧, relationships and purpose count for as much as income. Success, in the end, ought to be judged against one's own values rather than society's scoreboard."]}, "speaking": {"note": "khẩu ngữ, đồng tình có nhượng bộ, ví dụ đời thường", "qa": [{"q": "How do most people define success these days?", "a": "Sadly, I think it's still mostly about money and status — a big salary, a fancy job title, the nice car, all of that. Social media has made it worse, if you ask me, because everyone's constantly showing off their wins and it's easy to feel like you're falling behind. What frustrates me is that so many genuinely valuable things — like being a brilliant parent or teacher — don't really 'count' on that scoreboard, simply because you can't put a price on them."}, {"q": "Do you think that definition is a problem?", "a": "I do, yeah. Chasing that one narrow version of success leaves a lot of people burnt out and, honestly, a bit disillusioned — they tick every box and still feel empty. I'd love us to take a more ⟦holistic⟧ view, where a ⟦meaningful⟧ life counts for as much as a high-flying one. At the end of the day, success should be measured against your own values, not some external checklist that society hands you."}]}}}, {"q": "Thất bại có phải là điều cần thiết để đạt được thành công thật sự?", "ctx": "Topic liên quan: học từ sai lầm · sức bật · sợ thất bại · văn hóa 'chỉ được thắng'. Hợp cho Task 2 và Speaking Part 3.", "for": ["Setback dạy những bài học mà chiến thắng dễ dàng không bao giờ dạy được.", "Vượt qua adversity rèn resilience và tenacity — phẩm chất cốt lõi của người thành công.", "Thất bại phơi bày điểm yếu và buộc ta điều chỉnh, đổi mới cách làm.", "Nỗi sợ thất bại nuôi perfectionism tê liệt; chấp nhận thất bại giải phóng sự sáng tạo."], "against": ["Không phải thất bại nào cũng hữu ích; nhiều thất bại chỉ để lại tổn thương và nợ nần.", "Một số người thành công nhờ chuẩn bị meticulous, gần như không nếm thất bại lớn.", "Tôn vinh thất bại quá mức có thể lãng mạn hóa rủi ro và sự bất cẩn.", "Điều rèn giũa con người là cách PHẢN ỨNG với khó khăn, không nhất thiết phải là thất bại."], "rebut": [{"claim": "Thất bại luôn là bài học quý", "counter": "Chỉ khi ta phản tư và bounce back; thất bại không được rút kinh nghiệm chỉ đơn thuần là mất mát."}, {"claim": "Người thành công nào cũng từng thất bại nặng", "counter": "Không hẳn; nhiều người tiến bằng chuẩn bị kỹ và những sai lầm nhỏ, thay vì thảm bại lớn."}, {"claim": "Nên cứ mạnh dạn thất bại", "counter": "Cần phân biệt rủi ro có tính toán với sự liều lĩnh; ca ngợi thất bại mù quáng là nguy hiểm."}], "phrases": ["Failure is instructive only to those willing to learn from it.", "It is not failure itself that builds character, but the response it provokes.", "There is a danger of romanticising failure, as though setbacks were valuable in their own right.", "A crucial distinction must be drawn between calculated risk and reckless abandon.", "On balance, adversity, met with resilience, is less an obstacle to success than a precondition of it."], "vocab": ["adversity", "resilience", "setback", "perfectionism", "overcome", "tenacity"], "model": {"writing": {"note": "nêu giá trị của thất bại → phản biện tinh tế → lập trường có điều kiện", "paras": ["It is frequently asserted that failure is a necessary ingredient of genuine success. There is real wisdom in this, though the claim needs handling with care: it is not ⟦adversity⟧ in itself that ennobles us, but the ⟦resilience⟧ with which we meet it.", "The case for failure's value is compelling. A ⟦setback⟧ has a way of teaching lessons that easy victory never can, exposing weaknesses and forcing us to adapt. In struggling to ⟦overcome⟧ obstacles, people cultivate the ⟦tenacity⟧ and resourcefulness that define real achievement. Just as importantly, an outright fear of failing breeds a paralysing ⟦perfectionism⟧; only once we accept that we may stumble are we free to take the creative risks on which progress depends.", "Yet the argument can be pushed too far. Not every failure is instructive — many leave nothing behind but debt, disappointment or lasting harm. Some highly successful people, moreover, owe their achievements less to spectacular defeats than to ⟦meticulous⟧ preparation and a string of small, well-managed mistakes. There is, in short, a real danger of romanticising failure, as though setbacks were valuable in their own right.", "The decisive point is that failure teaches only those willing to learn from it. What ultimately forges character is not the fall but the response it provokes — the capacity to reflect, adapt and ⟦bounce back⟧. A crucial distinction must also be drawn between calculated risk and reckless abandon; to glorify failure indiscriminately is to mistake carelessness for courage.", "On balance, then, failure met with resilience is less an obstacle to success than a precondition of it. The goal is not to court failure for its own sake, but to fail intelligently — and to rise, each time, a little wiser."]}, "speaking": {"note": "khẩu ngữ, thừa nhận giá trị nhưng phân biệt sắc thái", "qa": [{"q": "Do people need to fail before they can succeed?", "a": "I'd say more often than not, yes — a few ⟦setbacks⟧ tend to teach you things that easy wins simply can't. When everything comes too easily, you never really develop that ⟦resilience⟧ or learn where your weak spots are. That said, I don't think we should romanticise failure. Not every flop is some noble lesson; sometimes it just sets you back badly. So it's less about failing itself and more about how you pick yourself up afterwards."}, {"q": "Is fear of failure a bad thing, then?", "a": "To a degree, a bit of fear keeps you sharp — but when it tips into full-blown ⟦perfectionism⟧, it's genuinely crippling. I've seen people so terrified of getting it wrong that they never start at all. Once you accept that you might ⟦hit rock bottom⟧ occasionally and still ⟦bounce back⟧, you're actually freed up to take risks and be creative. So I'd rather teach people to fail well than to avoid failure altogether."}]}}}]};
+const META = {"title": "Happiness & Success", "key": "happiness"};
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const hl=s=>esc(s).replace(/⟦(.+?)⟧/g,'<mark>$1</mark>'); // ⟦word⟧ -> highlighted target vocab
+let TOTAL=0; DATA.vocab.forEach(m=>m.groups.forEach(g=>TOTAL+=g.words.length));
+$('htitle').innerHTML=esc(META.title)+'<span class="lvl">C1 – C2</span>';
+$('headsub').innerHTML=`<b style="color:#f0e6c8">${TOTAL}</b> từ C1–C2 · ${DATA.ladders.length} nuance ladders · ${DATA.debates.length} debate (Critical Thinking) · sắc thái &amp; register · 🔊 giọng Anh–Anh`;
+$('foot').innerHTML='ZENITH · C1–C2 precision vocabulary — RW = Reading &amp; Writing · LS = Listening &amp; Speaking · 🔊 phát âm Anh–Anh';
+
+let voice=null;
+function pickV(){const vs=(window.speechSynthesis&&speechSynthesis.getVoices())||[];
+  const pref=["Google UK English Female","Microsoft Sonia Online (Natural) - English (United Kingdom)","Microsoft Libby Online (Natural) - English (United Kingdom)","Kate","Serena","Daniel"];
+  for(const n of pref){const v=vs.find(x=>x.name===n);if(v)return v;}
+  return vs.find(v=>/en[-_]GB/i.test(v.lang))||vs.find(v=>/United Kingdom/i.test(v.name))||null;}
+if('speechSynthesis' in window){voice=pickV();speechSynthesis.onvoiceschanged=()=>{voice=pickV();};}
+function say(w,rate){if(!('speechSynthesis' in window))return;const u=new SpeechSynthesisUtterance(w);u.lang='en-GB';u.rate=rate||.9;u.pitch=1.0;if(!voice)voice=pickV();if(voice)u.voice=voice;speechSynthesis.cancel();speechSynthesis.speak(u);}
+const strip=s=>String(s).replace(/⟦|⟧/g,'');
+function sayText(btn){const t=decodeURIComponent(btn.dataset.t||'');if(!t)return;
+  const on=btn.classList.contains('playing');speechSynthesis.cancel();
+  document.querySelectorAll('.mspk.playing').forEach(b=>{b.classList.remove('playing');b.innerHTML=b.dataset.idle;});
+  if(on)return; // toggle off
+  btn.dataset.idle=btn.innerHTML;btn.classList.add('playing');btn.innerHTML='⏹ Dừng';
+  const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.86;u.pitch=1.0;if(!voice)voice=pickV();if(voice)u.voice=voice;
+  u.onend=()=>{btn.classList.remove('playing');btn.innerHTML=btn.dataset.idle;};
+  speechSynthesis.speak(u);}
+
+const tabsEl=$('tabs'), mainEl=$('main');
+let cur='all', skill='all';
+
+function skillRow(){
+  return `<div class="skillrow">
+    <button class="${skill==='all'?'on all':''}" onclick="setSkill('all')">✦ Tất cả</button>
+    <button class="${skill==='RW'?'on rw':''}" onclick="setSkill('RW')">📖 Reading &amp; Writing</button>
+    <button class="${skill==='LS'?'on ls':''}" onclick="setSkill('LS')">🎧 Listening &amp; Speaking</button>
+  </div>`;
+}
+function setSkill(s){skill=s;render();}
+function passSkill(e){return skill==='all'||e.tag===skill;}
+
+function card(e){
+  const ls=e.tag==='LS';
+  return `<div class="card ${ls?'ls':''}">
+    <div class="w"><span>${esc(e.w)}</span>
+      ${e.pos?`<span class="pos">${esc(e.pos)}</span>`:''}
+      <span class="cefr ${e.cefr==='C2'?'c2':'c1'}">${esc(e.cefr||'C1')}</span>
+      <span class="chip ${ls?'ls':'rw'}">${ls?'L·S':'R·W'}</span>
+      <button class="spk" onclick="say('${String(e.w).replace(/'/g,"\\'")}')">🔊</button></div>
+    <div class="meta">${e.reg?`<span class="reg">${esc(e.reg)}</span>`:''}${e.up?`<span class="up">⬆ <b>${esc(e.up)}</b></span>`:''}</div>
+    <div class="vi">${esc(e.vi)}</div>
+    ${e.nu?`<div class="nu"><b>SẮC THÁI</b>${esc(e.nu)}</div>`:''}
+    ${e.col?`<div class="col"><b>COLLOCATION · </b>${esc(e.col)}</div>`:''}
+    <div class="ex">e.g. ${esc(e.ex)}</div></div>`;
+}
+
+function renderTabs(){
+  tabsEl.innerHTML='';
+  const mk=(id,label)=>{const b=document.createElement('button');b.className=(cur===id?'active':'');b.innerHTML=label;
+    b.onclick=()=>{cur=id;renderTabs();render();window.scrollTo({top:0,behavior:'smooth'});};return b;};
+  tabsEl.appendChild(mk('all','🔎 Tất cả'));
+  DATA.vocab.forEach(m=>tabsEl.appendChild(mk('m'+m.letter,`<span class="l">${m.letter}</span>${esc(m.title)}`)));
+  tabsEl.appendChild(mk('nuance','🪜 Nuance'));
+  tabsEl.appendChild(mk('debate','⚖ Critical Thinking'));
+  tabsEl.appendChild(mk('quiz','🎮 Quiz'));
+}
+
+function render(){
+  if(cur==='quiz'){renderQuiz();return;}
+  if(cur==='nuance'){renderLadders();return;}
+  if(cur==='debate'){renderDebates();return;}
+  if(cur==='all'){
+    mainEl.innerHTML=`<div class="searchbar"><span class="ic">🔎</span>
+      <input id="q" placeholder="Tìm từ, register, sắc thái hoặc nghĩa… (VD: pernicious, âm thầm, ⬆ harmful)" oninput="doSearch(this.value)"></div>
+      ${skillRow()}<div id="results"></div>`;
+    doSearch(($('q')&&$('q').value)||'');return;
+  }
+  const m=DATA.vocab.find(x=>'m'+x.letter===cur);
+  mainEl.innerHTML=`<div class="modhead"><div class="badge">${m.letter}</div><div><h2>${esc(m.title)}</h2><p>${esc(m.sub)}</p></div></div>
+    ${skillRow()}${m.groups.map(g=>{const ws=g.words.filter(passSkill);return ws.length?`<div class="sub">${esc(g.name)} <span class="cnt">· ${ws.length}</span></div><div class="grid">${ws.map(card).join('')}</div>`:'';}).join('')||'<div class="empty">Không có mục nào cho bộ lọc này.</div>'}`;
+}
+function doSearch(v){
+  const q=(v||'').toLowerCase().trim();const box=$('results');if(!box)return;
+  let html='',shown=0;
+  DATA.vocab.forEach(m=>{
+    let inner='';
+    m.groups.forEach(g=>{
+      const ws=g.words.filter(e=>passSkill(e)&&(!q||(e.w+' '+e.vi+' '+e.ex+' '+(e.col||'')+' '+(e.nu||'')+' '+(e.reg||'')+' '+(e.up||'')).toLowerCase().includes(q)));
+      if(ws.length){shown+=ws.length;inner+=`<div class="sub">${esc(g.name)} <span class="cnt">· ${ws.length}</span></div><div class="grid">${ws.map(card).join('')}</div>`;}
+    });
+    if(inner)html+=`<div class="modhead" style="margin-top:22px"><div class="badge">${m.letter}</div><div><h2>${esc(m.title)}</h2></div></div>`+inner;
+  });
+  box.innerHTML=shown?html:`<div class="empty">Không tìm thấy “${esc(q)}”.</div>`;
+}
+
+function renderLadders(){
+  mainEl.innerHTML=`<div class="modhead"><div class="badge">🪜</div><div><h2>Nuance Ladders</h2><p>Thang sắc thái — chọn từ mạnh/nhẹ &amp; đúng register cho từng nhóm nghĩa</p></div></div>`+
+    DATA.ladders.map(L=>{
+      const n=L.steps.length;
+      return `<div class="ladder"><div class="ladder-h">${esc(L.theme)} <span class="vi">${esc(L.vi)}</span></div>
+        <div class="steps">${L.steps.map((s,i)=>`<div class="step">
+          <div class="gauge"><i style="width:${Math.round((i+1)/n*100)}%"></i></div>
+          <div class="body"><div class="sw"><span>${esc(s.w)}</span><span class="lvtag">${esc(s.lv)}</span>
+            <button class="spk" onclick="say('${String(s.w).replace(/'/g,"\\'")}')">🔊</button></div>
+            <div class="svi">${esc(s.vi)}</div><div class="note">${esc(s.note)}</div></div></div>`).join('')}</div></div>`;
+    }).join('');
+}
+
+function renderDebates(){
+  mainEl.innerHTML=`<div class="modhead"><div class="badge">⚖</div><div><h2>Critical Thinking</h2><p>Mỗi debate: luận điểm bảo vệ CẢ HAI phía · phản biện chéo · khung câu &amp; từ vựng triển khai</p></div></div>`+
+    DATA.debates.map((D,i)=>`<div class="debate">
+      <div class="dtag">Debate ${i+1}</div>
+      <div class="dq">${esc(D.q)}</div>
+      <div class="dctx">${esc(D.ctx)}</div>
+      <div class="cols">
+        <div class="colc for"><h4>✔ Luận điểm ỦNG HỘ</h4><ul>${D.for.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+        <div class="colc against"><h4>✘ Luận điểm PHẢN ĐỐI (steelman)</h4><ul>${D.against.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+      </div>
+      <div class="rebut"><h4>Phản biện chéo</h4>${D.rebut.map(r=>`<div class="rpair"><div class="claim">“${esc(r.claim)}”</div><div class="counter">${esc(r.counter)}</div></div>`).join('')}</div>
+      <div class="phrases"><h4>Khung câu lập luận (C1–C2)</h4>${D.phrases.map(p=>`<span class="phrasechip">${esc(p)}</span>`).join('')}</div>
+      <div class="dvocab"><h4>Từ vựng nên triển khai</h4>${D.vocab.map(v=>`<span class="vchip" onclick="say('${String(v).replace(/'/g,"\\'")}')">${esc(v)}</span>`).join('')}</div>
+      ${D.model?`<div class="model">
+        <div class="legend">Từ <mark>tô sáng</mark> = vocab mục tiêu được triển khai đúng sắc thái &amp; register. Bấm 🔊 để nghe giọng Anh–Anh và <b>shadow</b> theo.</div>
+        <div class="mblock writing">
+          <div class="mhead"><div class="mlabel">✍️ Model · Writing Task 2</div>
+            <button class="mspk" onclick="sayText(this)" data-t="${encodeURIComponent(strip(D.model.writing.paras.join(' ')))}">🔊 Nghe &amp; shadow</button></div>
+          <div class="mreg">register: formal · academic · cohesive — ${esc(D.model.writing.note||'')}</div>
+          ${D.model.writing.paras.map(p=>`<p>${hl(p)}</p>`).join('')}</div>
+        <div class="mblock speaking">
+          <div class="mhead"><div class="mlabel">🎤 Model · Speaking Part 3</div>
+            <button class="mspk" onclick="sayText(this)" data-t="${encodeURIComponent(strip(D.model.speaking.qa.map(x=>x.a).join(' ')))}">🔊 Nghe &amp; shadow</button></div>
+          <div class="mreg">register: natural · spoken · idiomatic — ${esc(D.model.speaking.note||'')}</div>
+          ${D.model.speaking.qa.map(x=>`<div class="qa"><div class="mq">${hl(x.q)} <button class="mspk sm" onclick="sayText(this)" data-t="${encodeURIComponent(strip(x.a))}">🔊</button></div><div class="ma">${hl(x.a)}</div></div>`).join('')}</div>
+      </div>`:''}
+    </div>`).join('');
+}
+
+/* Quiz from vocab (VI -> English), respects skill filter */
+let quiz={pool:[],i:0,score:0,answered:false,all:[]};
+function pool(){const a=[];DATA.vocab.forEach(m=>m.groups.forEach(g=>g.words.forEach(w=>{if(passSkill(w))a.push(w);})));return a;}
+function renderQuiz(){
+  mainEl.innerHTML=`${skillRow()}<div class="quizwrap"><div class="qctrl" style="margin:0 0 16px">
+    <button class="btn p" onclick="startQuiz()">✦ Bắt đầu / Làm lại</button></div><div id="qbody"></div></div>`;
+  startQuiz();
+}
+function startQuiz(){const P=pool();quiz={all:P,pool:P.slice().sort(()=>Math.random()-.5).slice(0,10),i:0,score:0,answered:false};drawQ();}
+function drawQ(){
+  const body=$('qbody');if(!body)return;const q=quiz.pool[quiz.i];
+  if(!q){body.innerHTML=`<div class="qcard"><div class="qprompt-label gradtext">Kết quả</div><div class="qprompt gradtext">${quiz.score}/${quiz.pool.length}</div><div class="qctrl"><button class="btn p" onclick="startQuiz()">↻ Làm lại</button></div></div>`;return;}
+  const others=quiz.all.filter(w=>w.w!==q.w).sort(()=>Math.random()-.5).slice(0,3).map(w=>w.w);
+  const opts=[q.w,...others].sort(()=>Math.random()-.5);quiz.answered=false;
+  body.innerHTML=`<div class="qcard"><div class="qtop"><span>Câu ${quiz.i+1}/${quiz.pool.length}</span><span class="score">✦ ${quiz.score}</span></div>
+    <div class="qprompt-label gradtext">Say it in English</div><div class="qprompt">${esc(q.vi)}</div>
+    <div class="qopts" id="qopts">${opts.map((o,i)=>`<button data-o="${encodeURIComponent(o)}" onclick="answer(this)"><span class="k">${'ABCD'[i]}</span><span>${esc(o)}</span></button>`).join('')}</div>
+    <div class="qreveal" id="qreveal"></div><div class="qctrl"><button class="btn g" id="qnext" onclick="nextQ()" style="display:none">Câu tiếp →</button></div></div>`;
+}
+function answer(btn){
+  if(quiz.answered)return;quiz.answered=true;const q=quiz.pool[quiz.i];const chosen=decodeURIComponent(btn.dataset.o);
+  document.querySelectorAll('#qopts button').forEach(b=>{const o=decodeURIComponent(b.dataset.o);b.disabled=true;if(o===q.w)b.classList.add('correct');else if(o===chosen)b.classList.add('wrong');});
+  if(chosen===q.w)quiz.score++;say(q.w);$('qreveal').innerHTML=`<b>${esc(q.w)}</b> — ${esc(q.ex)}`;$('qnext').style.display='inline-block';
+}
+function nextQ(){quiz.i++;drawQ();}
+
+renderTabs();render();
+</script>
+</body>
+</html>
