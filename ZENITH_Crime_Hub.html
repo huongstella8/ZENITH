@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZENITH · C1–C2 Vocabulary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0a15; --panel:#16121f; --panel2:#1d1730; --line:#332a49; --ink:#f4efe4; --muted:#a99ec7;
+    --gold:#e8c26a; --gold2:#f6e6b4; --goldDeep:#b8863a; --plum:#7c5cff; --rose:#f19cb0; --green:#7fe0ab;
+    --grad:linear-gradient(120deg,#b8863a 0%,#f6e6b4 48%,#d9a441 100%);
+    --gradP:linear-gradient(120deg,#7c5cff,#c9a0ff);
+    --fh:'Playfair Display',Georgia,serif; --fb:'Inter',system-ui,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(55% 45% at 10% 0%,rgba(124,92,255,.18),transparent 60%),
+                     radial-gradient(50% 45% at 100% 4%,rgba(232,194,106,.16),transparent 60%),
+                     radial-gradient(60% 55% at 50% 100%,rgba(124,92,255,.10),transparent 60%);
+    background-attachment:fixed;}
+  h1,h2,h3,h4{font-family:var(--fh);margin:0;line-height:1.15;font-weight:700}
+  .gradtext{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  header.top{padding:26px 28px 24px;position:relative;overflow:hidden;background:linear-gradient(180deg,rgba(124,92,255,.12),transparent);border-bottom:1px solid var(--line)}
+  header .nova{font-family:var(--fb);font-weight:800;font-size:12.5px;letter-spacing:8px;text-transform:uppercase;color:#e7dcff;display:flex;align-items:center;gap:10px}
+  header .nova::before{content:"✦";color:var(--gold);filter:drop-shadow(0 0 7px var(--gold))}
+  header h1{font-size:40px;margin:12px 0 6px;font-weight:800;letter-spacing:-.01em}
+  header .lvl{display:inline-block;font-family:var(--fb);font-weight:800;font-size:11px;letter-spacing:1.5px;color:#0c0a15;background:var(--grad);padding:3px 10px;border-radius:20px;vertical-align:middle;margin-left:10px}
+  header p{margin:6px 0 0;color:var(--muted);font-size:13px;max-width:840px}
+  header .glow{position:absolute;right:-40px;top:-70px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(232,194,106,.45),transparent 65%);filter:blur(34px);pointer-events:none}
+  nav.tabs{position:sticky;top:0;z-index:30;background:rgba(12,10,21,.82);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:4px;padding:10px 16px}
+  nav.tabs button{border:1px solid transparent;background:transparent;font:inherit;font-family:var(--fb);font-weight:600;color:var(--muted);padding:8px 13px;border-radius:11px;cursor:pointer;font-size:13.5px;white-space:nowrap;transition:.15s}
+  nav.tabs button:hover{background:var(--panel2);color:var(--ink)}
+  nav.tabs button.active{background:var(--grad);color:#0c0a15;font-weight:800;box-shadow:0 4px 18px rgba(232,194,106,.35)}
+  nav.tabs button .l{font-family:var(--fh);font-weight:800;margin-right:5px}
+  main{max-width:1140px;margin:0 auto;padding:22px 20px 90px}
+  .searchbar{margin:0 0 16px;position:relative}
+  .searchbar input{width:100%;padding:14px 16px 14px 48px;border:1px solid var(--line);border-radius:14px;font:inherit;font-size:15.5px;background:var(--panel);color:var(--ink)}
+  .searchbar input::placeholder{color:#77709a}
+  .searchbar input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,194,106,.18)}
+  .searchbar .ic{position:absolute;left:17px;top:50%;transform:translateY(-50%);font-size:17px;opacity:.7}
+  .skillrow{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+  .skillrow button{border:1px solid var(--line);background:var(--panel);color:var(--muted);font:inherit;font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:20px;cursor:pointer;transition:.15s}
+  .skillrow button:hover{border-color:var(--gold);color:var(--ink)}
+  .skillrow button.on{color:#0c0a15;border-color:transparent}
+  .skillrow button.on.rw{background:linear-gradient(120deg,#e8c26a,#f6e6b4)}
+  .skillrow button.on.ls{background:linear-gradient(120deg,#c9a0ff,#7c5cff)}
+  .skillrow button.on.all{background:var(--grad)}
+  .modhead{display:flex;align-items:center;gap:16px;margin:6px 0 4px}
+  .modhead .badge{width:60px;height:60px;flex:0 0 auto;border-radius:16px;background:var(--grad);color:#0c0a15;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-size:26px;font-weight:800;box-shadow:0 8px 26px rgba(232,194,106,.4)}
+  .modhead h2{font-size:27px}
+  .modhead p{margin:2px 0 0;color:var(--muted);font-size:13.5px}
+  .sub{font-family:var(--fh);font-size:16px;font-weight:700;color:#f0e6c8;display:flex;align-items:center;gap:10px;margin:24px 0 12px}
+  .sub::before{content:"";width:24px;height:3px;background:var(--grad);border-radius:2px}
+  .sub .cnt{font-family:var(--fb);font-weight:600;font-size:12px;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
+  .card{border:1px solid var(--line);border-radius:15px;padding:15px 16px;background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.012));transition:transform .13s,box-shadow .13s,border-color .13s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold)}
+  .card.ls::before{background:var(--plum)}
+  .card:hover{transform:translateY(-3px);border-color:#4a3d63;box-shadow:0 14px 34px rgba(0,0,0,.5)}
+  .card .w{font-family:var(--fh);font-weight:800;font-size:19px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .card .pos{font-family:var(--fb);font-size:10px;font-weight:800;letter-spacing:.4px;color:#0c0a15;background:linear-gradient(120deg,#f6e6b4,#e8c26a);padding:2px 7px;border-radius:9px;text-transform:uppercase}
+  .card .cefr{font-family:var(--fb);font-size:10px;font-weight:900;letter-spacing:.4px;padding:2px 7px;border-radius:9px;color:#0c0a15}
+  .card .cefr.c1{background:#9fe6c0}.card .cefr.c2{background:#f0b6cf}
+  .card .chip{font-family:var(--fb);font-size:9.5px;font-weight:800;letter-spacing:.4px;padding:2px 7px;border-radius:9px;text-transform:uppercase}
+  .card .chip.rw{color:#2a2410;background:linear-gradient(120deg,#e8c26a,#f6e6b4)}
+  .card .chip.ls{color:#fff;background:linear-gradient(120deg,#7c5cff,#c9a0ff)}
+  .card .spk{margin-left:auto;border:1px solid var(--line);background:var(--panel2);border-radius:9px;cursor:pointer;font-size:14px;padding:3px 10px;color:var(--muted)}
+  .card .spk:hover{border-color:var(--gold);color:var(--gold)}
+  .card .meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:7px}
+  .card .reg{font-size:10.5px;font-weight:700;color:#d9cffc;background:rgba(124,92,255,.14);border:1px solid rgba(124,92,255,.28);padding:1px 8px;border-radius:8px;text-transform:lowercase}
+  .card .up{font-size:10.5px;font-weight:600;color:#a99ec7;background:var(--panel2);border:1px solid var(--line);padding:1px 8px;border-radius:8px}
+  .card .up b{color:var(--gold2)}
+  .card .vi{color:#f3c9dc;font-size:13.8px;margin-top:7px;font-weight:600}
+  .card .nu{font-size:12.4px;margin-top:8px;color:#f0dca6;background:rgba(232,194,106,.09);border:1px solid rgba(232,194,106,.2);border-radius:9px;padding:6px 9px}
+  .card .nu b{color:#f6e6b4;font-size:9.5px;letter-spacing:.5px;display:block;margin-bottom:1px}
+  .card .col{font-size:12.3px;margin-top:7px;color:#c8bff0}
+  .card .col b{color:#b39cff;font-size:9.5px;letter-spacing:.5px}
+  .card .ex{color:#aca4c6;font-size:12.8px;margin-top:7px;font-style:italic;padding-left:10px;border-left:2px solid var(--line)}
+  .empty{text-align:center;color:var(--muted);padding:50px 0;font-size:15px}
+  /* nuance ladders */
+  .ladder{border:1px solid var(--line);border-radius:16px;padding:18px 18px 14px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent);margin-bottom:16px}
+  .ladder-h{font-family:var(--fh);font-weight:800;font-size:18px;color:#f6e6b4;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+  .ladder-h .vi{font-family:var(--fb);font-weight:600;font-size:12.5px;color:var(--muted)}
+  .steps{margin-top:14px;display:flex;flex-direction:column;gap:8px}
+  .step{display:flex;gap:12px;align-items:flex-start;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  .step .gauge{flex:0 0 66px;height:8px;border-radius:6px;background:var(--panel2);position:relative;margin-top:8px;overflow:hidden}
+  .step .gauge i{position:absolute;left:0;top:0;bottom:0;background:var(--grad);border-radius:6px}
+  .step .body{flex:1}
+  .step .sw{font-family:var(--fh);font-weight:800;font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .step .sw .spk{border:1px solid var(--line);background:var(--panel2);border-radius:8px;cursor:pointer;font-size:12px;padding:1px 8px;color:var(--muted)}
+  .step .svi{color:#f3c9dc;font-size:12.6px;font-weight:600}
+  .step .note{color:#c9c0e2;font-size:12px;margin-top:2px}
+  .lvtag{font-size:9.5px;font-weight:900;letter-spacing:.4px;padding:1px 7px;border-radius:8px;color:#0c0a15;background:linear-gradient(120deg,#e8c26a,#f6e6b4);text-transform:uppercase}
+  /* debates */
+  .debate{border:1px solid var(--line);border-radius:16px;padding:20px;background:linear-gradient(180deg,rgba(255,255,255,.025),transparent);margin-bottom:20px}
+  .dq{font-family:var(--fh);font-weight:800;font-size:21px;color:#f6e6b4;line-height:1.25}
+  .dtag{display:inline-block;font-family:var(--fb);font-weight:800;font-size:10px;letter-spacing:1px;color:#0c0a15;background:var(--grad);padding:2px 9px;border-radius:20px;margin-bottom:8px;text-transform:uppercase}
+  .dctx{color:var(--muted);font-size:13px;margin:8px 0 16px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .colc{border:1px solid var(--line);border-radius:13px;padding:14px;background:var(--panel)}
+  .colc.for{border-color:rgba(127,224,171,.35)}
+  .colc.against{border-color:rgba(241,156,176,.35)}
+  .colc h4{font-family:var(--fb);font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-bottom:8px}
+  .colc.for h4{color:var(--green)}.colc.against h4{color:var(--rose)}
+  .colc ul{margin:0;padding-left:0;list-style:none}
+  .colc li{font-size:13px;margin-bottom:9px;padding-left:18px;position:relative;color:#e7e1d4}
+  .colc.for li::before{content:"▸";position:absolute;left:0;color:var(--green)}
+  .colc.against li::before{content:"▸";position:absolute;left:0;color:var(--rose)}
+  .rebut{margin-top:16px}
+  .rebut h4,.phrases h4,.dvocab h4{font-family:var(--fb);font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#d9cffc;margin:16px 0 9px;display:flex;align-items:center;gap:8px}
+  .rebut h4::before,.phrases h4::before,.dvocab h4::before{content:"";width:18px;height:2px;background:var(--gradP);border-radius:2px}
+  .rpair{border:1px solid var(--line);border-radius:12px;padding:11px 13px;background:var(--panel);margin-bottom:8px}
+  .rpair .claim{font-size:12.8px;color:#f3c9dc;font-weight:600}
+  .rpair .counter{font-size:12.8px;color:#c9e8d5;margin-top:4px;padding-left:16px;position:relative}
+  .rpair .counter::before{content:"↳";position:absolute;left:0;color:var(--green)}
+  .phrasechip{display:inline-block;font-size:12.5px;color:#f0e6c8;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:6px 11px;margin:0 6px 6px 0;font-style:italic}
+  .vchip{display:inline-block;font-size:12.5px;font-weight:600;color:#0c0a15;background:linear-gradient(120deg,#f6e6b4,#e8c26a);border-radius:9px;padding:4px 10px;margin:0 6px 6px 0;cursor:pointer}
+  /* model discussion */
+  .model{margin-top:18px;border-top:1px dashed var(--line);padding-top:14px}
+  .model .legend{font-size:11px;color:var(--muted);margin-bottom:10px}
+  .model .legend mark{margin:0 2px}
+  .mblock{border:1px solid var(--line);border-radius:13px;padding:15px 16px;background:var(--panel);margin-top:11px;position:relative}
+  .mblock.writing{border-left:3px solid var(--gold)}
+  .mblock.speaking{border-left:3px solid var(--plum)}
+  .mhead{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+  .mlabel{font-family:var(--fb);font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px}
+  .mblock.writing .mlabel{color:var(--gold2)}
+  .mblock.speaking .mlabel{color:#d9cffc}
+  .mreg{font-size:10.5px;color:var(--muted);margin-bottom:10px;font-style:italic}
+  .mspk{border:1px solid var(--line);background:var(--panel2);color:#f0e6c8;font:inherit;font-weight:700;font-size:11.5px;padding:5px 11px;border-radius:20px;cursor:pointer;white-space:nowrap;transition:.15s}
+  .mspk:hover{border-color:var(--gold);color:var(--gold)}
+  .mspk.playing{background:var(--grad);color:#0c0a15;border-color:transparent}
+  .mspk.sm{padding:1px 8px;font-size:11px;border-radius:8px;vertical-align:middle;margin-left:4px}
+  .mband{display:none}
+  .mblock p{font-size:13.2px;margin:0 0 10px;color:#e7e1d4;line-height:1.75}
+  .mblock p:last-child{margin-bottom:0}
+  .mblock .qa{margin-bottom:12px}
+  .mblock .qa:last-child{margin-bottom:0}
+  .mblock .qa .mq{font-size:12.6px;font-weight:700;color:#f3c9dc}
+  .mblock .qa .mq::before{content:"Q · ";color:var(--rose)}
+  .mblock .qa .ma{font-size:13.2px;color:#e7e1d4;margin-top:4px;line-height:1.75}
+  mark{background:linear-gradient(transparent 58%, rgba(232,194,106,.38) 58%);color:#f6e6b4;font-weight:600;border-radius:2px;padding:0 1px}
+  .mblock.speaking mark{background:linear-gradient(transparent 58%, rgba(124,92,255,.4) 58%);color:#d9c9ff}
+  /* quiz */
+  .quizwrap{max-width:620px;margin:0 auto}
+  .qcard{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+  .qtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:700;color:var(--muted);font-size:13px}
+  .qtop .score{color:var(--gold)}
+  .qprompt-label{font-weight:800;letter-spacing:.6px;font-size:13px;text-transform:uppercase;margin-top:12px}
+  .qprompt{font-family:var(--fh);font-size:32px;font-weight:800;margin:8px 0 22px}
+  .qopts{display:flex;flex-direction:column;gap:12px}
+  .qopts button{border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:14px;padding:16px;font:inherit;font-weight:600;font-size:18px;cursor:pointer;transition:.12s;text-align:left;display:flex;align-items:center;gap:12px}
+  .qopts button:hover{border-color:var(--gold)}
+  .qopts button .k{width:34px;height:34px;flex:0 0 auto;border-radius:9px;background:var(--panel);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:800}
+  .qopts button.correct{background:rgba(127,224,171,.15);border-color:var(--green)}
+  .qopts button.correct .k{background:var(--green);color:#0c0a15}
+  .qopts button.wrong{background:rgba(241,156,176,.15);border-color:var(--rose)}
+  .qopts button.wrong .k{background:var(--rose);color:#0c0a15}
+  .qopts button:disabled{cursor:default}
+  .qctrl{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap;align-items:center}
+  .btn{border:0;border-radius:12px;font:inherit;font-weight:800;font-size:14px;padding:12px 20px;cursor:pointer}
+  .btn.p{background:var(--grad);color:#0c0a15}
+  .btn.g{background:var(--panel2);border:1px solid var(--line);color:var(--ink)}
+  .qreveal{margin-top:16px;font-size:14px;color:var(--muted);min-height:24px}
+  .qreveal b{color:var(--ink)}
+  .foot{text-align:center;color:var(--muted);font-size:12px;margin-top:30px;padding:0 20px}
+  @media(max-width:640px){.grid{grid-template-columns:1fr}.cols{grid-template-columns:1fr}.qprompt{font-size:26px}header h1{font-size:30px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="glow"></div>
+  <div class="nova">HUONG STELLA · ZENITH</div>
+  <h1 class="gradtext" id="htitle">Technology &amp; AI<span class="lvl">C1 – C2</span></h1>
+  <p id="headsub"></p>
+</header>
+<nav class="tabs" id="tabs"></nav>
+<main id="main"></main>
+<div class="foot" id="foot"></div>
+
+<script>
+const DATA = {"vocab": [{"letter": "A", "title": "Crime & Wrongdoing", "sub": "Offences & their nature · Reading/Writing", "groups": [{"name": "Types & Gravity", "words": [{"w": "offence", "pos": "n", "cefr": "C1", "reg": "legal", "up": "crime / wrong act", "vi": "hành vi phạm tội", "nu": "Pháp lý, trung tính; 'a minor/serious offence'.", "col": "a serious offence", "ex": "He was convicted of a serious offence against public order.", "tag": "RW"}, {"w": "misconduct", "pos": "n", "cefr": "C2", "reg": "formal", "up": "improper behaviour", "vi": "hành vi sai trái", "nu": "Trang trọng: sai phạm (nghề nghiệp/tài chính), chưa hẳn hình sự.", "col": "professional misconduct", "ex": "The officer was dismissed for gross misconduct.", "tag": "RW"}, {"w": "transgression", "pos": "n", "cefr": "C2", "reg": "literary", "up": "breaking a rule", "vi": "sự vi phạm, lỗi lầm", "nu": "Văn chương/đạo đức: vượt lằn ranh cho phép.", "col": "a moral transgression", "ex": "Even minor transgressions were punished with startling severity.", "tag": "RW"}, {"w": "atrocity", "pos": "n", "cefr": "C2", "reg": "formal", "up": "a cruel crime", "vi": "tội ác tày trời", "nu": "Rất mạnh: hành vi tàn bạo, thường quy mô lớn.", "col": "commit an atrocity", "ex": "The tribunal was set up to judge wartime atrocities.", "tag": "RW"}, {"w": "felony", "pos": "n", "cefr": "C2", "reg": "legal", "up": "serious crime", "vi": "trọng tội", "nu": "Thuật ngữ pháp lý (Mỹ): tội nghiêm trọng.", "col": "a violent felony", "ex": "Armed robbery is treated as a violent felony.", "tag": "RW"}, {"w": "petty crime", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "minor crime", "vi": "tội vặt", "nu": "Tội nhỏ; 'a rise in petty crime'.", "col": "petty crime", "ex": "Deprived areas often see a rise in petty crime.", "tag": "RW"}]}, {"name": "The Offender & Motive", "words": [{"w": "perpetrator", "pos": "n", "cefr": "C2", "reg": "formal", "up": "person who commits a crime", "vi": "thủ phạm, kẻ gây án", "nu": "Trang trọng: người thực hiện hành vi phạm tội.", "col": "the perpetrator", "ex": "CCTV footage helped identify the perpetrator.", "tag": "RW"}, {"w": "culprit", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "guilty person", "vi": "thủ phạm, người có lỗi", "nu": "Đời thường hơn 'perpetrator'.", "col": "catch the culprit", "ex": "Police were quick to catch the culprit.", "tag": "RW"}, {"w": "motive", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "reason for a crime", "vi": "động cơ (gây án)", "nu": "'establish a motive'; lý do phạm tội.", "col": "a clear motive", "ex": "Investigators struggled to establish a clear motive.", "tag": "RW"}, {"w": "premeditated", "pos": "adj", "cefr": "C2", "reg": "legal", "up": "planned in advance", "vi": "có chủ mưu, tính toán trước", "nu": "Pháp lý: cố ý lên kế hoạch, tăng nặng tội.", "col": "a premeditated attack", "ex": "The court ruled the killing was premeditated.", "tag": "RW"}, {"w": "recidivism", "pos": "n", "cefr": "C2", "reg": "academic", "up": "reoffending", "vi": "tình trạng tái phạm", "nu": "Học thuật: quay lại con đường phạm tội.", "col": "high recidivism", "ex": "High recidivism suggests prisons rarely rehabilitate.", "tag": "RW"}, {"w": "delinquency", "pos": "n", "cefr": "C2", "reg": "academic", "up": "minor youth crime", "vi": "hành vi phạm pháp (vị thành niên)", "nu": "Học thuật; 'juvenile delinquency'.", "col": "juvenile delinquency", "ex": "Youth clubs can curb juvenile delinquency.", "tag": "RW"}]}]}, {"letter": "B", "title": "Policing & Prosecution", "sub": "Catching & trying offenders · Reading/Writing", "groups": [{"name": "Investigation", "words": [{"w": "law enforcement", "pos": "n", "cefr": "C1", "reg": "formal", "up": "police / authorities", "vi": "cơ quan thực thi pháp luật", "nu": "Trang trọng, tập thể; 'law enforcement agencies'.", "col": "law enforcement", "ex": "Law enforcement agencies coordinated the operation.", "tag": "RW"}, {"w": "apprehend", "pos": "v", "cefr": "C2", "reg": "formal", "up": "arrest / catch", "vi": "bắt giữ", "nu": "Trang trọng hơn 'catch/arrest'.", "col": "apprehend a suspect", "ex": "Officers apprehended the suspect at the airport.", "tag": "RW"}, {"w": "surveillance", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "watching / monitoring", "vi": "sự giám sát, theo dõi", "nu": "'under surveillance'; giám sát để điều tra.", "col": "under surveillance", "ex": "The gang had been under surveillance for months.", "tag": "RW"}, {"w": "interrogate", "pos": "v", "cefr": "C2", "reg": "formal", "up": "question intensively", "vi": "thẩm vấn", "nu": "Trang trọng: hỏi cung căng thẳng.", "col": "interrogate a suspect", "ex": "The suspect was interrogated for hours.", "tag": "RW"}, {"w": "forensic", "pos": "adj", "cefr": "C2", "reg": "technical", "up": "scientific (evidence)", "vi": "(thuộc) pháp y, khoa học hình sự", "nu": "Thuật ngữ; 'forensic evidence'.", "col": "forensic evidence", "ex": "Forensic evidence placed him firmly at the scene.", "tag": "RW"}, {"w": "deterrent", "pos": "n", "cefr": "C2", "reg": "formal", "up": "something that discourages", "vi": "biện pháp răn đe", "nu": "Trang trọng: khiến người ta chùn tay.", "col": "act as a deterrent", "ex": "Harsher sentences supposedly act as a deterrent.", "tag": "RW"}]}, {"name": "The Trial", "words": [{"w": "prosecute", "pos": "v", "cefr": "C1", "reg": "legal", "up": "take to court", "vi": "truy tố", "nu": "Pháp lý: đưa ra xét xử.", "col": "prosecute an offender", "ex": "The state chose to prosecute the offender.", "tag": "RW"}, {"w": "defendant", "pos": "n", "cefr": "C1", "reg": "legal", "up": "accused person", "vi": "bị cáo", "nu": "Pháp lý: người bị buộc tội.", "col": "the defendant", "ex": "The defendant pleaded not guilty.", "tag": "RW"}, {"w": "acquit", "pos": "v", "cefr": "C2", "reg": "legal", "up": "declare not guilty", "vi": "tuyên trắng án", "nu": "Pháp lý: tha bổng.", "col": "acquit of a charge", "ex": "He was acquitted on all counts.", "tag": "RW"}, {"w": "verdict", "pos": "n", "cefr": "C1", "reg": "legal", "up": "court's decision", "vi": "phán quyết", "nu": "'reach/return a verdict'.", "col": "a unanimous verdict", "ex": "The jury returned a unanimous verdict.", "tag": "RW"}, {"w": "testimony", "pos": "n", "cefr": "C2", "reg": "legal", "up": "evidence given in court", "vi": "lời khai (tại tòa)", "nu": "Trang trọng/pháp lý: lời chứng.", "col": "give testimony", "ex": "A key witness gave damning testimony.", "tag": "RW"}, {"w": "miscarriage of justice", "pos": "n", "cefr": "C2", "reg": "legal", "up": "wrongful conviction", "vi": "sự oan sai", "nu": "Cụm pháp lý: kết án nhầm người vô tội.", "col": "a miscarriage of justice", "ex": "The case was later exposed as a grave miscarriage of justice.", "tag": "RW"}]}]}, {"letter": "C", "title": "Punishment & Reform", "sub": "Sentencing & second chances · Reading/Writing", "groups": [{"name": "Sentencing", "words": [{"w": "sentence", "pos": "n", "cefr": "C1", "reg": "legal", "up": "court punishment", "vi": "bản án", "nu": "'a lengthy/custodial sentence'.", "col": "a custodial sentence", "ex": "The judge imposed a lengthy custodial sentence.", "tag": "RW"}, {"w": "incarceration", "pos": "n", "cefr": "C2", "reg": "formal", "up": "imprisonment", "vi": "sự giam giữ, tù đày", "nu": "Trang trọng hơn 'imprisonment'.", "col": "mass incarceration", "ex": "Mass incarceration has done little to cut crime.", "tag": "RW"}, {"w": "lenient", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "not harsh", "vi": "khoan dung, nhẹ", "nu": "Trang trọng: hình phạt nhẹ; trái 'harsh'.", "col": "a lenient sentence", "ex": "Critics condemned the sentence as far too lenient.", "tag": "RW"}, {"w": "punitive", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "meant to punish", "vi": "mang tính trừng phạt", "nu": "Trang trọng: nghiêng về trừng phạt.", "col": "a punitive approach", "ex": "A purely punitive approach neglects the causes of crime.", "tag": "RW"}, {"w": "retribution", "pos": "n", "cefr": "C2", "reg": "formal", "up": "punishment as revenge", "vi": "sự trừng phạt, báo ứng", "nu": "Trang trọng: trả đũa cho cái sai.", "col": "seek retribution", "ex": "Some see justice as retribution, others as repair.", "tag": "RW"}, {"w": "mandatory", "pos": "adj", "cefr": "C2", "reg": "legal", "up": "required by law", "vi": "bắt buộc", "nu": "Pháp lý: 'a mandatory sentence'.", "col": "a mandatory minimum", "ex": "Mandatory minimum sentences tie judges' hands.", "tag": "RW"}]}, {"name": "Reform & Rights", "words": [{"w": "rehabilitate", "pos": "v", "cefr": "C2", "reg": "formal", "up": "reform an offender", "vi": "cải tạo, phục hồi", "nu": "Trang trọng: giúp phạm nhân hoàn lương.", "col": "rehabilitate offenders", "ex": "Prisons should rehabilitate offenders, not merely punish them.", "tag": "RW"}, {"w": "reintegrate", "pos": "v", "cefr": "C2", "reg": "formal", "up": "return to society", "vi": "tái hòa nhập", "nu": "Trang trọng: đưa trở lại cộng đồng.", "col": "reintegrate into society", "ex": "Ex-prisoners need support to reintegrate into society.", "tag": "RW"}, {"w": "deterrence", "pos": "n", "cefr": "C2", "reg": "academic", "up": "discouraging crime", "vi": "sự răn đe", "nu": "Học thuật: nguyên lý ngăn ngừa qua sợ hãi.", "col": "the principle of deterrence", "ex": "Sentencing rests partly on the principle of deterrence.", "tag": "RW"}, {"w": "proportionate", "pos": "adj", "cefr": "C2", "reg": "legal", "up": "fitting the crime", "vi": "tương xứng", "nu": "Pháp lý: hình phạt cân xứng với tội.", "col": "a proportionate response", "ex": "Punishment ought to be proportionate to the offence.", "tag": "RW"}, {"w": "civil liberties", "pos": "n", "cefr": "C2", "reg": "formal", "up": "personal freedoms", "vi": "quyền tự do dân sự", "nu": "Trang trọng: quyền cá nhân trước nhà nước.", "col": "erode civil liberties", "ex": "Sweeping surveillance laws erode civil liberties.", "tag": "RW"}, {"w": "presumption of innocence", "pos": "n", "cefr": "C2", "reg": "legal", "up": "innocent until proven guilty", "vi": "suy đoán vô tội", "nu": "Nguyên tắc pháp lý cốt lõi.", "col": "the presumption of innocence", "ex": "The presumption of innocence is the bedrock of a fair trial.", "tag": "RW"}]}]}, {"letter": "D", "title": "Causes, Justice & Society", "sub": "Why crime happens & what is fair · Reading/Writing", "groups": [{"name": "Roots of Crime", "words": [{"w": "deprivation", "pos": "n", "cefr": "C2", "reg": "academic", "up": "hardship / lack", "vi": "sự thiếu thốn, bần hàn", "nu": "Học thuật: thiếu điều kiện sống cơ bản.", "col": "social deprivation", "ex": "Crime often flourishes in areas of acute deprivation.", "tag": "RW"}, {"w": "marginalised", "pos": "adj", "cefr": "C2", "reg": "academic", "up": "pushed to the edge", "vi": "bị gạt ra bên lề", "nu": "Học thuật: bị loại khỏi cơ hội xã hội.", "col": "marginalised youth", "ex": "Marginalised youth are the likeliest to offend and reoffend.", "tag": "RW"}, {"w": "root cause", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "underlying reason", "vi": "nguyên nhân gốc rễ", "nu": "'tackle the root causes of crime'.", "col": "the root causes", "ex": "Real reform means tackling the root causes of crime.", "tag": "RW"}, {"w": "succumb to", "pos": "phr", "cefr": "C2", "reg": "formal", "up": "give in to", "vi": "sa vào, khuất phục trước", "nu": "Trang trọng: chịu thua cám dỗ/áp lực.", "col": "succumb to temptation", "ex": "Many young offenders succumb to peer pressure.", "tag": "RW"}, {"w": "stigma", "pos": "n", "cefr": "C2", "reg": "academic", "up": "mark of disgrace", "vi": "sự kỳ thị", "nu": "Định kiến bám theo người có tiền án.", "col": "the stigma of a record", "ex": "Ex-offenders face the stigma of a criminal record.", "tag": "RW"}, {"w": "desperation", "pos": "n", "cefr": "C1", "reg": "neutral", "up": "hopeless need", "vi": "sự tuyệt vọng, cùng quẫn", "nu": "Động cơ phạm tội do bế tắc.", "col": "sheer desperation", "ex": "Some steal out of sheer desperation, not greed.", "tag": "RW"}]}, {"name": "Justice & Fairness", "words": [{"w": "the rule of law", "pos": "n", "cefr": "C2", "reg": "formal", "up": "law governs all", "vi": "nguyên tắc thượng tôn pháp luật", "nu": "Trang trọng: mọi người bình đẳng trước luật.", "col": "uphold the rule of law", "ex": "A stable society depends on the rule of law.", "tag": "RW"}, {"w": "impartial", "pos": "adj", "cefr": "C2", "reg": "formal", "up": "unbiased", "vi": "công tâm, vô tư", "nu": "Trang trọng: không thiên vị; 'an impartial judge'.", "col": "an impartial trial", "ex": "Everyone is entitled to an impartial trial.", "tag": "RW"}, {"w": "accountability", "pos": "n", "cefr": "C2", "reg": "formal", "up": "being answerable", "vi": "trách nhiệm giải trình", "nu": "Trang trọng: phải chịu trách nhiệm.", "col": "police accountability", "ex": "The public increasingly demands police accountability.", "tag": "RW"}, {"w": "impunity", "pos": "n", "cefr": "C2", "reg": "formal", "up": "freedom from punishment", "vi": "sự không bị trừng phạt", "nu": "Trang trọng: hành xử sai mà không bị xử lý.", "col": "act with impunity", "ex": "The powerful too often act with impunity.", "tag": "RW"}, {"w": "systemic", "pos": "adj", "cefr": "C2", "reg": "academic", "up": "built into the system", "vi": "mang tính hệ thống", "nu": "Học thuật: cố hữu trong cấu trúc.", "col": "systemic bias", "ex": "Campaigners point to systemic bias in sentencing.", "tag": "RW"}, {"w": "vigilante", "pos": "n", "cefr": "C2", "reg": "journalistic", "up": "self-appointed enforcer", "vi": "người tự xử (ngoài luật)", "nu": "Phê phán: tự thực thi công lý ngoài pháp luật.", "col": "vigilante justice", "ex": "Vigilante justice undermines the rule of law.", "tag": "RW"}]}]}, {"letter": "E", "title": "Phrasal Verbs & Idioms", "sub": "Natural, high-level · Listening/Speaking", "groups": [{"name": "Advanced Phrasal Verbs", "words": [{"w": "get away with", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "escape punishment", "vi": "thoát tội, không bị phạt", "nu": "'get away with murder' — làm càn mà không bị phạt.", "col": "get away with it", "ex": "It's galling when the powerful get away with it.", "tag": "LS"}, {"w": "crack down on", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "act strictly against", "vi": "mạnh tay trấn áp", "nu": "Siết chặt hành vi vi phạm.", "col": "crack down on gangs", "ex": "The mayor vowed to crack down on knife crime.", "tag": "LS"}, {"w": "lock up", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "imprison", "vi": "tống giam", "nu": "Đời thường: bỏ tù.", "col": "lock offenders up", "ex": "Simply locking offenders up rarely solves the problem.", "tag": "LS"}, {"w": "let off", "pos": "phr v", "cefr": "C2", "reg": "neutral", "up": "not punish", "vi": "tha bổng, nương nhẹ", "nu": "'let someone off with a warning'.", "col": "let off lightly", "ex": "Many felt he was let off far too lightly.", "tag": "LS"}, {"w": "track down", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "find", "vi": "truy tìm ra", "nu": "Lần theo dấu vết để bắt.", "col": "track down a suspect", "ex": "Detectives finally tracked down the suspect.", "tag": "LS"}, {"w": "own up to", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "confess", "vi": "thú nhận", "nu": "Thừa nhận đã làm sai.", "col": "own up to a crime", "ex": "He eventually owned up to the theft.", "tag": "LS"}, {"w": "clamp down on", "pos": "phr v", "cefr": "C1", "reg": "neutral", "up": "restrict firmly", "vi": "siết chặt", "nu": "Đồng nghĩa crack down on.", "col": "clamp down on fraud", "ex": "Banks are clamping down on online fraud.", "tag": "LS"}, {"w": "stamp out", "pos": "phr v", "cefr": "C2", "reg": "neutral", "up": "eliminate", "vi": "xóa bỏ, dẹp bỏ", "nu": "Loại trừ tận gốc.", "col": "stamp out corruption", "ex": "The new chief promised to stamp out corruption.", "tag": "LS"}]}, {"name": "High-level Idioms", "words": [{"w": "caught red-handed", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "caught in the act", "vi": "bị bắt quả tang", "nu": "Bắt gặp ngay lúc đang phạm tội.", "col": "caught red-handed", "ex": "The thief was caught red-handed.", "tag": "LS"}, {"w": "a slap on the wrist", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "a very mild punishment", "vi": "phạt nhẹ, qua loa", "nu": "Chỉ trích hình phạt quá nhẹ.", "col": "a slap on the wrist", "ex": "The fine was little more than a slap on the wrist.", "tag": "LS"}, {"w": "above the law", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "exempt from rules", "vi": "đứng trên pháp luật", "nu": "Coi mình không phải tuân luật.", "col": "above the law", "ex": "In a fair society, no one is above the law.", "tag": "LS"}, {"w": "turn a blind eye", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "ignore deliberately", "vi": "làm ngơ, phớt lờ", "nu": "Cố tình bỏ qua sai phạm.", "col": "turn a blind eye", "ex": "Officials turned a blind eye to the abuse.", "tag": "LS"}, {"w": "behind bars", "pos": "idiom", "cefr": "C1", "reg": "neutral", "up": "in prison", "vi": "sau song sắt (ở tù)", "nu": "'put someone behind bars'.", "col": "put behind bars", "ex": "The evidence put him behind bars for life.", "tag": "LS"}, {"w": "take the law into your own hands", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "act as your own judge", "vi": "tự xử theo ý mình", "nu": "Tự thực thi công lý, bỏ qua pháp luật.", "col": "take the law into your own hands", "ex": "People shouldn't take the law into their own hands.", "tag": "LS"}, {"w": "the long arm of the law", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "the reach of justice", "vi": "bàn tay/cánh tay pháp luật", "nu": "Không ai thoát khỏi pháp luật mãi.", "col": "the long arm of the law", "ex": "No one escapes the long arm of the law forever.", "tag": "LS"}, {"w": "a grey area", "pos": "idiom", "cefr": "C2", "reg": "neutral", "up": "unclear case", "vi": "vùng xám (không rõ ràng)", "nu": "Trường hợp luật chưa rạch ròi.", "col": "a legal grey area", "ex": "Online harassment remains a legal grey area.", "tag": "LS"}]}]}], "ladders": [{"theme": "IMPORTANT", "vi": "mức độ quan trọng — nhẹ → tối cao", "steps": [{"w": "notable", "lv": "nhẹ", "vi": "đáng chú ý", "note": "Ghi nhận nhưng không nhấn mạnh."}, {"w": "significant", "lv": "vừa", "vi": "đáng kể", "note": "Trung lập, an toàn, rất phổ biến trong writing."}, {"w": "crucial", "lv": "mạnh", "vi": "then chốt", "note": "Thiết yếu cho một kết quả."}, {"w": "pivotal", "lv": "mạnh+", "vi": "mang tính bản lề", "note": "Là điểm xoay quyết định cả cục diện."}, {"w": "paramount", "lv": "tối cao", "vi": "tối quan trọng, trên hết", "note": "Rất trang trọng: cao hơn mọi yếu tố khác."}, {"w": "seminal", "lv": "học thuật", "vi": "có tính khai nguồn", "note": "Chỉ dùng cho công trình/ý tưởng đặt nền móng."}]}, {"theme": "HARMFUL", "vi": "mức độ có hại — nhẹ → nghiêm trọng", "steps": [{"w": "undesirable", "lv": "nhẹ", "vi": "không mong muốn", "note": "Uyển ngữ, lịch sự, giảm nhẹ."}, {"w": "detrimental", "lv": "vừa", "vi": "có hại, bất lợi", "note": "Trang trọng, trung tính; đi với 'to'."}, {"w": "deleterious", "lv": "mạnh", "vi": "gây hại (học thuật)", "note": "Rất trang trọng/khoa học."}, {"w": "pernicious", "lv": "mạnh+", "vi": "độc hại âm thầm", "note": "Tác hại ngấm dần, lan rộng."}, {"w": "insidious", "lv": "tinh vi", "vi": "nguy hiểm ngấm ngầm", "note": "Nhấn mạnh sự lén lút, khó nhận ra."}, {"w": "egregious", "lv": "cực đoan", "vi": "tồi tệ trắng trợn", "note": "Sai/tệ đến mức lộ liễu, gây phẫn nộ."}]}, {"theme": "INCREASE", "vi": "mức độ tăng — từ từ → bùng nổ", "steps": [{"w": "rise", "lv": "nhẹ", "vi": "tăng lên", "note": "Trung tính, chung chung."}, {"w": "climb", "lv": "vừa", "vi": "nhích lên đều", "note": "Tăng ổn định, từ tốn."}, {"w": "surge", "lv": "mạnh", "vi": "tăng vọt", "note": "Tăng nhanh và đột ngột."}, {"w": "soar", "lv": "mạnh+", "vi": "tăng cao vút", "note": "Lên rất cao, thường tích cực."}, {"w": "skyrocket", "lv": "cực đoan", "vi": "tăng phi mã", "note": "Không trang trọng; tăng chóng mặt."}, {"w": "escalate", "lv": "tiêu cực", "vi": "leo thang", "note": "Tăng theo hướng xấu."}]}, {"theme": "CAUSE", "vi": "gây ra — trung tính → mạnh", "steps": [{"w": "lead to", "lv": "nhẹ", "vi": "dẫn đến", "note": "Trung tính, an toàn nhất."}, {"w": "give rise to", "lv": "vừa", "vi": "làm nảy sinh", "note": "Trang trọng hơn 'cause'."}, {"w": "precipitate", "lv": "mạnh", "vi": "làm bùng phát (đột ngột)", "note": "Kích hoạt điều xấu bất ngờ."}, {"w": "engender", "lv": "học thuật", "vi": "làm sản sinh", "note": "Rất trang trọng; thường với cảm xúc/thái độ."}, {"w": "catalyse", "lv": "mạnh+", "vi": "xúc tác, thúc đẩy", "note": "Khơi mào và tăng tốc một quá trình."}, {"w": "trigger", "lv": "đột ngột", "vi": "châm ngòi", "note": "Kích hoạt tức thì một phản ứng."}]}, {"theme": "REDUCE", "vi": "làm giảm — nhẹ → dứt khoát", "steps": [{"w": "lessen", "lv": "nhẹ", "vi": "làm giảm bớt", "note": "Chung chung, trung tính."}, {"w": "alleviate", "lv": "vừa", "vi": "xoa dịu (đau khổ, gánh nặng)", "note": "Làm dịu vấn đề, thường về khó khăn."}, {"w": "mitigate", "lv": "mạnh", "vi": "giảm thiểu (rủi ro/tác hại)", "note": "Trang trọng; giảm mức nghiêm trọng."}, {"w": "curtail", "lv": "mạnh+", "vi": "cắt giảm, hạn chế", "note": "Chủ động cắt bớt."}, {"w": "stem", "lv": "dứt khoát", "vi": "chặn đứng (đà xấu)", "note": "Ngăn dòng chảy tiêu cực."}]}, {"theme": "WIDESPREAD", "vi": "mức độ phổ biến — ít → khắp nơi", "steps": [{"w": "common", "lv": "nhẹ", "vi": "phổ biến", "note": "Trung tính, đời thường."}, {"w": "prevalent", "lv": "vừa", "vi": "thịnh hành", "note": "Trang trọng hơn; phổ biến ở một thời/nơi."}, {"w": "pervasive", "lv": "mạnh", "vi": "thấm khắp", "note": "Len lỏi mọi ngóc ngách; hơi tiêu cực."}, {"w": "ubiquitous", "lv": "mạnh+", "vi": "hiện diện khắp nơi", "note": "Trang trọng/văn chương."}, {"w": "endemic", "lv": "chuyên biệt", "vi": "cố hữu, đặc hữu", "note": "Ăn sâu vào một nơi/nhóm; thường về vấn đề."}]}, {"theme": "SHOW / HIGHLIGHT", "vi": "cho thấy — trung tính → nhấn mạnh", "steps": [{"w": "indicate", "lv": "nhẹ", "vi": "cho thấy, chỉ ra", "note": "Trung tính, thận trọng."}, {"w": "demonstrate", "lv": "vừa", "vi": "chứng minh rõ", "note": "Bằng chứng cho thấy chắc chắn."}, {"w": "underscore", "lv": "mạnh", "vi": "nhấn mạnh, tô đậm", "note": "Làm nổi bật tầm quan trọng."}, {"w": "exemplify", "lv": "học thuật", "vi": "là ví dụ điển hình cho", "note": "Minh họa hoàn hảo cho một xu hướng."}, {"w": "epitomise", "lv": "mạnh+", "vi": "là hiện thân của", "note": "Là mẫu mực tuyệt đối của điều gì đó."}]}, {"theme": "BIG CHANGE", "vi": "thay đổi — nhỏ → tận gốc", "steps": [{"w": "alter", "lv": "nhẹ", "vi": "thay đổi (đôi chút)", "note": "Thay đổi nhẹ, cục bộ."}, {"w": "transform", "lv": "mạnh", "vi": "biến đổi toàn diện", "note": "Đổi khác về bản chất."}, {"w": "revolutionise", "lv": "mạnh+", "vi": "cách mạng hóa", "note": "Thay đổi triệt để cả một lĩnh vực."}, {"w": "overhaul", "lv": "dứt khoát", "vi": "đại tu, cải tổ toàn bộ", "note": "Chủ động làm lại từ gốc."}, {"w": "paradigm shift", "lv": "học thuật", "vi": "đổi mô thức", "note": "Thay đổi cả khung tư duy nền tảng."}]}], "debates": [{"q": "Mục đích chính của việc bỏ tù nên là trừng phạt hay cải tạo?", "ctx": "Topic liên quan: răn đe · tái phạm · công lý phục hồi · nguyên nhân gốc rễ. Dùng cho Writing Task 2 (discuss/opinion) và Speaking Part 3.", "for": ["Cải tạo giảm recidivism: dạy nghề, trị liệu giúp phạm nhân reintegrate và không tái phạm.", "Trừng phạt thuần túy (punitive) tốn kém mà không chạm tới root cause của tội phạm.", "Nhiều người phạm tội do deprivation và marginalisation; cải tạo mới xử lý được gốc.", "Một xã hội văn minh nên hướng tới sửa chữa con người, không chỉ retribution."], "against": ["Hình phạt phục vụ retribution và công lý cho nạn nhân — điều cải tạo bỏ qua.", "Deterrence: án nghiêm khiến người khác chùn tay, bảo vệ cộng đồng.", "Một số tội quá nghiêm trọng khiến 'cải tạo' là bất khả và xúc phạm nạn nhân.", "Giam giữ (incarceration) trực tiếp cách ly kẻ nguy hiểm khỏi xã hội."], "rebut": [{"claim": "Cải tạo là mềm yếu với tội phạm", "counter": "Ngược lại: cải tạo hiệu quả cắt giảm tái phạm, tức bảo vệ cộng đồng tốt hơn cả hình phạt nặng."}, {"claim": "Trừng phạt răn đe được tội phạm", "counter": "Bằng chứng cho thấy tính CHẮC CHẮN bị bắt răn đe mạnh hơn mức độ khắc nghiệt của án."}, {"claim": "Nạn nhân cần công lý báo ứng", "counter": "Công lý cho nạn nhân là chính đáng, nhưng có thể đạt qua công lý phục hồi thay vì báo thù đơn thuần."}], "phrases": ["The two aims are too often presented as mutually exclusive, when in fact a just system must balance both.", "It would be facile to dismiss rehabilitation as being 'soft on crime'.", "The pertinent measure of a prison is not how harshly it punishes, but how few of its inmates return.", "Punishment may satisfy our instinct for retribution, yet it does little to prevent the next offence.", "On balance, a system oriented towards rehabilitation serves society more effectively than one bent on retribution."], "vocab": ["rehabilitate", "recidivism", "retribution", "deterrence", "punitive", "reintegrate"], "model": {"writing": {"note": "discuss both + opinion: cân bằng hai mục đích, nghiêng về cải tạo", "paras": ["One of the oldest questions in penal policy is whether imprisonment should serve chiefly to punish or to reform. These aims are too often presented as mutually exclusive; in reality, a just system must balance both, though I will argue that the emphasis ought to fall on ⟦rehabilitation⟧.", "The case for punishment is not to be dismissed lightly. Locking offenders up satisfies society's instinct for ⟦retribution⟧ and offers a measure of justice to victims, whose suffering a purely therapeutic model can seem to overlook. A credible threat of ⟦incarceration⟧ also has a ⟦deterrent⟧ effect, discouraging others from offending, while for the most dangerous criminals imprisonment simply removes a threat from the streets. To ignore these functions altogether would be naive.", "Yet a system built primarily on ⟦punitive⟧ severity is, on closer inspection, self-defeating. Its central failing is that it does almost nothing to address the ⟦root causes⟧ of crime — the ⟦deprivation⟧, addiction and ⟦marginalisation⟧ from which so much offending springs. Warehousing people in harsh conditions and releasing them, unskilled and stigmatised, all but guarantees they will reoffend, as stubbornly high rates of ⟦recidivism⟧ across punitive systems attest.", "Rehabilitation, by contrast, tackles the problem at its source. Education, vocational training and treatment equip offenders to ⟦reintegrate⟧ into society and, crucially, not to return. Here the objection that reform is 'soft on crime' collapses: the truest measure of a prison is not how harshly it punishes, but how few of its inmates come back — and by that yardstick, rehabilitation protects the public far more effectively than retribution ever could.", "On balance, then, the dichotomy is a false one. Punishment will always have its place, but a system oriented towards genuine rehabilitation serves victims, offenders and society alike. Justice, properly understood, should seek not merely to wound the wrongdoer, but to break the cycle of crime."]}, "speaking": {"note": "khẩu ngữ, cân bằng rồi nghiêng về cải tạo", "qa": [{"q": "What do you think prisons are actually for — punishment or rehabilitation?", "a": "Ideally both, I'd say, but if you pushed me, I'd lean towards ⟦rehabilitation⟧. I completely understand the appeal of punishment — there's a natural instinct to want wrongdoers to pay, especially for the victims' sake. But just ⟦locking people up⟧ and throwing away the key doesn't really work, does it? The reoffending rates speak for themselves. If someone comes out with no skills and a criminal record, they're almost bound to slide back into crime."}, {"q": "Isn't rehabilitation just being soft on criminals?", "a": "That's the usual criticism, but I'd actually turn it around. To me, cutting reoffending is the toughest, most sensible thing you can do, because it means fewer future victims — so it's really about protecting the public. A lot of crime comes down to ⟦deprivation⟧ and a lack of options in the first place, so unless you deal with those ⟦root causes⟧, you're just papering over the cracks. Harsh sentences might feel satisfying, but they rarely stop the next offence."}]}}}, {"q": "Việc mở rộng giám sát (CCTV, dữ liệu, nhận diện khuôn mặt) để giảm tội phạm có đáng đánh đổi quyền riêng tư?", "ctx": "Topic liên quan: an ninh vs tự do · quyền riêng tư · lạm quyền nhà nước · 'không có gì phải giấu'. Hợp cho 'to what extent' và Speaking Part 3.", "for": ["Giám sát giúp law enforcement ngăn ngừa và phá án nhanh, act as a deterrent hiệu quả.", "An toàn công cộng là quyền căn bản; bảo vệ tính mạng trọng hơn chút riêng tư.", "Người không phạm pháp 'chẳng có gì phải giấu', nên tác động là tối thiểu.", "Công nghệ hiện đại đòi công cụ hiện đại để chống tội phạm ngày càng tinh vi."], "against": ["Giám sát đại trà erode civil liberties và biến người dân thành đối tượng tình nghi mặc định.", "Quyền lực này dễ bị lạm dụng và mở rộng âm thầm ('a slippery slope').", "Bằng chứng về hiệu quả giảm tội của camera diện rộng là mờ nhạt.", "Lập luận 'không có gì phải giấu' hiểu sai bản chất của quyền riêng tư như một quyền."], "rebut": [{"claim": "Không phạm pháp thì sợ gì", "counter": "Riêng tư không phải để 'che giấu' mà là một quyền; ai cũng đóng cửa phòng tắm dù chẳng làm gì sai."}, {"claim": "An toàn quan trọng hơn riêng tư", "counter": "Đây là ngụy biện đánh đổi: có thể đạt cả an toàn LẪN riêng tư qua giám sát có mục tiêu và giám sát tư pháp."}, {"claim": "Camera răn đe tội phạm", "counter": "Bằng chứng thực nghiệm yếu; tội phạm thường chỉ dịch chuyển sang nơi khác chứ không biến mất."}], "phrases": ["The trade-off between security and liberty is rarely as stark as its proponents suggest.", "The 'nothing to hide' argument fundamentally misconstrues the nature of privacy as a right.", "There is a real danger of a slippery slope, whereby exceptional powers quietly become the norm.", "The pertinent question is not whether surveillance works at all, but at what cost and under what safeguards.", "On balance, security and privacy are not irreconcilable, provided such powers are subject to rigorous oversight."], "vocab": ["surveillance", "civil liberties", "deterrent", "impunity", "accountability", "the presumption of innocence"], "model": {"writing": {"note": "to what extent: thừa nhận lợi ích an ninh, phản biện về quyền & giám sát", "paras": ["As ⟦surveillance⟧ technologies grow ever more powerful, societies must ask how much privacy they are willing to surrender in the name of safety. While the security benefits are real, I would argue that the trade-off is rarely as stark as its proponents suggest, and that expanding surveillance without stringent safeguards exacts too high a price.", "The case for surveillance is straightforward enough. Cameras and data-sharing assist ⟦law enforcement⟧ in preventing and solving crime, and the mere presence of monitoring can act as a ⟦deterrent⟧. Public safety, its defenders rightly observe, is itself a fundamental right; and if the law-abiding have, as the saying goes, 'nothing to hide', the intrusion may seem a modest price for protection.", "Yet this reasoning is more seductive than sound. The 'nothing to hide' argument fundamentally misconstrues the nature of privacy, which is not a cloak for wrongdoing but a right in its own right — we all close the bathroom door despite doing nothing wrong. Mass surveillance, moreover, quietly inverts a cornerstone of justice, the ⟦presumption of innocence⟧, by treating every citizen as a suspect by default and steadily eroding hard-won ⟦civil liberties⟧.", "There is, besides, a real danger of a slippery slope. Powers introduced for grave threats have a habit of expanding until they become routine, and without robust ⟦accountability⟧ they are ripe for abuse. Nor is the supposed pay-off as clear as claimed: the evidence that blanket camera coverage actually reduces crime, rather than merely displacing it, is decidedly thin.", "On balance, then, security and privacy are not the irreconcilable opposites they are made out to be. Targeted surveillance, subject to judicial oversight, can protect the public without dismantling their freedoms. The pertinent question is not whether to watch, but whom, why, and under what safeguards — for a society that surrenders its liberties to feel safe may end up with neither."]}, "speaking": {"note": "khẩu ngữ, thừa nhận an ninh rồi bảo vệ quyền riêng tư", "qa": [{"q": "Do you think more CCTV and surveillance make society safer?", "a": "To some extent, yes — I can see how cameras help the police catch people and maybe put a few off in the first place. But I'm quite wary of it, to be honest. There's this assumption that if you've done nothing wrong, you've nothing to hide, and I think that misses the point entirely. Privacy isn't about hiding crimes; it's a basic right. We all shut the bathroom door, don't we? So I'd want to see some serious ⟦accountability⟧ before we all agree to be filmed everywhere."}, {"q": "So where would you draw the line?", "a": "For me it's about targeted surveillance rather than watching everyone all the time. Keep an eye on genuine suspects, sure, but with proper judicial oversight — not blanket monitoring that treats the whole population as guilty until proven innocent. My worry is the ⟦slippery slope⟧: powers brought in for terrorism quietly become the norm for everything. Security and privacy aren't really either/or; with the right safeguards, I think you can have both."}]}}}, {"q": "Nghèo đói và bất bình đẳng có phải là nguyên nhân chính của tội phạm — và điều đó có bào chữa cho hành vi phạm tội không?", "ctx": "Topic liên quan: nguyên nhân gốc rễ · trách nhiệm cá nhân · công lý xã hội · phòng ngừa. Hợp cho Task 2 và Speaking Part 3.", "for": ["Tội phạm tập trung rõ ở khu deprivation; hoàn cảnh định hình lựa chọn mạnh mẽ.", "Thiếu cơ hội, giáo dục và việc làm khiến người ta succumb to tội phạm vì desperation.", "Giải quyết root cause (nghèo, marginalisation) hiệu quả hơn trừng phạt về lâu dài.", "Bỏ qua yếu tố xã hội là đổ hết cho cá nhân trong khi hệ thống cũng có lỗi (systemic)."], "against": ["Đa số người nghèo không phạm tội; hoàn cảnh không quyết định hành vi một cách máy móc.", "Đổ cho hoàn cảnh làm nhẹ trách nhiệm cá nhân và xúc phạm người nghèo lương thiện.", "Nhiều tội (tham nhũng, gian lận) do người giàu gây ra — nghèo không phải nguyên nhân duy nhất.", "Con người có free will; giải thích không được đánh đồng với biện minh."], "rebut": [{"claim": "Nghèo gây ra tội phạm nên phạm tội là dễ hiểu", "counter": "Giải thích một nguyên nhân KHÔNG đồng nghĩa với bào chữa; hiểu vì sao khác với tha thứ."}, {"claim": "Người nghèo phạm tội vì bản tính", "counter": "Sai và bất công: đa số người nghèo lương thiện; vấn đề là CƠ HỘI, không phải đạo đức."}, {"claim": "Chỉ cần trừng phạt nghiêm là đủ", "counter": "Trừng phạt không chạm tới điều kiện sản sinh tội phạm; phòng ngừa qua công bằng xã hội bền vững hơn."}], "phrases": ["To explain a phenomenon is not to excuse it; the two are frequently, and lazily, conflated.", "It would be reductive to attribute all crime to poverty, yet foolish to deny its role.", "Circumstances powerfully shape choices without wholly determining them.", "The most humane and effective response is to address the conditions in which crime festers.", "On balance, deprivation is a major cause of crime, but causation is not the same as absolution."], "vocab": ["deprivation", "marginalised", "root cause", "succumb to", "systemic", "desperation"], "model": {"writing": {"note": "phân biệt nguyên nhân vs bào chữa; giữ cả trách nhiệm cá nhân và xã hội", "paras": ["It is often claimed that poverty and inequality are the principal drivers of crime — and, more contentiously, that this somehow excuses the offender. The first proposition I find largely persuasive; the second rests on a crucial confusion, for to explain a phenomenon is not to excuse it.", "That ⟦deprivation⟧ breeds crime is difficult to deny. Offending clusters unmistakably in the poorest districts, where a scarcity of opportunity, education and stable work leaves many, in sheer ⟦desperation⟧, to ⟦succumb to⟧ temptation. Where young people are ⟦marginalised⟧ and see no legitimate path ahead, some inevitably turn to illegitimate ones. It follows that tackling the ⟦root causes⟧ of crime — and acknowledging the ⟦systemic⟧ failures that produce them — is a far more durable strategy than punishment alone.", "The opposing view, however, issues a necessary corrective. The overwhelming majority of poor people never offend, which shows plainly that circumstances shape choices without wholly determining them. To suggest otherwise is not only philosophically shaky but faintly insulting to the law-abiding poor. Crime, besides, is hardly the preserve of the destitute: fraud and corruption are perpetrated by the wealthy and powerful, for whom greed, not need, is the spur.", "The decisive point is that causation is not the same as absolution. We can recognise the social forces that make crime more likely while still holding individuals responsible for their actions; understanding why someone offended is quite distinct from forgiving it. To collapse the two — to treat every criminal as a mere victim of circumstance — would be to strip people of moral agency altogether.", "On balance, then, poverty and inequality are indeed major causes of crime, and a humane society will address the conditions in which it festers. But explanation must not shade into exculpation: the most defensible position holds society accountable for the soil, and the individual for the seed."]}, "speaking": {"note": "khẩu ngữ, phân biệt giải thích vs bào chữa", "qa": [{"q": "Do you think poverty is the main cause of crime?", "a": "It's certainly a huge factor, I'd say. If you look at where crime is concentrated, it's overwhelmingly in the most ⟦deprived⟧ areas, where people have few options and are often pretty ⟦marginalised⟧. When you're desperate and see no legitimate way forward, some people are going to slip into crime. So yes, tackling those ⟦root causes⟧ — poverty, lack of opportunity — makes far more sense to me than just punishing people after the fact."}, {"q": "But does that mean we should excuse criminals who grew up poor?", "a": "No, and that's a really important distinction. Explaining why someone offended isn't the same as excusing it — the two get lazily lumped together. After all, the vast majority of poor people never commit crimes, so clearly your circumstances shape your choices without completely deciding them. So I'd hold society responsible for creating the conditions, but I'd still hold the individual responsible for what they actually do. It's both, really — not one or the other."}]}}}]};
+const META = {"title": "Crime & Justice", "key": "crime"};
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const hl=s=>esc(s).replace(/⟦(.+?)⟧/g,'<mark>$1</mark>'); // ⟦word⟧ -> highlighted target vocab
+let TOTAL=0; DATA.vocab.forEach(m=>m.groups.forEach(g=>TOTAL+=g.words.length));
+$('htitle').innerHTML=esc(META.title)+'<span class="lvl">C1 – C2</span>';
+$('headsub').innerHTML=`<b style="color:#f0e6c8">${TOTAL}</b> từ C1–C2 · ${DATA.ladders.length} nuance ladders · ${DATA.debates.length} debate (Critical Thinking) · sắc thái &amp; register · 🔊 giọng Anh–Anh`;
+$('foot').innerHTML='ZENITH · C1–C2 precision vocabulary — RW = Reading &amp; Writing · LS = Listening &amp; Speaking · 🔊 phát âm Anh–Anh';
+
+let voice=null;
+function pickV(){const vs=(window.speechSynthesis&&speechSynthesis.getVoices())||[];
+  const pref=["Google UK English Female","Microsoft Sonia Online (Natural) - English (United Kingdom)","Microsoft Libby Online (Natural) - English (United Kingdom)","Kate","Serena","Daniel"];
+  for(const n of pref){const v=vs.find(x=>x.name===n);if(v)return v;}
+  return vs.find(v=>/en[-_]GB/i.test(v.lang))||vs.find(v=>/United Kingdom/i.test(v.name))||null;}
+if('speechSynthesis' in window){voice=pickV();speechSynthesis.onvoiceschanged=()=>{voice=pickV();};}
+function say(w,rate){if(!('speechSynthesis' in window))return;const u=new SpeechSynthesisUtterance(w);u.lang='en-GB';u.rate=rate||.9;u.pitch=1.0;if(!voice)voice=pickV();if(voice)u.voice=voice;speechSynthesis.cancel();speechSynthesis.speak(u);}
+const strip=s=>String(s).replace(/⟦|⟧/g,'');
+function sayText(btn){const t=decodeURIComponent(btn.dataset.t||'');if(!t)return;
+  const on=btn.classList.contains('playing');speechSynthesis.cancel();
+  document.querySelectorAll('.mspk.playing').forEach(b=>{b.classList.remove('playing');b.innerHTML=b.dataset.idle;});
+  if(on)return; // toggle off
+  btn.dataset.idle=btn.innerHTML;btn.classList.add('playing');btn.innerHTML='⏹ Dừng';
+  const u=new SpeechSynthesisUtterance(t);u.lang='en-GB';u.rate=.86;u.pitch=1.0;if(!voice)voice=pickV();if(voice)u.voice=voice;
+  u.onend=()=>{btn.classList.remove('playing');btn.innerHTML=btn.dataset.idle;};
+  speechSynthesis.speak(u);}
+
+const tabsEl=$('tabs'), mainEl=$('main');
+let cur='all', skill='all';
+
+function skillRow(){
+  return `<div class="skillrow">
+    <button class="${skill==='all'?'on all':''}" onclick="setSkill('all')">✦ Tất cả</button>
+    <button class="${skill==='RW'?'on rw':''}" onclick="setSkill('RW')">📖 Reading &amp; Writing</button>
+    <button class="${skill==='LS'?'on ls':''}" onclick="setSkill('LS')">🎧 Listening &amp; Speaking</button>
+  </div>`;
+}
+function setSkill(s){skill=s;render();}
+function passSkill(e){return skill==='all'||e.tag===skill;}
+
+function card(e){
+  const ls=e.tag==='LS';
+  return `<div class="card ${ls?'ls':''}">
+    <div class="w"><span>${esc(e.w)}</span>
+      ${e.pos?`<span class="pos">${esc(e.pos)}</span>`:''}
+      <span class="cefr ${e.cefr==='C2'?'c2':'c1'}">${esc(e.cefr||'C1')}</span>
+      <span class="chip ${ls?'ls':'rw'}">${ls?'L·S':'R·W'}</span>
+      <button class="spk" onclick="say('${String(e.w).replace(/'/g,"\\'")}')">🔊</button></div>
+    <div class="meta">${e.reg?`<span class="reg">${esc(e.reg)}</span>`:''}${e.up?`<span class="up">⬆ <b>${esc(e.up)}</b></span>`:''}</div>
+    <div class="vi">${esc(e.vi)}</div>
+    ${e.nu?`<div class="nu"><b>SẮC THÁI</b>${esc(e.nu)}</div>`:''}
+    ${e.col?`<div class="col"><b>COLLOCATION · </b>${esc(e.col)}</div>`:''}
+    <div class="ex">e.g. ${esc(e.ex)}</div></div>`;
+}
+
+function renderTabs(){
+  tabsEl.innerHTML='';
+  const mk=(id,label)=>{const b=document.createElement('button');b.className=(cur===id?'active':'');b.innerHTML=label;
+    b.onclick=()=>{cur=id;renderTabs();render();window.scrollTo({top:0,behavior:'smooth'});};return b;};
+  tabsEl.appendChild(mk('all','🔎 Tất cả'));
+  DATA.vocab.forEach(m=>tabsEl.appendChild(mk('m'+m.letter,`<span class="l">${m.letter}</span>${esc(m.title)}`)));
+  tabsEl.appendChild(mk('nuance','🪜 Nuance'));
+  tabsEl.appendChild(mk('debate','⚖ Critical Thinking'));
+  tabsEl.appendChild(mk('quiz','🎮 Quiz'));
+}
+
+function render(){
+  if(cur==='quiz'){renderQuiz();return;}
+  if(cur==='nuance'){renderLadders();return;}
+  if(cur==='debate'){renderDebates();return;}
+  if(cur==='all'){
+    mainEl.innerHTML=`<div class="searchbar"><span class="ic">🔎</span>
+      <input id="q" placeholder="Tìm từ, register, sắc thái hoặc nghĩa… (VD: pernicious, âm thầm, ⬆ harmful)" oninput="doSearch(this.value)"></div>
+      ${skillRow()}<div id="results"></div>`;
+    doSearch(($('q')&&$('q').value)||'');return;
+  }
+  const m=DATA.vocab.find(x=>'m'+x.letter===cur);
+  mainEl.innerHTML=`<div class="modhead"><div class="badge">${m.letter}</div><div><h2>${esc(m.title)}</h2><p>${esc(m.sub)}</p></div></div>
+    ${skillRow()}${m.groups.map(g=>{const ws=g.words.filter(passSkill);return ws.length?`<div class="sub">${esc(g.name)} <span class="cnt">· ${ws.length}</span></div><div class="grid">${ws.map(card).join('')}</div>`:'';}).join('')||'<div class="empty">Không có mục nào cho bộ lọc này.</div>'}`;
+}
+function doSearch(v){
+  const q=(v||'').toLowerCase().trim();const box=$('results');if(!box)return;
+  let html='',shown=0;
+  DATA.vocab.forEach(m=>{
+    let inner='';
+    m.groups.forEach(g=>{
+      const ws=g.words.filter(e=>passSkill(e)&&(!q||(e.w+' '+e.vi+' '+e.ex+' '+(e.col||'')+' '+(e.nu||'')+' '+(e.reg||'')+' '+(e.up||'')).toLowerCase().includes(q)));
+      if(ws.length){shown+=ws.length;inner+=`<div class="sub">${esc(g.name)} <span class="cnt">· ${ws.length}</span></div><div class="grid">${ws.map(card).join('')}</div>`;}
+    });
+    if(inner)html+=`<div class="modhead" style="margin-top:22px"><div class="badge">${m.letter}</div><div><h2>${esc(m.title)}</h2></div></div>`+inner;
+  });
+  box.innerHTML=shown?html:`<div class="empty">Không tìm thấy “${esc(q)}”.</div>`;
+}
+
+function renderLadders(){
+  mainEl.innerHTML=`<div class="modhead"><div class="badge">🪜</div><div><h2>Nuance Ladders</h2><p>Thang sắc thái — chọn từ mạnh/nhẹ &amp; đúng register cho từng nhóm nghĩa</p></div></div>`+
+    DATA.ladders.map(L=>{
+      const n=L.steps.length;
+      return `<div class="ladder"><div class="ladder-h">${esc(L.theme)} <span class="vi">${esc(L.vi)}</span></div>
+        <div class="steps">${L.steps.map((s,i)=>`<div class="step">
+          <div class="gauge"><i style="width:${Math.round((i+1)/n*100)}%"></i></div>
+          <div class="body"><div class="sw"><span>${esc(s.w)}</span><span class="lvtag">${esc(s.lv)}</span>
+            <button class="spk" onclick="say('${String(s.w).replace(/'/g,"\\'")}')">🔊</button></div>
+            <div class="svi">${esc(s.vi)}</div><div class="note">${esc(s.note)}</div></div></div>`).join('')}</div></div>`;
+    }).join('');
+}
+
+function renderDebates(){
+  mainEl.innerHTML=`<div class="modhead"><div class="badge">⚖</div><div><h2>Critical Thinking</h2><p>Mỗi debate: luận điểm bảo vệ CẢ HAI phía · phản biện chéo · khung câu &amp; từ vựng triển khai</p></div></div>`+
+    DATA.debates.map((D,i)=>`<div class="debate">
+      <div class="dtag">Debate ${i+1}</div>
+      <div class="dq">${esc(D.q)}</div>
+      <div class="dctx">${esc(D.ctx)}</div>
+      <div class="cols">
+        <div class="colc for"><h4>✔ Luận điểm ỦNG HỘ</h4><ul>${D.for.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+        <div class="colc against"><h4>✘ Luận điểm PHẢN ĐỐI (steelman)</h4><ul>${D.against.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>
+      </div>
+      <div class="rebut"><h4>Phản biện chéo</h4>${D.rebut.map(r=>`<div class="rpair"><div class="claim">“${esc(r.claim)}”</div><div class="counter">${esc(r.counter)}</div></div>`).join('')}</div>
+      <div class="phrases"><h4>Khung câu lập luận (C1–C2)</h4>${D.phrases.map(p=>`<span class="phrasechip">${esc(p)}</span>`).join('')}</div>
+      <div class="dvocab"><h4>Từ vựng nên triển khai</h4>${D.vocab.map(v=>`<span class="vchip" onclick="say('${String(v).replace(/'/g,"\\'")}')">${esc(v)}</span>`).join('')}</div>
+      ${D.model?`<div class="model">
+        <div class="legend">Từ <mark>tô sáng</mark> = vocab mục tiêu được triển khai đúng sắc thái &amp; register. Bấm 🔊 để nghe giọng Anh–Anh và <b>shadow</b> theo.</div>
+        <div class="mblock writing">
+          <div class="mhead"><div class="mlabel">✍️ Model · Writing Task 2</div>
+            <button class="mspk" onclick="sayText(this)" data-t="${encodeURIComponent(strip(D.model.writing.paras.join(' ')))}">🔊 Nghe &amp; shadow</button></div>
+          <div class="mreg">register: formal · academic · cohesive — ${esc(D.model.writing.note||'')}</div>
+          ${D.model.writing.paras.map(p=>`<p>${hl(p)}</p>`).join('')}</div>
+        <div class="mblock speaking">
+          <div class="mhead"><div class="mlabel">🎤 Model · Speaking Part 3</div>
+            <button class="mspk" onclick="sayText(this)" data-t="${encodeURIComponent(strip(D.model.speaking.qa.map(x=>x.a).join(' ')))}">🔊 Nghe &amp; shadow</button></div>
+          <div class="mreg">register: natural · spoken · idiomatic — ${esc(D.model.speaking.note||'')}</div>
+          ${D.model.speaking.qa.map(x=>`<div class="qa"><div class="mq">${hl(x.q)} <button class="mspk sm" onclick="sayText(this)" data-t="${encodeURIComponent(strip(x.a))}">🔊</button></div><div class="ma">${hl(x.a)}</div></div>`).join('')}</div>
+      </div>`:''}
+    </div>`).join('');
+}
+
+/* Quiz from vocab (VI -> English), respects skill filter */
+let quiz={pool:[],i:0,score:0,answered:false,all:[]};
+function pool(){const a=[];DATA.vocab.forEach(m=>m.groups.forEach(g=>g.words.forEach(w=>{if(passSkill(w))a.push(w);})));return a;}
+function renderQuiz(){
+  mainEl.innerHTML=`${skillRow()}<div class="quizwrap"><div class="qctrl" style="margin:0 0 16px">
+    <button class="btn p" onclick="startQuiz()">✦ Bắt đầu / Làm lại</button></div><div id="qbody"></div></div>`;
+  startQuiz();
+}
+function startQuiz(){const P=pool();quiz={all:P,pool:P.slice().sort(()=>Math.random()-.5).slice(0,10),i:0,score:0,answered:false};drawQ();}
+function drawQ(){
+  const body=$('qbody');if(!body)return;const q=quiz.pool[quiz.i];
+  if(!q){body.innerHTML=`<div class="qcard"><div class="qprompt-label gradtext">Kết quả</div><div class="qprompt gradtext">${quiz.score}/${quiz.pool.length}</div><div class="qctrl"><button class="btn p" onclick="startQuiz()">↻ Làm lại</button></div></div>`;return;}
+  const others=quiz.all.filter(w=>w.w!==q.w).sort(()=>Math.random()-.5).slice(0,3).map(w=>w.w);
+  const opts=[q.w,...others].sort(()=>Math.random()-.5);quiz.answered=false;
+  body.innerHTML=`<div class="qcard"><div class="qtop"><span>Câu ${quiz.i+1}/${quiz.pool.length}</span><span class="score">✦ ${quiz.score}</span></div>
+    <div class="qprompt-label gradtext">Say it in English</div><div class="qprompt">${esc(q.vi)}</div>
+    <div class="qopts" id="qopts">${opts.map((o,i)=>`<button data-o="${encodeURIComponent(o)}" onclick="answer(this)"><span class="k">${'ABCD'[i]}</span><span>${esc(o)}</span></button>`).join('')}</div>
+    <div class="qreveal" id="qreveal"></div><div class="qctrl"><button class="btn g" id="qnext" onclick="nextQ()" style="display:none">Câu tiếp →</button></div></div>`;
+}
+function answer(btn){
+  if(quiz.answered)return;quiz.answered=true;const q=quiz.pool[quiz.i];const chosen=decodeURIComponent(btn.dataset.o);
+  document.querySelectorAll('#qopts button').forEach(b=>{const o=decodeURIComponent(b.dataset.o);b.disabled=true;if(o===q.w)b.classList.add('correct');else if(o===chosen)b.classList.add('wrong');});
+  if(chosen===q.w)quiz.score++;say(q.w);$('qreveal').innerHTML=`<b>${esc(q.w)}</b> — ${esc(q.ex)}`;$('qnext').style.display='inline-block';
+}
+function nextQ(){quiz.i++;drawQ();}
+
+renderTabs();render();
+</script>
+</body>
+</html>
